@@ -1,71 +1,75 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--底部导航 start-->
-<div id="bottomNav" class="box">
- <div class="box_1">
-  <div class="bNavList clearfix">
-   <div class="f_l">
-   <!-- {if $navigator_list.bottom} -->
-   <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} -->
-        <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a>
-        <!-- {if !$smarty.foreach.nav_bottom_list.last} -->
-           -
-        <!-- {/if} -->
-      <!-- {/foreach} -->
-  <!-- {/if} -->
-   </div>
-   <div class="f_r">
-   <a href="#top"><img src="images/bnt_top.gif" /></a> <a href="../index.php"><img src="images/bnt_home.gif" /></a>
-   </div>
+<div class="footer block">
+<div class="footerup">
+  <div class="footercont">
+    <ul class="nums clearfix">
+      <li class="first"> <a href="#" target="_blank"> <span>7</span> <strong>
+        <label>天</label>
+        退货保障 </strong> </a> </li>
+      <li class="line">|</li>
+      <li class="second"> <a href="#" target="_blank"> <span>15</span> <strong>
+        <label>天</label>
+        换货承诺 </strong> </a> </li>
+      <li class="line">|</li>
+      <li class="third"> <a href="#" target="_blank"> <span>299</span> <strong>
+        <label>元起</label>
+        全场包邮 </strong> </a> </li>
+      <li class="line"></li>
+      <li class="fourth"> <a href="#" target="_blank"> <span>正品</span> <strong>
+        <label>跨境试点</label>
+        防伪溯源 </strong> </a> </li>
+    </ul>
+   
+    
+    
+    <div class="service clearfix ">
+                        <dl>
+        <dt><a href="article_cat.php?id=5" title="新手上路 ">新手上路 </a></dt>
+                <dd><a href="article.php?id=9" title="售后流程">售后流程</a></dd>
+                <dd><a href="article.php?id=10" title="注册购物流程">注册购物流程</a></dd>
+                <dd><a href="article.php?id=11" title="关于进口税">关于进口税</a></dd>
+              </dl>
+                        <dl>
+        <dt><a href="article_cat.php?id=9" title="关于我们">关于我们</a></dt>
+                <dd><a href="article.php?id=24" title="了解海狗商城">了解海狗商城</a></dd>
+                <dd><a href="article.php?id=4" title="联系我们">联系我们</a></dd>
+                <dd><a href="article.php?id=25" title="加入我们">加入我们</a></dd>
+              </dl>
+              <dl>
+        <dt><a href="article_cat.php?id=13" title="关于海淘">关于海淘</a></dt>
+                <dd><a href="article.php?id=36" title="淘全球">淘全球</a></dd>
+                <dd><a href="article.php?id=37" title="注意事项">注意事项</a></dd>
+                <dd><a href="article.php?id=38" title="海淘流程">海淘流程</a></dd>
+              </dl>
+                        
+      <dl>
+      	<dt>官方网址</dt>
+        <dd class="sina"> <img src="themes/default/imagesgy/qrcode.png" style="width:75px;"> </dd>
+      </dl>
+      <dl>
+        <dd class="sina"> <!-- <span class="icon-common icon-common-sina"></span> <a href="http://weibo.com/ikjtao" target="_blank" style="font-weight:bold;"> 官方微博 </a>  --></dd>
+        <dd class="sina"> <img src="themes/default/imagesgy/qrcodehttp.png" style="width:75px;"> </dd>
+      </dl>
+      <div class="online">
+        <ul>
+          <li class="item1"> <span class="icon-common icon-common-tel"></span>400-018-7286</li>
+          <li class="item2"> 仅收市话费，周一至周五9:00-17:00 </li>
+        <li class="item3 clearfix"> <a style="height: 48px;width:173px;" href="http://wpa.qq.com/msgrd?V=1&amp;uin=405704570&amp;site=qq&amp;menu=yes" target="_blank"><img src="goods_files/qq.png"></a> </li>
+        </ul>
+      </div>
+    </div>
   </div>
- </div>
 </div>
-<!--底部导航 end-->
-<div class="blank"></div>
-<!--版权 start-->
-<div id="footer">
- <div class="text">
- {$copyright}<br />
- {$shop_address} {$shop_postcode}
- <!-- 客服电话{if $service_phone} -->
-      Tel: {$service_phone}
- <!-- 结束客服电话{/if} -->
- <!-- 邮件{if $service_email} -->
-      E-mail: {$service_email}<br />
- <!-- 结束邮件{/if} -->
- <!-- QQ 号码 {foreach from=$qq item=im} -->
-      <!-- {if $im} -->
-      <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束QQ号码 -->
-      <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
-      <!-- {if $im} -->
-      <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a>
-      <!-- {/if} -->
-      <!--{/foreach} 结束淘宝旺旺 -->
-      <!-- Yahoo Messenger {foreach from=$ym item=im} -->
-      <!-- {if $im} -->
-      <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束Yahoo Messenger -->
-      <!-- MSN Messenger {foreach from=$msn item=im} -->
-      <!-- {if $im} -->
-      <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束MSN Messenger -->
-      <!-- Skype {foreach from=$skype item=im} -->
-      <!-- {if $im} -->
-      <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a>
-      <!-- {/if} -->
-  <!-- {/foreach} --><br />
-  <!-- ICP 证书{if $icp_number} -->
-  {$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a><br />
-  <!-- 结束ICP 证书{/if} -->
-  {insert name='query_info'}<br />
-  {foreach from=$lang.p_y item=pv}{$pv}{/foreach}{$licensed}<br />
-    {if $stats_code}
-    <div align="left">{$stats_code}</div>
-    {/if}
-    <div align="left"  id="rss"><a href="{$feed_url}"><img src="../images/xml_rss2.gif" alt="rss" /></a></div>
- </div>
+<div class="info ">
+ © 2005-2014 海狗商城 版权所有，并保留所有权利。<br>
+ <a href="http://www.miibeian.gov.cn/" target="_blank"> 浙ICP备14021928号-1</a>
+ <br>
+            
+        
+  <img alt="" src="goods_files/footerbg.png"> </div>
+<div class="believe">
+ <a target="_blank" href="#"><img src="goods_files/cnnicVerifyseal.png" style="border:none;height:42px;" oncontextmenu="return false;" alt="可信网站"></a>
+ <a target="_blank" href="#"><img alt="诚信网站" src="goods_files/szfwVerifyseal.gif" style="border:none;"></a> 
+ <a target="_blank" href="#"><img alt="诚信网站" src="goods_files/save.jpg" style="border:none;"></a> </div>
 </div>
-

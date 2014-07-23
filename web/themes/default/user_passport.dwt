@@ -10,79 +10,120 @@
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
-{* 包含脚本文件 *}
-{insert_scripts files='common.js,user.js,transport.js'}
 
+{* 包含脚本文件 *}
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,jquery.SuperSlide.js'}
+{insert_scripts files='common.js,user.js,transport.js'}
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#remember").val(0);
+	 $("#checkbox_item ,#message_AUTOLOGIN_TWOWEEKS").click(function() {
+	 	var r = $("#remember").val();
+	 	if(r=='0'){
+		 	$("#remember").val(1);
+		 	$("#checkbox_item").addClass("checked");
+	 	} else {
+		 	$("#remember").val(0);
+			$("#checkbox_item").removeClass("checked");
+	 	}
+	 	});
+	 	$("#miniLogin_username,#message_INPUT_IDENTITY").focus(function(){
+		 	$("#message_INPUT_IDENTITY").addClass("hide");
+	 	});
+
+	 	$("#miniLogin_username,#message_INPUT_IDENTITY").click(function(){
+		 	$("#miniLogin_username")[0].focus()
+	 	});
+	 	$("#password,#message_INPUT_PASSWORD").focus(function(){
+		 	$("#message_INPUT_PASSWORD").addClass("hide");
+	 	});
+
+	 	$("#password,#message_INPUT_PASSWORD").click(function(){
+		 	$("#password")[0].focus()
+	 	});
+
+	 	
+	 	
+})
+</script>
 <body>
-<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
-<!--当前位置 start-->
-<div class="block box">
- <div id="ur_here">
-  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
-  </div>
-</div>
-<!--当前位置 end-->
-<div class="blank"></div>
+
 <!--#登录界面 start-->
 <!-- {if $action eq 'login'} -->
-<div class="usBox clearfix">
-  <div class="usBox_1 f_l">
-   <div class="logtitle"></div>
-   <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
-        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
-          <tr>
-            <td width="15%" align="right">{$lang.label_username}</td>
-            <td width="85%"><input name="username" type="text" size="25" class="inputBg" /></td>
-          </tr>
-          <tr>
-            <td align="right">{$lang.label_password}</td>
-            <td>
-            <input name="password" type="password" size="15"  class="inputBg"/>
-            </td>
-          </tr>
-          <!-- 判断是否启用验证码{if $enabled_captcha} -->
-          <tr>
-            <td align="right">{$lang.comment_captcha}</td>
-            <td><input type="text" size="8" name="captcha" class="inputBg" />
-            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
-          </tr>
-          <!--{/if}-->
-          <tr>
-            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td align="left">
-            <input type="hidden" name="act" value="act_login" />
+<link href="themes/default/reg.css" rel="stylesheet" type="text/css" />
+<div class="layout">
+  <div class="nl-content">
+    <div id="custom_display_1" class="nl-logo-area"><a href="javascript:void(0)"><img src="themes/default/imagesgy/icon-common.png" id="logo-img"></a></div>
+    <h1 id="custom_display_256" class="nl-login-title"><span id="message_LOGIN_TITLE">一个帐号，把全世界的商品收入囊中！</span></h1>
+    <h2 id="lsrp_appName" class="nl-login-title lsrp-appname"></h2>
+    <div id="custom_display_2">
+
+    <p id="message_LOGIN_PHONETIP" class="nl-phone-tip">&nbsp;</p>
+    </div>
+    <div class="nl-frame-container">
+      <div id="form-area" class="ng-form-area show-place">
+    <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+      <div style="z-index:30;" id="shake_area" class="shake-area">
+        <div class="enter-area">
+          <input type="text" autocomplete="off" data-rule="(^[\w.\-]+@(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,6}$)|(^1\d{10}$)|(^\d{3,}$)|(^\++\d{2,}$)" id="miniLogin_username" class="enter-item first-enter-item" name="username">
+          <i id="message_INPUT_IDENTITY" class="placeholder">邮箱/手机号码/小米ID</i>
+
+        </div>
+        <div style="z-index:20;" class="enter-area">
+          <input type="password" data-rule="" autocomplete="off" id="password" name="password" class="enter-item last-enter-item">
+          <i id="message_INPUT_PASSWORD" class="placeholder">密码</i>
+
+
+        </div>
+      </div>
+      <div style="display:none;" id="img_code_area" class="enter-area img-code-area">
+        <img id="code_img" class="code-img" src="">
+        <input type="text" maxlength="12" autocomplete="off" id="miniLogin_captCode" class="enter-item code-enter-item">
+        <i id="message_INPUT_CONFIRM" class="placeholder">验证码</i>
+        <span class="error-tip"><em class="error-ico"></em><span id="code_error_tips" class="error-msg"></span></span>
+      </div>
+      <div id="miniLogin_forbidden" class="miniLogin_forbidden">
+          <div><span id="message_LOGIN_TOO_MUCH">您的操作频率过快，请稍后再试。</span>(<span id="retryCountdown"></span>)</div>
+      </div>
+      <input type="hidden" name="act" value="act_login" />
             <input type="hidden" name="back_act" value="{$back_act}" />
-            <input type="submit" name="submit" value="" class="us_Submit" />
-            </td>
-          </tr>
-	  <tr><td></td><td><a href="user.php?act=qpassword_name" class="f3">{$lang.get_password_by_question}</a>&nbsp;&nbsp;&nbsp;<a href="user.php?act=get_password" class="f3">{$lang.get_password_by_mail}</a></td></tr>
-      </table>
+      <input type="submit" value="立即登录" id="message_LOGIN_IMMEDIATELY" class="button orange">
+      <div class="ng-foot clearfix">
+        <div id="custom_display_8">
+          <div id="cookie_area" class="ng-cookie-area">
+            <input type="hidden" name="remember" id="remember" value="0"><em id="checkbox_item" class="checkbox"></em><span id="message_AUTOLOGIN_TWOWEEKS">两周内自动登录</span>
+          </div>
+        </div>
+        <div class="ng-link-area">
+<!--           <span id="custom_display_16">
+            <a id="other_method" href="javascript:void(0);">其他方式登录</a>
+          </span> -->
+          <span id="custom_display_32">  </span>
+          <span id="custom_display_64">
+            <a href="user.php?act=qpassword_name" class="f3">{$lang.get_password_by_question}</a> | <a href="user.php?act=get_password" class="f3">{$lang.get_password_by_mail}</a>
+          </span>
+
+        </div>
+      </div>
+      <span id="custom_display_128">
+        <a target="_blank" id="message_REGISTER" class="button" href="user.php?act=register">注册新用户</a>
+      </span>
     </form>
   </div>
-  <div class="usTxt">
-    <strong>{$lang.user_reg_info[0]}</strong>  <br />
-    <strong class="f4">{$lang.user_reg_info[1]}：</strong><br />
-    <!-- {if $car_off eq 1} -->
-    {$lang.user_reg_info[2]}<br />
-    <!--{/if}-->
-    <!-- {if $car_off eq 0} -->
-    {$lang.user_reg_info[8]}<br />
-    <!--{/if}-->
-    {$lang.user_reg_info[3]}：<br />
-    1. {$lang.user_reg_info[4]}<br />
-    2. {$lang.user_reg_info[5]}<br />
-    3. {$lang.user_reg_info[6]}<br />
-    4. {$lang.user_reg_info[7]}  <br />
-    <a href="user.php?act=register"><img src="images/bnt_ur_reg.gif" /></a>
+    </div>
+  </div>
+  <div id="custom_display_4" class="nl-footer">
+
+    <p id="message_COPYRIGHT" class="nl-f-copyright"> © 2005-2014 海狗商城 版权所有，并保留所有权利。
+ <a href="http://www.miibeian.gov.cn/" target="_blank"> 浙ICP备14021928号-1</a></p>
   </div>
 </div>
+
 <!--{/if}-->
 <!--#登录界面 end-->
 
 <!--*会员注册界面 start-->
+
     <!--{if $action eq 'register'}-->
     <!-- {if $shop_reg_closed eq 1} -->
     <div class="usBox">
@@ -92,112 +133,146 @@
     </div>
     <!-- {else} -->
     {insert_scripts files='utils.js'}
-<div class="usBox">
-  <div class="usBox_2 clearfix">
-   <div class="regtitle"></div>
-    <form action="user.php" method="post" name="formUser" onsubmit="return register();">
-      <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
-        <tr>
-          <td width="13%" align="right">{$lang.label_username}</td>
-          <td width="87%">
-          <input name="username" type="text" size="25" id="username" onblur="is_registered(this.value);" class="inputBg"/>
-            <span id="username_notice" style="color:#FF0000"> *</span>
-          </td>
-        </tr>
-        <tr>
-          <td align="right">{$lang.label_email}</td>
-          <td>
-          <input name="email" type="text" size="25" id="email" onblur="checkEmail(this.value);"  class="inputBg"/>
-            <span id="email_notice" style="color:#FF0000"> *</span>
-          </td>
-        </tr>
-        <tr>
-          <td align="right">{$lang.label_password}</td>
-          <td>
-          <input name="password" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="inputBg" style="width:179px;" />
-            <span style="color:#FF0000" id="password_notice"> *</span>
-          </td>
-        </tr>
-        <tr>
-          <td align="right">{$lang.label_password_intensity}</td>
-          <td>
-            <table width="145" border="0" cellspacing="0" cellpadding="1">
-              <tr align="center">
-                <td width="33%" id="pwd_lower">{$lang.pwd_lower}</td>
-                <td width="33%" id="pwd_middle">{$lang.pwd_middle}</td>
-                <td width="33%" id="pwd_high">{$lang.pwd_high}</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr>
-          <td align="right">{$lang.label_confirm_password}</td>
-          <td>
-          <input name="confirm_password" type="password" id="conform_password" onblur="check_conform_password(this.value);"  class="inputBg" style="width:179px;"/>
-            <span style="color:#FF0000" id="conform_password_notice"> *</span>
-          </td>
-        </tr>
-        <!-- {foreach from=$extend_info_list item=field} -->
-	<!-- {if $field.id eq 6} -->
-        <tr>
-          <td align="right">{$lang.passwd_question}</td>
-          <td>
-          <select name='sel_question'>
-	  <option value='0'>{$lang.sel_question}</option>
-	  {html_options options=$passwd_questions}
-	  </select>
-          </td>
-        </tr>
-        <tr>
-          <td align="right" <!-- {if $field.is_need} -->id="passwd_quesetion"<!--{/if}-->>{$lang.passwd_answer}</td>
-          <td>
-	  <input name="passwd_answer" type="text" size="25" class="inputBg" maxlengt='20'/><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
-          </td>
-        </tr>
-	<!-- {else} -->
-        <tr>
-          <td align="right" <!-- {if $field.is_need} -->id="extend_field{$field.id}i"<!--{/if}-->>{$field.reg_field_name}
-          <td>
-          <input name="extend_field{$field.id}" type="text" size="25" class="inputBg" /><!-- {if $field.is_need} --><span style="color:#FF0000"> *</span><!-- {/if} -->
-          </td>
-        </tr>
-	<!-- {/if} -->
-	<!-- {/foreach} -->
-      <!-- 判断是否启用验证码{if $enabled_captcha} -->
-      <tr>
-      <td align="right">{$lang.comment_captcha}</td>
-      <td><input type="text" size="8" name="captcha" class="inputBg" />
-      <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
-      </tr>
-      <!--{/if}-->
-        <tr>
-          <td>&nbsp;</td>
-          <td><label>
-            <input name="agreement" type="checkbox" value="1" checked="checked" />
-            {$lang.agreement}</label></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td align="left">
-          <input name="act" type="hidden" value="act_register" >
+<link href="themes/default/reg2.css" rel="stylesheet" type="text/css" />
+<div class="top">
+	<div class="logo">
+    
+        <a href="/"><img alt="小米logo" src="themes/default/imagesgy/icon-common.png"></a>        
+      
+	</div>
+</div>
+
+<div class="suc_content reg-account nojsp">
+  <div class="suc_kuang">
+    <div class="hei_513">
+      <h4 class="h4_suc">注册新用户</h4>
+      <p class="suc_p">如果您已拥有帐号，则可
+        
+          <a class="cor_yellow" href="user.php">在此登录</a>
+        
+      </p>
+ 
+      <form id="regByEmail" action="/pass/register" method="post">
+	    <input type="hidden" value="" id="passToken" name="passToken">
+        <input type="hidden" value="" id="passport_ph" name="passport_ph">
+        <input type="hidden" value="" name="qs">
+        <dl class="login-dl clearfix" style="display: none;">
+          <dt class="dt_l">邮箱：</dt>
+	  <dd id="emailInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" rule="^[\w.\-]+@(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,6}$" isrequired="true" value="" class="input_kuang val_m item errortip address" id="emailInp" name="email">
+            <span id="emailCode" class="check_tips error_tip">邮箱格式错误</span>
+            <span class="check_tips empty_tip">请输入邮箱</span>
+	    <span class="check_tips succ_tips"></span>
+          </dd>
+	  <dt class="dt_l">设置密码：</dt>
+	  <dd id="pwdTd" class="dd_r dd_r_pos clearfix">
+	    <input type="password" autocomplete="off" name="password" id="pwd" isrequired="true" class="input_kuang item val_m errortip password">
+            <span id="tips_val" class="check_tips error_tip"></span>
+            <span class="check_tips empty_tip">请输入新密码</span>
+            <span id="pos_email" class="prompt_info">密码长度8~16位，数字、字母、字符至少包含两种</span>
+            <span style="display:none;" id="pos_email2" class="prompt_info">密码长度8~16位，数字、字母、字符至少包含两种</span>
+            <span class="check_tips succ_tips"></span>
+            <span class="tips_1">密码长度为8~16位</span>
+            <span class="tips_2">密码不能全为字母</span>
+            <span class="tips_3">密码不能全为数字</span>
+            <span style="display:none;" class="tips_4">密码不能与邮箱相同</span>
+            <span style="display:none;" class="tips_6">密码长度8~16位，数字、字母、字符至少包含两种</span>
+            <span style="display:none;" class="tips_7">密码不能全为字符</span>
+	  </dd>
+          <dt class="dt_l">确认密码：</dt>
+	  <dd class="dd_r clearfix">
+            <input type="password" autocomplete="off" repeat="#pwd" isrequired="true" name="repassword" class="input_kuang val_m item errortip">
+            <span class="check_tips repeat_tip">密码输入不一致</span>
+            <span class="check_tips empty_tip">请输入确认密码</span>
+	    <span class="check_tips succ_tips"></span>
+	  </dd>
+          <dt style="margin-top:10px;" class="dt_l">验证码：</dt>
+          <dd style="margin-top:10px;" class="dd_r clearfix">
+            <input type="text" autocomplete="off" isrequired="true" name="inputcode" class="input_kuang val_m item errortip checkcode" id="imginput">
+            <img onclick="this.src = this.src + '&amp;_=' + new Date().getTime()" src="/pass/getCode?icodeType=register">
+	    <span class="checkcode_span">点击图片刷新验证码
+            <br>
+	      <i class="code_error">
+	      
+	      </i>
+	    </span>
+          </dd>
+	  <dt class="dt_l">&nbsp;</dt>
+	  <dd class="dd_r la_height clearfix">
+            <div class="sub_login flt_l"><input type="submit" value="立即注册" class="no_bg"></div>
+          </dd>
+	</dl>
+      </form><!-- email end -->
+      <form action="user.php" method="post" name="formUser" onsubmit="return register();">
+        <!--用来对付IE11不支持autocomplete="off"-->
+        <div style="display: none;">
+            <input type="text"><input type="password">
+        </div>
+	<dl style="" class="login-dl clearfix">
+	  <dt class="dt_l">用户名：</dt>
+	  <dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="username" isrequired="true" value=""  name="username" class="input_kuang">
+           
+            <span id="phoneCode" class="check_tips error_tip">手机号码格式错误</span>
+            <span class="check_tips empty_tip">请输入手机号码</span>
+            <span class="check_tips succ_tips"></span>
+            <span class="check_tips fbdn_tip">您的操作频率过快，请稍后再试。</span>
+            <span class="check_tips custom_tip"></span>
+            
+          </dd>
+            <dt class="dt_l">邮箱：</dt>
+    <dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="email" isrequired="true" value=""  name="email" class="input_kuang">
+           
+            <span id="phoneCode" class="check_tips error_tip">手机号码格式错误</span>
+            <span class="check_tips empty_tip">请输入手机号码</span>
+            <span class="check_tips succ_tips"></span>
+            <span class="check_tips fbdn_tip">您的操作频率过快，请稍后再试。</span>
+            <span class="check_tips custom_tip"></span>
+            
+          </dd>
+          <dt class="dt_l">设置密码：</dt>
+          <dd id="pwdTd2" class="dd_r clearfix dd_r_pos">
+            <input type="password" autocomplete="off" name="password" id="password" isrequired="true" class="input_kuang item val_m errortip password">
+            <span style="color:#FF0000" id="password_notice"></span>
+	  </dd>
+          <dt class="dt_l">确认密码：</dt>
+	  <dd style="position:relative;" class="dd_r clearfix">
+            <input type="password" autocomplete="off" repeat="#phone_pwd" isrequired="true" name="confirm_password" id="confirm_password" class="input_kuang val_m item errortip">
+            <span style="color:#FF0000" id="conform_password_notice"></span>
+	    <div id="security_tips" style="padding:20px;margin-left:320px;margin-top:-210px;display:none;z-index:100;position:absolute;background:rgb(236,236,236);border:1px solid #d9d9d9;width:600px;">
+	        
+	        
+	        
+	        
+	    </div>
+	  </dd>
+	  <dt class="dt_l">&nbsp;</dt>
+	  <dd class="dd_r clearfix la_height">
+	   <input name="act" type="hidden" value="act_register" >
           <input type="hidden" name="back_act" value="{$back_act}" />
-          <input name="Submit" type="submit" value="" class="us_Submit_reg">
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">&nbsp;</td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td class="actionSub">
-          <a href="user.php?act=login">{$lang.want_login}</a><br />
-          <a href="user.php?act=get_password">{$lang.forgot_password}</a>
-          </td>
-        </tr>
-      </table>
-    </form>
+          <input name="agreement" type="hidden" value="1" checked="checked" />
+            <div class="sub_login flt_l"><input type="submit" value="立即注册" class="no_bg"></div>
+          </dd>
+	</dl>  
+      </form><!-- phone end -->
+      <p class="p_cor_hui">点击“立即注册”，即表示您同意并愿意遵守<a target="_blank" class="cor_yellow" href="article.php?cat_id=-1">用户协议</a></p>
+    </div>
+    <div class="suc_botm"></div><!--这部分是卷角效果-->
   </div>
 </div>
+<div style="width:auto;" class="footer">
+  <ul class="links">
+    <li class="copyright"><span> © 2005-2014 海狗商城 版权所有，并保留所有权利。
+ <a href="http://www.miibeian.gov.cn/" target="_blank"> 浙ICP备14021928号-1</a></span></li>
+  </ul>
+</div>
+
+
+
+
+
+
 <!--{/if}-->
 <!--{/if}-->
 <!--#会员注册界面 end-->
@@ -341,8 +416,6 @@
 </div>
 <!--{/if}-->
 <!--#找回密码界面 end-->
-<div class="blank"></div>
-<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
 var process_request = "{$lang.process_request}";

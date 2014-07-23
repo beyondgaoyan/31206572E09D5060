@@ -1,0 +1,2142 @@
+
+@charset "utf-8";
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, dl, dd, ol, ul, caption, th, td, form, fieldset, legend, input, button, textarea, address {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+ol, ul {
+    list-style: none outside none;
+}
+fieldset, img {
+    border: 0 none;
+}
+address, cite, dfn, em, var {
+    font-style: normal;
+}
+code, kbd, pre, samp {
+    font-family: courier new,courier,monospace;
+}
+input, button, textarea, select {
+    font-size: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: inherit;
+    table-layout: fixed;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+a, a:hover {
+    text-decoration: none;
+}
+a, label, *:focus {
+    outline: 0 none;
+}
+body {
+    color: #000;
+    font: 12px "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+button, input, select, textarea {
+    font-family: "Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+}
+input:-moz-placeholder {
+    color: #ccc;
+}
+.clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.clearfix {
+}
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    background: none repeat scroll 0 0 #f2f2f2;
+}
+.wrap {
+    word-wrap: break-word;
+}
+.top {
+    background: none repeat scroll 0 0 #ececec;
+    border-bottom: 1px solid #d9d9d9;
+    height: 75px;
+    padding-top: 25px;
+}
+.logo, .content, .footer {
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 900px;
+}
+.content {
+    height: 500px;
+    padding-top: 80px;
+    position: relative;
+}
+.loadimg {
+    background: url("/static/img/passport/welcome3.jpg") no-repeat scroll 0 80px rgba(0, 0, 0, 0);
+}
+.suc_content {
+    height: 630px;
+    margin: 0 auto;
+    padding-top: 80px;
+    width: 903px;
+}
+.suc_kuang {
+    background: none repeat scroll 0 0 #f9f9f9;
+}
+.suc_botm {
+    background: url("/static/img/passport/bom_cor.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    height: 62px;
+}
+.links {
+    display: inline-block;
+}
+.links li {
+    border-right: 1px solid #ff6600;
+    float: left;
+}
+.links li.copyright {
+    border-right: medium none;
+}
+.footer {
+    margin-top: 45px;
+    text-align: center;
+}
+.footer a {
+    color: #ff6600;
+    padding: 0 10px;
+}
+.footer span {
+    color: #999;
+    margin-left: 10px;
+}
+.sub_bg, .input_kuang, .input_b, .sub_login, .mt_login {
+    border-radius: 3px;
+}
+.sub_bg, .mt_login, .input_b {
+    box-shadow: 0 1px 1px #f0f0f0;
+}
+.sub_bg {
+    background: url(imagesgy/s_bgs.png) repeat-x scroll 0 -40px rgba(0, 0, 0, 0);
+    border: 1px solid #dadada;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 36px;
+    width: 132px;
+}
+.input_kuang {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: url(imagesgy/s_bgs.png) repeat-x scroll 0 -118px #fff;
+    border-color: #ccc #e3e3e3 #e3e3e3;
+    border-image: none;
+    border-right: 1px solid #e3e3e3;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px #fff;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    padding: 8px;
+    width: 252px;
+}
+.error_put {
+    border: 2px solid #f18447;
+    padding: 7px;
+}
+.sub_login {
+    background: url(imagesgy/s_bgs.png) repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #dd621f;
+    cursor: pointer;
+    height: 40px;
+    margin: 0 auto;
+    width: 130px;
+}
+.no_bg {
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+}
+.sub_bg input {
+    height: 36px;
+    width: 132px;
+}
+.sub_login input {
+    color: #fff;
+    font: 700 16px/40px 微软雅黑,黑体,文泉驿黑体;
+    height: 40px;
+    width: 130px;
+}
+.sub_login .sub_login_a {
+    color: #fff;
+    display: inline-block;
+    font: 700 16px/40px 微软雅黑,黑体,文泉驿黑体;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+}
+.mt_login {
+    background: url(imagesgy/s_bgs.png) repeat-x scroll 0 -40px rgba(0, 0, 0, 0);
+    border: 1px solid #dadada;
+    color: #dd621f;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 24px;
+    padding-top: 14px;
+    text-align: center;
+    width: 273px;
+}
+.pointer {
+    cursor: pointer;
+}
+.color_33 {
+    color: #333;
+}
+.language {
+    position: absolute;
+    right: 20px;
+    top: -80px;
+}
+.language a {
+    border-right: 1px solid #666;
+    color: #666;
+    font-size: 14px;
+    padding: 0 10px;
+}
+.language a.last {
+    border: 0 none;
+}
+.language a:hover {
+    color: #333;
+    text-decoration: underline;
+}
+.marl_40 {
+    margin-left: 40px;
+}
+.mart_60 {
+    margin-top: 60px;
+}
+.mart_30 {
+    margin-top: 30px;
+}
+.font_b {
+    font-weight: bold;
+}
+.flt_l {
+    float: left;
+}
+.flt_ln {
+    float: left;
+}
+.long_width {
+    width: 326px;
+}
+p.intrd {
+    color: #b0b0b0;
+    margin-top: 10px;
+}
+p.lht {
+    line-height: 1.5;
+}
+.val_m {
+    vertical-align: middle;
+}
+i.val_m {
+    font-size: 14px;
+    font-style: normal;
+}
+.val_mT {
+    vertical-align: middle;
+}
+.teln_m {
+    text-align: center;
+}
+.por_r {
+    position: relative;
+}
+.check_zi {
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin: 10px 0 0 10px;
+}
+.back_link {
+    color: #ff6600;
+    display: block;
+    font-size: 14px;
+    margin-top: 95px;
+    text-decoration: underline;
+}
+.register p {
+    font-size: 14px;
+}
+.change {
+    margin-left: 140px;
+    margin-top: 26px;
+}
+.color_yellow {
+    color: #ff7e00;
+}
+.h4_suc {
+    color: #ff9630;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 10px 30px;
+    padding-top: 20px;
+}
+.suc_p {
+    border-bottom: 1px dashed #e3e3e3;
+    color: #999;
+    padding: 0 0 20px 30px;
+}
+.radio_quyu {
+    font-size: 14px;
+    margin: 50px 0 20px 260px;
+}
+.p_cor_hui {
+    color: #999;
+    margin: 4px 0 0 260px;
+}
+.aln_r {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 38px;
+    text-align: right;
+    width: 80px;
+}
+.juli {
+    margin-right: 50px;
+}
+.hei_513 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dadada #dadada -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    height: auto;
+}
+.error_icontwo {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -85px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+    width: 16px;
+}
+.error_icon, .ok_icon {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -32px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    margin: 0 6px;
+    vertical-align: middle;
+    width: 16px;
+}
+.ok_icon {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0);
+}
+.la_height .sub_login {
+    margin-top: 6px;
+}
+.littlepop {
+    display: none;
+    position: absolute;
+    right: 48px;
+    top: -35px;
+}
+.popmessage {
+    background: url(imagesgy/s_bgs.png) repeat-x scroll 0 -252px rgba(0, 0, 0, 0);
+    border: 1px solid #e8d76b;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px #e9e9e9;
+    color: #ff0000;
+    display: none;
+    height: 18px;
+    line-height: 1.1;
+    padding: 10px;
+}
+.little_corner {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -74px rgba(0, 0, 0, 0);
+    display: block;
+    height: 11px;
+    margin-left: 13px;
+    margin-top: -2px;
+    overflow: hidden;
+    position: relative;
+    width: 12px;
+    z-index: 1;
+}
+.prompt_info {
+    color: #999;
+    left: 320px;
+    line-height: 1.5;
+    position: absolute;
+    top: 10px;
+    width: 274px;
+    z-index: 2;
+}
+.tips_1, .tips_2, .tips_3 {
+    display: none;
+}
+.validate_info {
+    color: #999;
+    line-height: 14px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+#validate_td .check_tips {
+    left: 130px;
+}
+.Mradio {
+    margin-right: 6px;
+}
+.radio_quyu .Mradio {
+}
+.register {
+    margin: 0 auto;
+    width: 650px;
+}
+.title {
+    color: #ff7e00;
+    font-size: 30px;
+    padding-top: 140px;
+}
+.register p {
+    line-height: 22px;
+}
+.point_email {
+    border-bottom: 1px dashed #c9c9c9;
+    padding: 30px 0;
+}
+.point_phone {
+    font-size: 14px;
+    margin: 45px 0 0;
+}
+.point_time {
+    color: #999;
+    font-size: 14px;
+    padding: 25px;
+}
+.other {
+    color: #999;
+    padding: 30px 0 0 83px;
+    text-align: left;
+}
+.action {
+    color: #f60;
+    text-decoration: underline;
+}
+.back {
+    color: #f60;
+    display: inline-block;
+    margin-top: 55px;
+    text-decoration: underline;
+}
+.retrieve_pwd {
+    border-bottom: 1px dashed #e3e3e3;
+    color: #ff7e00;
+    font-size: 24px;
+    font-weight: 400;
+    height: 24px;
+    line-height: 24px;
+    padding: 30px;
+    text-align: left;
+}
+.tips {
+    font-size: 14px;
+    margin-top: 98px;
+}
+.txt_input {
+    margin: 30px 0 0;
+    text-align: center;
+}
+.txt_input .mt_login {
+    color: #000000;
+    font-weight: normal;
+    margin-left: 4px;
+    padding-top: 12px;
+    width: 110px;
+}
+.txt_input .goback {
+    margin-top: 30px;
+}
+.next_btn {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 60px;
+    width: 130px;
+}
+.email {
+    font-size: 14px;
+    margin: 30px 0 0 415px;
+    text-align: left;
+}
+.phone {
+    font-size: 14px;
+    margin: 20px 0 0 415px;
+    text-align: left;
+}
+.sure_btn {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 50px;
+    width: 130px;
+}
+.email_tips {
+    font-size: 14px;
+    margin-top: 142px;
+}
+.orange {
+    color: #ff7e00;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.new_pwd {
+    margin: 60px auto 0;
+    width: 510px;
+}
+.new_pwd table td {
+    height: 38px;
+    line-height: 38px;
+    padding-bottom: 12px;
+}
+.reset_pwd {
+    margin-bottom: 20px;
+}
+.p_tips {
+    font-size: 14px;
+    margin-top: 110px;
+    padding-top: 10px;
+    text-align: center;
+}
+.new_tips {
+    height: 32px;
+    line-height: 16px;
+    margin: 0 0 0 80px;
+    padding: 0;
+    text-align: left;
+}
+.resetpassword .new_pwd {
+    margin: 60px 0 0 100px;
+}
+.resetpassword .reset_pwd {
+    width: 800px;
+}
+.resetpassword .new_tips {
+    margin: 0 0 0 150px;
+}
+.resetPass_content {
+    margin-top: 60px;
+}
+.msgTips {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.hide {
+    display: none !important;
+}
+.td1 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    width: 80px;
+}
+.changePwd .td1 {
+    text-align: right;
+    width: 120px;
+}
+.font_14 {
+    font-size: 14px;
+}
+.new_width {
+    width: 290px;
+}
+.changeP {
+    margin: 0 0 0 120px;
+}
+.pwd_p {
+    font-size: 14px;
+    line-height: 1.1;
+    margin: 0 0 20px 84px;
+}
+.big_name {
+    color: #ff7e00;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.1;
+}
+.only_tips {
+    color: #999;
+    font-size: 12px;
+    margin: 10px 10px 0 180px;
+}
+.detail {
+    margin: 50px 0 0 60px;
+}
+.user_info {
+    margin-bottom: 40px;
+}
+.info {
+    border-bottom: 1px dashed #e3e3e3;
+    height: 25px;
+    line-height: 25px;
+    padding: 30px;
+}
+.info .left {
+    color: #ff7e00;
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+    font-weight: 400;
+}
+.info .right {
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+}
+.info .right a {
+    color: #000;
+}
+.photo {
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 1px 2px #cdcdcd;
+    float: left;
+    width: 120px;
+}
+.photo img {
+    display: block;
+    height: 120px;
+    width: 120px;
+}
+.photo a {
+    color: #ff7e00;
+    display: block;
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: underline;
+}
+.mess {
+    float: left;
+    width: 440px;
+}
+.mess td {
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    padding-bottom: 22px;
+    width: 260px;
+}
+.mess td .wrap {
+    width: 260px;
+}
+.mess td.td_l {
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 80px;
+}
+.p_pop {
+    display: inline-block;
+    position: relative;
+}
+.pop {
+    display: none;
+    left: 16px;
+    margin-left: 10px;
+    padding-left: 10px;
+    position: absolute;
+    top: -24px;
+    width: 370px;
+    z-index: 10;
+}
+.hover .pop {
+    display: inline-block;
+}
+.doubt {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin-left: 2px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 16px;
+}
+.td_lht {
+    background: url("/static/img/passport/s_bgspop.png") repeat-x scroll 0 bottom #fefefe;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px #f0f0f0;
+    color: #999;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 6px 10px;
+}
+.lit_tip {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -63px rgba(0, 0, 0, 0);
+    display: inline-block;
+    float: left;
+    height: 11px;
+    left: -1px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    width: 12px;
+    z-index: 11;
+}
+.servie {
+    margin-right: 60px;
+}
+.serve_title {
+    border-bottom: 1px solid #ff7e00;
+    clear: both;
+    color: #ff7e00;
+    font-weight: bold;
+    margin-bottom: 11px;
+    padding-bottom: 11px;
+}
+.mess td a {
+    color: #ff7e00;
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.servie a.mt_login {
+    color: #000;
+    font-weight: normal;
+    height: 36px;
+    line-height: 36px;
+    padding-top: 0;
+    width: 136px;
+}
+.servie a.mt_login:hover {
+    background: url("/static/img/passport/sub_h.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #dd621f;
+    color: #fff;
+}
+.mess td a.mar_no {
+    margin-left: 0;
+}
+.sub_links {
+    padding-top: 10px;
+}
+.sub_links li {
+    float: left;
+    height: 50px;
+    width: 156px;
+}
+.sub_links li.the_one {
+    width: 140px;
+}
+.check_tips {
+    background: url("/static/img/passport/icosfories.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: none;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 10px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+.succ_tips {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0);
+    display: none;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 16px;
+}
+.imgerror .errortip, .nosame .errortip, .error .errortip, .empty .errortip, .repeat .errortip {
+    border: 2px solid #f18447;
+    padding: 7px;
+}
+.msgTips {
+    background: none repeat scroll 0 0 #000;
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+.msgInfo {
+    background: none repeat scroll 0 0 #fcfcfc;
+    border: 1px solid #9f9f9f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    height: 30px;
+    left: 50%;
+    margin: -30px auto 0 -130px;
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 200px;
+    z-index: 10;
+}
+.suc_limit {
+    height: 586px;
+}
+.hei_444 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dadada #dadada -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+    height: 444px;
+}
+.left_name {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+.m_name {
+    color: #333;
+}
+.m_func {
+    color: #ff7e00;
+    margin-left: 10px;
+}
+.guide {
+    margin: 26px;
+}
+.guide ul {
+    background: none repeat scroll 0 0 #ebebeb;
+    width: 100%;
+}
+.guide li {
+    background: none repeat scroll 0 0 #ebebeb;
+    color: #666;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+}
+.li1 {
+    width: 212px;
+}
+.li2, .li3 {
+    width: 216px;
+}
+.li4 {
+    width: 205px;
+}
+.li5 {
+    width: 430px;
+}
+.li6 {
+    width: 419px;
+}
+.guide li span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.guide li em {
+    display: block;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 13px;
+}
+.guide li .em1 {
+    background: url("/static/img/passport/huijiantou.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.guide li.current {
+    background: none repeat scroll 0 0 #fd843f;
+    color: #fff;
+}
+.guide li.current span {
+    color: #fff;
+}
+.guide li.current .em1 {
+    background: url("/static/img/passport/jiantou.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.guide li.current .em2 {
+    background: url("/static/img/passport/caijiantou.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    left: -13px;
+    top: 0;
+}
+a.resent {
+    color: #ff7800;
+    margin-left: 20px;
+    text-decoration: underline;
+}
+p.sucss {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 16px;
+    margin: 62px 0 52px;
+    text-align: center;
+}
+.sucs_div {
+    text-align: center;
+}
+.sucs_div .mt_login {
+    color: #000;
+    font-weight: normal;
+    height: 26px;
+    padding-top: 10px;
+    width: 118px;
+}
+p.sent_p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 40px 0;
+    text-align: center;
+}
+p.sent_p b {
+    margin-left: 10px;
+}
+.a_cancel {
+    margin-top: 26px;
+    text-align: center;
+}
+.a_cancel a {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.mar_k label {
+    display: block;
+    margin-bottom: 14px;
+    vertical-align: middle;
+}
+.mar_k {
+    font-size: 14px;
+    margin-top: 100px;
+}
+.mar_k2 {
+    font-size: 14px;
+    margin-top: 60px;
+}
+.some_tips {
+    line-height: 1.1;
+    margin-bottom: 28px;
+    text-align: center;
+}
+.mar_k label {
+    margin-left: 386px;
+}
+.mar_k2 label {
+    display: block;
+    margin-bottom: 6px;
+    margin-left: 290px;
+    vertical-align: middle;
+}
+.mar_k .sub_bg {
+    display: block;
+    margin: 50px auto 0;
+}
+.em_check {
+    margin: -12px 0 26px;
+    text-align: center;
+}
+.em_check .input_kuang {
+    width: 80px;
+}
+.em_sub {
+    text-align: center;
+}
+.em_sub .sub_login {
+    float: none;
+    margin: 0 auto;
+}
+.pos_new {
+    padding: 30px 0 0 290px;
+}
+#vKey, #vKey_text {
+    width: 86px;
+}
+.goback {
+    margin-top: 60px;
+    text-align: center;
+}
+.goback a {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.ph_tips {
+    font-size: 14px;
+    margin-top: 70px;
+    text-align: center;
+}
+.email_tip {
+    font-size: 14px;
+    margin: 140px 0 0;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.checkcode {
+    width: 100px;
+}
+.checkcode_span {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 200px;
+}
+.checkcode_span i {
+    font-style: normal;
+}
+.code_error {
+    color: #f60745;
+}
+.mes_p {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0 0 30px 40px;
+}
+.mes_p a {
+    color: #ff7e00;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.mes_p span {
+    margin-right: 10px;
+}
+.padt_20 {
+    padding-top: 20px;
+}
+.content_p_center {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    padding-left: 66px;
+}
+.content_p {
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0 0 180px;
+}
+.new_mar {
+    margin: 10px 0 20px 180px;
+}
+.mar_tp {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 100px 0 60px;
+    text-align: center;
+}
+.new_con {
+    margin: 0 auto;
+    width: 320px;
+}
+.new_lg {
+    font-size: 16px;
+    height: 30px;
+    margin-left: 40px;
+    padding-top: 10px;
+    width: 130px;
+}
+.new_sg {
+    float: left;
+    width: 130px;
+}
+.appeal-process {
+    padding: 40px;
+}
+.appeal-process h4 {
+    color: #333;
+    font-size: 16px;
+}
+.appeal-process p {
+    color: #2c2c2c;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+.appeal-process span {
+    color: #ff7e00;
+}
+.appeal-process p.text-indent {
+    text-indent: 28px;
+}
+.appeal-process-con {
+    padding-left: 28px;
+}
+.apc-left, .apc-right {
+    float: left;
+}
+.apc-right {
+    width: 680px;
+}
+.cannot-used {
+    font-size: 14px;
+    margin-top: 20px;
+}
+.cannot-used a {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.inputvkey {
+    width: 86px;
+}
+.usi .mess {
+    margin-left: 10px;
+}
+.bif .sucs_div .mt_login {
+    width: 200px;
+}
+.sakc .sucs_div .mt_login {
+    width: 200px;
+}
+.bia .ph_mar span {
+    width: 260px;
+}
+.bia .marl_1 {
+    padding-left: 275px;
+}
+.snsu .mess {
+    margin-left: 10px;
+    width: 430px;
+}
+.enchpen .prompt_info {
+    padding-top: 0;
+}
+.sra .sub_bg {
+    width: 180px;
+}
+.sra .sub_bg input {
+    width: 180px;
+}
+.nouse .suc_kuang {
+    background: url("/static/img/passport/con_bg.png") repeat-x scroll left bottom #fdfdfd;
+}
+.nouse {
+    height: 1060px;
+}
+.nouse .hei_513 {
+    height: 974px;
+}
+.nouse .apc-right {
+    width: 700px;
+}
+.nousedever {
+    color: #ff7e00;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+.pointer {
+    cursor: pointer;
+}
+.tooltips {
+    display: inline-block;
+    position: relative;
+    vertical-align: 2px;
+}
+.tooltips .bubble {
+    display: none;
+    left: 72px;
+    margin-left: 10px;
+    padding-left: 10px;
+    position: absolute;
+    top: -24px;
+    z-index: 10;
+}
+.hover .bubble {
+    display: inline-block;
+}
+.tooltips .doubt {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 70px;
+}
+.tooltips .bubble-content {
+    background: none repeat scroll 0 0 #f4f4f4;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    box-shadow: 0 3px 3px #f0f0f0, 0 -1px 0 #fff inset;
+    color: #999;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 6px 10px;
+    width: 220px;
+}
+.tooltips .bubble-corner {
+    background: url("/static/img/passport/icos-new.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 11px;
+    left: -1px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    width: 12px;
+    z-index: 11;
+}
+.suc_content {
+    height: auto;
+}
+.account_tips {
+    font-size: 14px;
+    height: 32px;
+    line-height: 16px;
+    margin-left: 180px;
+    text-align: left;
+}
+dl {
+    margin-bottom: 20px;
+}
+.dt_l, .dd_r {
+    float: left;
+    height: 38px;
+    margin-bottom: 12px;
+    vertical-align: middle;
+}
+.dt_l {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 38px;
+    padding-right: 10px;
+    text-align: right;
+    width: 170px;
+}
+.dd_r {
+    width: 580px;
+}
+.dd_r_pos {
+    position: relative;
+}
+.dd_r input {
+    display: block;
+    float: left;
+}
+.dd_r span {
+    float: left;
+}
+.dd_r p {
+    font-size: 14px;
+    line-height: 38px;
+}
+.check_tips {
+    margin-top: 11px;
+}
+.newerror .error_tip, .nosame .no_tips, .error .error_tip, .empty .empty_tip, .repeat .repeat_tip, .succ .succ_tips {
+    display: block;
+}
+.error .for_error_tip, .empty .for_empty_tip, .error .littlepop, .empty .littlepop {
+    display: inline-block;
+}
+.prompt_info, .validate_info {
+    margin-left: 10px;
+    padding-top: 10px;
+}
+.prompt_info {
+    position: static;
+}
+.changP .dt_l {
+    width: 210px;
+}
+.changP_container {
+    margin: 60px auto 0;
+}
+.changP_container .dd_r {
+    width: 620px;
+}
+.changP .account_tips {
+    margin-left: 220px;
+}
+.resetP .dd_r {
+    width: 680px;
+}
+.resetp .prompt_info {
+    padding-top: 0;
+}
+.bindA dl {
+    margin: 60px 0 30px;
+}
+.bindA .dt_l {
+    width: 270px;
+}
+.bindA .dd_r {
+    width: 620px;
+}
+.bindA .input_kuang {
+    width: 232px;
+}
+.bindA .sub_login {
+    display: inline-block;
+    margin: 0 0 0 280px;
+}
+.reg-account .getCode, .upgrade .getCode {
+    color: #000;
+    float: left;
+    font-weight: normal;
+    height: 38px;
+    margin-left: 4px;
+    padding-top: 0;
+    width: 90px;
+}
+.reg-account .code-area {
+    width: 106px;
+}
+.reg-account b, .upgrade b {
+    font-weight: normal;
+}
+.prevnum_info {
+    background: url("/static/img/passport/num_info.png") no-repeat scroll 0 10px rgba(0, 0, 0, 0);
+    clear: both;
+    color: #999;
+    float: none;
+    margin: 0;
+    padding: 10px 0 10px 20px;
+    width: 540px;
+}
+.regs b, .upus b {
+    display: block;
+    font-weight: normal;
+    margin-top: -8px;
+    position: relative;
+}
+.reg-account .dd_r {
+    width: 680px;
+}
+.reg-account img {
+    cursor: pointer;
+    float: left;
+    margin: -10px 10px 0 5px;
+    vertical-align: middle;
+}
+.upgrade .checkcode, .reg-account .checkcode {
+    width: 100px;
+}
+.reg-account .checkcode_span {
+    padding-top: 8px;
+}
+.reg-account .radio_quyu {
+    margin: 50px 0 20px 180px;
+}
+.reg-account .p_cor_hui {
+    margin: 4px 0 0 180px;
+}
+.reg-account .p_cor_hui a {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.cor_yellow {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.upgrade .noSend, .reg-account .noSend {
+    color: #999;
+    cursor: default;
+}
+.forgetpassword .sub_bg {
+    display: block;
+    margin: 60px auto 0;
+}
+.forget_area {
+    margin: 30px auto 14px;
+    position: relative;
+    width: 350px;
+}
+.forget_area .littlepop {
+    right: -12px;
+}
+.upgrade .code-area {
+    width: 106px;
+}
+.upgrade .sub_login {
+    margin: 10px 0 0;
+}
+.login-intro {
+    margin-left: 180px;
+}
+.vfphone dl {
+    margin-top: 70px;
+}
+.vfphone .dt_l {
+    width: 224px;
+}
+.vfphone .dd_r {
+    width: 660px;
+}
+.vfphone .input_kuang {
+    width: 90px;
+}
+.vfphone .dd_r_span {
+    line-height: 1.5;
+    margin-left: 10px;
+}
+.vfphone .dd_r_span a {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.vfphone .sub_login {
+    display: inline-block;
+    margin-left: 234px;
+}
+.vfphone .cannot-used {
+    margin-left: 234px;
+}
+.em_errorp {
+    clear: both;
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+}
+.suc_limit p.sent_p {
+    margin: 60px 0 20px;
+}
+.cps .title {
+    font-size: 16px;
+    padding-top: 100px;
+}
+.upgrade .dd_r, .regs .dd_r {
+    width: 720px;
+}
+.upus .prompt_info, .regs .prompt_info {
+    padding-top: 0;
+    width: 400px;
+}
+.upus .getCode, .regs .getCode {
+    width: 180px;
+}
+.upus .validate_info, .regs .validate_info {
+    line-height: 1.5;
+    padding-top: 0;
+    width: 480px;
+}
+.upus #phoneCode, .regs #phoneCode {
+    width: 230px;
+}
+.upus #phoneCode b {
+    display: block;
+    font-weight: normal;
+    margin-top: -10px;
+}
+.upus .en-width, .regs .en-width {
+    width: 100px;
+}
+.vetp .dt_l {
+    width: 260px;
+}
+.vetp .dd_r {
+    width: 630px;
+}
+.vetp .sub_login, .vetp .cannot-used {
+    margin-left: 270px;
+}
+.once_get {
+    color: #6a6a6a;
+    cursor: default;
+}
+.sendRpw .resetwidth {
+    color: #ff7e00;
+    cursor: pointer;
+    width: 180px;
+}
+.hei_513 {
+    height: auto;
+    min-height: 513px;
+}
+.faq_link {
+    margin-bottom: 20px;
+}
+.faq_link em {
+    background: url("/static/img/passport/faq_icon.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 25px;
+}
+.faq_link a {
+    color: #000;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.faq_link_more {
+    color: #ff7e00;
+    text-decoration: underline;
+}
+.radio_quyu .faq_link_more {
+    margin-left: 40px;
+}
+.td_lht .faq_link_more {
+    text-decoration: none;
+}
+.check_tips .faq_link_more {
+    text-decoration: none;
+}
+.tl_c {
+    text-align: center;
+}
+.yh_notice {
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 510px;
+}
+.notice_title1 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.notice_title2 {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.notice_content {
+    color: #808184;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.yh_notice .sub_login {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+}
+.notice_link {
+    color: #ff7e00;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+.mar_tp2 {
+    color: #252525;
+}
+.btn-area {
+    text-align: center;
+}
+.btn-area a {
+    color: #ff7e00;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.btn-area .sub_login {
+    color: #fff;
+    line-height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+.bind_model h4 {
+    color: #333;
+}
+.bind_model h4 span {
+    color: #ff7e00;
+}
+.bd_intro {
+    background: none repeat scroll 0 0 #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    float: left;
+    margin: 40px 0 0 20px;
+    min-height: 210px;
+    padding: 30px 40px;
+    width: 210px;
+}
+.bind_img_area {
+    background: url("/static/img/passport/bd-bind2.png") no-repeat scroll center 16px rgba(0, 0, 0, 0);
+    width: 100%;
+}
+.bind_img_area img {
+    border-radius: 10px;
+    display: block;
+    width: 60px;
+}
+.bind_img_area .one, .bind_img_area .two {
+    color: #333;
+    text-align: center;
+    width: 60px;
+}
+.bind_img_area .one {
+    float: left;
+}
+.bind_img_area .two {
+    float: right;
+}
+.bind_img_area .name {
+    display: block;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bd_intro_detail {
+    color: #333;
+    font-size: 14px;
+    margin: 20px 0 10px;
+}
+.bd_intro_detail .name {
+    color: #ff7e00;
+}
+.bd_intro_list {
+    color: #999;
+    line-height: 1.5;
+    margin: 0 0 0 4px;
+}
+.bd_intro_title {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+.bd_intro_title span {
+    color: #ff7e00;
+}
+.bd_btn_area {
+    overflow: hidden;
+}
+.bd_btn_area a {
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    text-align: center;
+    width: 130px;
+}
+.bd_btn_area .sub_login {
+    color: #fff;
+    margin-right: 20px;
+}
+.bd_btn_area .mt_login {
+    color: #333;
+}
+.double_login {
+    padding-top: 40px;
+    position: relative;
+}
+.dl_tips {
+    padding: 80px 0 0 230px;
+}
+.dl_tips .bd_intro_list {
+    color: #999;
+    font-size: 14px;
+}
+.font_20 {
+    font-size: 20px;
+    line-height: 1.5;
+}
+.color_333 {
+    color: #333;
+}
+a.cor_yellow {
+    color: #ff7e00;
+}
+.color_999 {
+    color: #999;
+    line-height: 1.5;
+}
+a.sub_login, a.sub_bg {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+}
+a.sub_bg {
+    color: #333;
+}
+.resent_code {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    color: #ff7e00;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.resent_code:hover {
+    text-decoration: none;
+}
+.no_send, .no_send:hover {
+    color: #999;
+    cursor: default;
+    text-decoration: none;
+}
+.double_login .input_kuang, .double_login .check_tips {
+    float: left;
+}
+.dl_intro_area {
+    padding-left: 90px;
+}
+.dl_intro_area ul li {
+    float: left;
+    height: auto;
+    margin-right: 60px;
+    width: 200px;
+}
+.dl_intro_area li img {
+    display: block;
+    margin: 0 auto 20px;
+}
+.dl_intro_area li .cor_yellow {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+.dl_code_area {
+    overflow: hidden;
+    padding-left: 200px;
+}
+.dl_code_area .v5phone2, .dl_code_area .v5phone1 {
+    display: block;
+    float: left;
+    height: 201px;
+    margin-right: 40px;
+    width: 101px;
+}
+.dl_code_area .input_kuang {
+    width: 160px;
+}
+.dl_code_area .sub_login {
+    margin: 30px 0 10px;
+}
+.dl_code_area label {
+    display: block;
+    margin: 10px 0;
+    width: 240px;
+}
+.dl_code_area a.color_333 {
+    text-decoration: underline;
+}
+.dl_code_area a.color_333:hover {
+    color: #ff7e00;
+    text-decoration: none;
+}
+.font_16 {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.font_24 {
+    font-size: 24px;
+}
+.dl_open {
+    background: url("/static/img/passport/double_open_bg.png") no-repeat scroll center 90px rgba(0, 0, 0, 0);
+    height: 480px;
+}
+.dl_open .font_24 {
+    height: 30px;
+    margin-bottom: 20px;
+}
+.dl_tip_item {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: right;
+    width: 380px;
+}
+.code_area {
+    height: 170px;
+    margin-bottom: 40px;
+    width: 170px;
+}
+.dl_re_open {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 450px;
+}
+.dl_re_open .container {
+    background: url("/static/img/passport/double_open_bg.png") no-repeat scroll center -90px rgba(0, 0, 0, 0);
+}
+.dl_has_bug {
+    margin: 0 auto;
+    width: 460px;
+}
+.dl_has_bug .container {
+    border-bottom: 1px solid #ccc;
+    height: 30px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 20px 0 10px;
+}
+.dl_has_bug .container p {
+    float: left;
+}
+.dl_has_bug .container a {
+    float: right;
+    font-size: 12px;
+    padding-top: 10px;
+    text-decoration: underline;
+}
+.dl_has_bug .container a:hover {
+    color: #ff7e00;
+    text-decoration: none;
+}
+.app_area {
+    height: 110px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 212px;
+    z-index: 10;
+}
+.app_area img {
+    display: block;
+}
+.app_area a {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+}
+.app_area {
+    background: url("/static/img/passport/app_bg2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 110px;
+    padding-left: 102px;
+}
+.app_area p {
+    width: 110px;
+}
+.app_area_hover {
+    background: url("/static/img/passport/app_hover.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.color_fff {
+    color: #fff;
+}
+.aa_download_link a:hover {
+    color: #ff7e00;
+}
+.has_no_bind_ico, .has_bind_ico {
+    background: url("/static/img/passport/icosfories.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    margin-left: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 16px;
+}
+.has_bind_ico {
+    background: url("/static/img/passport/icos.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0);
+}
+.msgTips {
+    z-index: 50;
+}
+.downapp_container {
+    margin: 0 auto;
+    width: 570px;
+}
+.dc_title {
+    line-height: 26px;
+    padding: 40px 0;
+}
+.dct_intro {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+.down_index {
+    background: url("/static/img/passport/new_select_ico.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #fff;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    margin-right: 20px;
+    text-indent: 36px;
+}
+.di_andriod {
+    background-position: 0 -1px;
+    width: 104px;
+}
+.di_andriod:hover {
+    background-position: 0 -1px;
+}
+.di_andriod_default {
+    background-position: 0 -30px;
+}
+.di_ios {
+    background-position: -105px -1px;
+    width: 72px;
+}
+.di_ios:hover {
+    background-position: -105px -1px;
+}
+.di_ios_default {
+    background-position: -105px -30px;
+}
+.down_area {
+    background: none repeat scroll 0 0 #f9f9f9;
+    border: 1px solid #333;
+    border-radius: 6px;
+    height: 370px;
+    left: 50%;
+    margin-left: -310px;
+    margin-top: -186px;
+    position: absolute;
+    top: 50%;
+    width: 620px;
+    z-index: 100;
+}
+.download_area {
+    padding-top: 30px;
+}
+.da_andriod, .da_code {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: inline-block;
+    float: left;
+    height: 230px;
+    margin-left: 40px;
+    padding-top: 20px;
+    width: 245px;
+}
+.da_andriod img, .da_andriod a {
+    display: block;
+    margin: 0 auto;
+}
+.da_andriod img {
+    margin: 14px auto;
+}
+.da_btn {
+    background: url("/static/img/passport/app_down_ico.png") no-repeat scroll 20px 6px #f4592d;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px 10px 50px;
+    width: 80px;
+}
+.da_code_img {
+    border: 1px solid #ccc;
+    height: 120px;
+    margin: 14px auto;
+    overflow: hidden;
+    width: 120px;
+}
+.da_code_img img {
+    margin: -24px 0 0 -24px;
+}
+.down_area .info {
+    padding: 14px 30px;
+}
+.close_btn {
+    color: #666;
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+.close_btn:hover {
+    color: #ff7e00;
+}
+.msgTips {
+    z-index: 50;
+}
+.downapp_container .download_area {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    display: none;
+    padding: 60px 40px;
+    position: relative;
+}
+.downapp_container .ad_corner {
+    background: url("/static/img/passport/new_two_corner.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 15px;
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
+    top: -15px;
+    width: 25px;
+}
+.downapp_container .dla_title {
+    font-size: 14px;
+    font-weight: bold;
+}
+.downapp_container .da_andriod, .downapp_container .da_code {
+    border: 0 none;
+    border-radius: 0;
+    display: inline-block;
+    float: left;
+    height: 190px;
+    margin: 0;
+    width: 236px;
+}
+.downapp_container .da_andriod {
+    border-right: 1px solid #ccc;
+}
+.downapp_container .da_andriod img, .downapp_container .da_andriod a {
+    display: block;
+    margin: 0 auto;
+}
+.downapp_container .da_andriod img {
+    margin: 14px auto;
+}
+.downapp_container .da_code_img {
+    height: 120px;
+    margin: 14px auto;
+    overflow: hidden;
+    width: 120px;
+}
+.downapp_container .da_code_img img {
+    margin: -27px 0 0 -24px;
+}
+.downapp_container .down_area .info {
+    padding: 14px 30px;
+}
+.downapp_container .close_btn {
+    color: #666;
+    cursor: pointer;
+    float: right;
+    font-size: 20px;
+}
+.downapp_container .close_btn:hover {
+    color: #ff7e00;
+}
+#ios_area .ad_corner {
+    left: 390px;
+}
+.activate_token .font_16 {
+    margin: 10px;
+}
+.activate_token .sub_bg {
+    margin-right: 20px;
+}
+.activate_fail_tip {
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 40px;
+}
+.token_area {
+    background: none repeat scroll 0 0 #989898;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    padding: 10px 30px;
+}
+.activate_link a {
+    color: #ff7e00;
+}
+.avatar {
+    background: none repeat scroll 0 0 #bbb;
+    border-radius: 6px;
+    height: 90px;
+    margin: 20px auto 10px;
+    overflow: hidden;
+    padding: 0;
+    width: 90px;
+}
+.avatar img {
+    height: 100%;
+    width: 100%;
+}
+.username {
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+.input-mid {
+    padding: 8px 2%;
+    width: 96% !important;
+}
+.through {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.float_right {
+    float: right;
+}
+.form_extension {
+    height: 30px;
+    line-height: 30px;
+}
+.webcode_timer_outer {
+    background: none repeat scroll 0 0 rgb(80, 80, 80);
+    height: 76px;
+    margin: 0 auto;
+    position: relative;
+    width: 270px;
+}
+.webcode_timer_inner, .webcode_timer_text {
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    height: 76px;
+    left: 0;
+    letter-spacing: 3px;
+    line-height: 76px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.webcode_timer_inner {
+    background: none repeat scroll 0 0 rgb(251, 116, 43);
+    width: 0;
+}
+.webcode_dynamic_code p {
+    line-height: 200%;
+}
+.repass_container {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #bbb;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+.repass_header {
+    font-size: 16px;
+}
+.en .hide-with-en, .zh_cn .hide-with-zh_cn, .zh_tw .hide-with-zh_tw {
+    display: none !important;
+}
+.en .not-hide-en, .zh_cn .not-hide-en, .zh_tw .not-hide-zh_tw {
+    display: block !important;
+}
+.zh_cn .not-hide-en, .zh_tw .not-hide-en, .en .not-hide-zh_cn, .zh_tw .not-hide-zh_cn, .zh_cn .not-hide-zh_tw, .en .not-hide-zh_tw {
+    display: none !important;
+}
+.en .info .right a {
+    font-size: 14px;
+}

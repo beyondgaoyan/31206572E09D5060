@@ -74,19 +74,19 @@
       <!--评论表单 start-->
       <div class="commentsList">
       <form action="javascript:;" onsubmit="submitComment(this)" method="post" name="commentForm" id="commentForm">
-       <table width="710" border="0" cellspacing="5" cellpadding="0">
+       <table width="100%" border="0" cellspacing="5" cellpadding="0">
         <tr>
-          <td width="64" align="right">{$lang.username}：</td>
-          <td width="631"{if !$enabled_captcha}{/if}><!--{if $smarty.session.user_name}-->{$smarty.session.user_name}<!--{else}-->{$lang.anonymous}<!--{/if}--></td>
+          <td width="100" align="right"height="30">{$lang.username}：</td>
+          <td width=""{if !$enabled_captcha}{/if}><!--{if $smarty.session.user_name}-->{$smarty.session.user_name}<!--{else}-->{$lang.anonymous}<!--{/if}--></td>
         </tr>
         <tr>
-          <td align="right">E-mail：</td>
+          <td align="right"height="30">E-mail：</td>
           <td>
           <input type="text" name="email" id="email"  maxlength="100" value="{$smarty.session.email|escape}" class="inputBorder"/>
           </td>
         </tr>
         <tr>
-          <td align="right">{$lang.comment_rank}：</td>
+          <td align="right"height="30">{$lang.comment_rank}：</td>
           <td>
           <input name="comment_rank" type="radio" value="1" id="comment_rank1" /> <img src="../images/stars1.gif" />
           <input name="comment_rank" type="radio" value="2" id="comment_rank2" /> <img src="../images/stars2.gif" />
@@ -98,20 +98,20 @@
         <tr>
           <td align="right" valign="top">{$lang.comment_content}：</td>
           <td>
-          <textarea name="content" class="inputBorder" style="height:50px; width:620px;"></textarea>
+          <textarea name="content" class="inputBorder" style="height:50px; width:100%;"></textarea>
           <input type="hidden" name="cmt_type" value="{$comment_type}" />
           <input type="hidden" name="id" value="{$id}" />
           </td>
         </tr>
         <tr>
-          <td colspan="2">
+          <td colspan="2" height="30">
           <!-- 判断是否启用验证码{if $enabled_captcha} -->
-          <div style="padding-left:15px; text-align:left; float:left;">
+          <div style="padding-left:39px; text-align:left; float:left;">
           {$lang.comment_captcha}：<input type="text" name="captcha"  class="inputBorder" style="width:50px; margin-left:5px;"/>
           <img src="captcha.php?{$rand}" alt="captcha" onClick="this.src='captcha.php?'+Math.random()" class="captcha">
           </div>
           <!-- {/if} -->
-          <input name="" type="submit"  value="" class="f_r" style="border:none; background:url(../images/commentsBnt.gif); width:75px; height:21px; margin-right:8px;">
+          <input name="" type="submit"  value="" class="" style="border:none; background:url(../images/commentsBnt.gif); width:75px; height:21px; margin:0 8px;">
           </td>
         </tr>
       </table>

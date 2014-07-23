@@ -60,7 +60,7 @@ var process_request = "{$lang.process_request}";
     <div class="header-nav clearfix">
         <div id="J_categoryContainer" class="nav-category" onmouseover="this.className='nav-category nav-category_on'" onmouseout="this.className='nav-category'">
             <a class="btn-category-list" href="#">全部商品分类<i class="iconfont"></i></a>
-            <div class="my_left_category my_left_category2" id="aaa"  style="top:50px;" >
+            <div class="my_left_category my_left_category2" id="aaa"  style="top:50px;display:block" >
             <ul class="lists">
                 <!--{foreach from=$categories item=cat}-->
             <li class="category_none" onmouseover="this.className='category_none category_over'" onmouseout="this.className='category_none'">
