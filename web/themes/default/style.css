@@ -550,7 +550,7 @@ text-shadow: 0 0 0, 0 1px 0 white; color: #404040;font-family: "微软雅黑";}
 商品详情页面部分模块
 ==================== */
 #goodsInfo{ background: #fff;margin-bottom: 10px;}
-.root61 #goodsInfo .imgInfo{width: 800px;}
+.root61 #goodsInfo .imgInfo{width: 750px;}
 #goodsInfo .imgInfo{width:610px; float:left; text-align:center; position:relative;}
 #goodsInfo .imgInfo .imgInfo_img{width:510px; height:510px; position:relative; overflow:hidden;}
 #goodsInfo .imgInfo .imgInfo_img li{float:left;}
@@ -561,7 +561,7 @@ text-shadow: 0 0 0, 0 1px 0 white; color: #404040;font-family: "微软雅黑";}
 #goodsInfo .gallery li{float:left; width:48px; margin:0 2px;}
 #goodsInfo .gallery li img{width:46px; height:46px; display:block;}
 /*文字信息*/
-.root61 #goodsInfo .textInfo{width: 332px;}
+.root61 #goodsInfo .textInfo{width: 382px;}
 #goodsInfo .textInfo{float: right;width: 282px;padding: 0 28px 0 29px;border-left: 1px solid #ededed;font-size: 12px;color: #434a54; overflow: hidden}
 .textInfo .text .text_l{ font-size: 24px;line-height: 1.5; font-weight:bold; padding-top:30px;}
 .goods-info-phone { text-align:left; padding:0;line-height: 2;color: #aab2bd;}
@@ -3221,7 +3221,7 @@ a:hover, a:focus {
     width: auto;
 }
 .xm-goods-list .notice .loading {
-    background: url("http://s1.mi.com/zt/2013/loading.gif") no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+    background: url(imagesgy/loading.gif) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
     display: block;
     height: 32px;
     margin: 20px auto;
@@ -3243,19 +3243,20 @@ a:hover, a:focus {
     text-align: center;
 }
 .xm-goods-item .item-thumb img {
-    background: url("http://s1.mi.com/zt/2013/loading.gif") no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
+    background: url(imagesgy/loading.gif) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);
     height: 220px;
     width: 220px;
 }
 .xm-goods-item .item-title {
     font-size: 14px;
     font-weight: 400;
-    height: 21px;
+    height: 42px;
+    line-height: 21px;
     margin: 0;
     overflow: hidden;
     padding: 0 10px;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 .xm-goods-item .item-title a {
     color: #333;
@@ -3265,11 +3266,14 @@ a:hover, a:focus {
     text-decoration: none;
 }
 .xm-goods-item .item-price {
-    height: 21px;
+    height: 24px;
     padding: 0 10px;
+    border-bottom: 1px solid #ccc;
+    color: #ff0500;
+    font-size: 15px;
 }
 .xm-goods-item .item-price .sep {
-    color: #f3f3f3;
+    color: #ccc;
     font-size: 12px;
     margin: 0 10px;
 }
@@ -3597,7 +3601,7 @@ a:hover, a:focus {
 }
 @media (max-width: 1260px) {
 .container {
-    width: 930px;
+    width: 1240px;
 }
 .row .col-16 {
     width: 682px;

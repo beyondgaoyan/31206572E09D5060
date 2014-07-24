@@ -312,9 +312,14 @@ function fittings_add_cart_response(result)
 	  
       
       <div id="goodsDesc">
-	<p>&nbsp;<img alt="" src="goods_files/1.jpg"><img src="goods_files/-_01.jpg" alt="" height="3476" width="790"><img src="goods_files/-_02.jpg" alt="" height="4115" width="790"></p>      </div>
-     
+
+{$goods.goods_desc}
+
+      </div>
+     <!--商品描述，商品属性 START-->
 	 <div class="xm-box" id="goodsPar">
+
+      
                 <div class="hd">
                     <h3 class="title">规格参数</h3>
                 </div>
@@ -323,41 +328,27 @@ function fittings_add_cart_response(result)
                         <table>
                             <thead>
                                 <tr>
-                                    <th colspan="4">  商品编号：310520146150900208 </th>
+                                    <th colspan="4">  商品编号：{$goods.goods_sn} </th>
                                 </tr>
                             </thead>
                             <tbody>
-							                                          <tr>     
-								  <th>品牌</th>
-                                   <td>BRITA</td>
-                                 
-                                                                    
-                                </tr> 
-								                                  <tr>     
-								  <th>净重</th>
-                                   <td>1.11</td>
-                                 
-                                                                    
-                                </tr> 
-								                                  <tr>     
-								  <th>原产地</th>
-                                   <td>德国</td>
-                                 
-                                                                    
-                                </tr> 
-								                                  <tr>     
-								  <th>容量</th>
-                                   <td>3.5L</td>
-                                 
-                                                                    
-                                </tr> 
+                            <!-- {foreach from=$properties item=property_group key=key} -->
+
+        <!-- {foreach from=$property_group item=property} -->
+        <tr>
+          <th>{$property.name|escape:html}</th>
+          <td>{$property.value}</td>
+        </tr>
+        <!-- {/foreach}-->
+        <!-- {/foreach}-->
+
 								 		
         				              </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-      
+      <!--商品描述，商品属性 END-->
   
      	 
 	 
