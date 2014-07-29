@@ -98,7 +98,71 @@ function addToCartResponse(result)
     }
     else
     {
-      switch(result.confirm_type)
+    
+    //by gaoyan  增加小米成功效果
+    var elmSuccess,timeoutSuccess,timeoutSuccessef;
+                    elmSuccess = $('<div class="item-action-state">已成功加入购物车</div>');
+                    $('.item-actions-'+result.goods_id).append(elmSuccess);
+                    elmSuccess
+                        .animate({'bottom': '0'}, 200, 'swing', function() {
+                            var $this = $(this);
+
+                            timeoutSuccess = window.setTimeout(function() {
+                                $this.animate({'bottom': '-30px'}, 200, 'swing', function() {
+                                    $this.remove();
+                                });
+                            }, 1000);
+                        })
+                        .on('click', function() {
+                            var $this = $(this);
+
+                            window.clearTimeout(timeoutSuccess);
+                            $this.stop(true, true).animate({'bottom': '-30px'}, 200, 'swing', function() {
+                                $this.remove();
+                            })
+                        });
+    //by gaoyan 增加小米效果  详情页面
+
+					var b =$("#goodsSubBarAddCartBtn");
+					b.parent().css({
+						position:"relative",overflow:"hidden"
+					});
+					var c=$("<span>");
+					c.html("<i class='icon-goods-add-success'></i>加入成功！").appendTo(b.parent()).addClass("item-action-state").animate({
+						top:"10px"
+					}
+					,200,function(){
+						 timeoutSuccess = window.setTimeout(function() {
+                                c.animate({'top': '60px'}, 200, 'swing', function() {
+                                  c.remove();
+                                });
+                            }, 1000);
+					});
+					
+                            window.clearTimeout(timeoutSuccess);
+                            
+                            
+							var e =$("#goodsDetailAddCartBtn");
+					e.parent().css({
+						position:"relative",overflow:"hidden"
+					});
+					var f=$("<span>");
+					f.html("<i class='icon-goods-add-success'></i>加入成功！").appendTo(e.parent()).addClass("item-action-state-info").animate({
+						top:"10px"
+					}
+					,200,function(){
+						 timeoutSuccessef = window.setTimeout(function() {
+                                f.animate({'top': '60px'}, 200, 'swing', function() {
+                                  f.remove();
+                                });
+                            }, 1000);
+					});
+                            window.clearTimeout(timeoutSuccessef);
+                            
+
+
+      /*
+switch(result.confirm_type)
       {
         case '1' :
           if (confirm(result.message)) location.href = cart_url;
@@ -112,6 +176,7 @@ function addToCartResponse(result)
         default :
           break;
       }
+*/
     }
   }
 }

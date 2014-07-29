@@ -32,8 +32,11 @@ window.pageConfig={
 <!--当前位置 end-->
 <div class="blank"></div>
 <div class="block clearfix">
-
-	 
+<!-- {if $category==20} -->
+<div class="block clearfix">
+{insert name='ads' id=5 num=$ads_num}
+</div>
+<!-- {/if} -->
    <!-- TemplateBeginEditable name="右边区域" -->
 
   <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->

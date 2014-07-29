@@ -826,6 +826,9 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
 	//by gy 
 	$hscode = !empty($_POST['hscode']) ? $_POST['hscode'] : 0;
 	$tariffno = !empty($_POST['tariffno']) ? $_POST['tariffno'] : 0;
+	$originplace = !empty($_POST['originplace']) ? $_POST['originplace'] : '';
+	$tariff = !empty($_POST['tariff']) ? $_POST['tariff'] : '';
+	
 	
 	
     /* 入库 */
@@ -833,12 +836,12 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
     {
         if ($code == '')
         {
-            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_sn, hscode,tariffno," .
+            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_sn, hscode,tariffno,tariff,originplace, " .
                     "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
                     "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_brief, " .
                     "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, " .
                     "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, rank_integral, suppliers_id)" .
-                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$goods_sn', '$hscode','$tariffno','$catgory_id', " .
+                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$goods_sn', '$hscode','$tariffno','$tariff','$originplace','$catgory_id', " .
                     "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
                     "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
                     "'$_POST[keywords]', '$_POST[goods_brief]', '$_POST[seller_note]', '$goods_weight', '$goods_number',".
@@ -847,12 +850,12 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
         }
         else
         {
-            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_sn, hscode,tariffno," .
+            $sql = "INSERT INTO " . $ecs->table('goods') . " (goods_name, goods_name_style, goods_sn, hscode,tariffno,tariff,originplace, " .
                     "cat_id, brand_id, shop_price, market_price, is_promote, promote_price, " .
                     "promote_start_date, promote_end_date, goods_img, goods_thumb, original_img, keywords, goods_brief, " .
                     "seller_note, goods_weight, goods_number, warn_number, integral, give_integral, is_best, is_new, is_hot, is_real, " .
                     "is_on_sale, is_alone_sale, is_shipping, goods_desc, add_time, last_update, goods_type, extension_code, rank_integral)" .
-                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$goods_sn','$hscode','$tariffno', '$catgory_id', " .
+                "VALUES ('$_POST[goods_name]', '$goods_name_style', '$goods_sn','$hscode','$tariffno','$tariff','$originplace', '$catgory_id', " .
                     "'$brand_id', '$shop_price', '$market_price', '$is_promote','$promote_price', ".
                     "'$promote_start_date', '$promote_end_date', '$goods_img', '$goods_thumb', '$original_img', ".
                     "'$_POST[keywords]', '$_POST[goods_brief]', '$_POST[seller_note]', '$goods_weight', '$goods_number',".
@@ -924,7 +927,9 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
                 "last_update = '". gmtime() ."', ".
                 "goods_type = '$goods_type' ," .
                 "hscode = '$hscode' ," .
-                "tariffno = '$tariffno' " .
+                "tariffno = '$tariffno', " .
+                "tariff = '$tariff', ".
+                "originplace = '$originplace' " .
                 "WHERE goods_id = '$_REQUEST[goods_id]' LIMIT 1";
     }
     $db->query($sql);
@@ -1359,7 +1364,38 @@ elseif ($_REQUEST['act'] == 'edit_goods_name')
         make_json_result(stripslashes($goods_name));
     }
 }
+/*------------------------------------------------------ */
+//-- 修改税率 by gaoyan
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_tariff')
+{
+    check_authz_json('goods_manage');
 
+    $goods_id = intval($_POST['id']);
+    $tariff = json_str_iconv(trim($_POST['val']));
+
+    if ($exc->edit("tariff = '$tariff', last_update=" .gmtime(), $goods_id))
+    {
+        clear_cache_files();
+        make_json_result(stripslashes($tariff));
+    }
+}
+/*------------------------------------------------------ */
+//-- 修改产地 by gaoyan
+/*------------------------------------------------------ */
+elseif ($_REQUEST['act'] == 'edit_originplace')
+{
+    check_authz_json('goods_manage');
+
+    $goods_id = intval($_POST['id']);
+    $originplace = json_str_iconv(trim($_POST['val']));
+
+    if ($exc->edit("originplace = '$originplace', last_update=" .gmtime(), $goods_id))
+    {
+        clear_cache_files();
+        make_json_result(stripslashes($originplace));
+    }
+}
 /*------------------------------------------------------ */
 //-- 修改商品货号
 /*------------------------------------------------------ */

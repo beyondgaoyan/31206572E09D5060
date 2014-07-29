@@ -73,7 +73,7 @@ Utils.isEmail = function( email )
 
 Utils.isTel = function ( tel )
 {
-  var reg = /^[\d|\-|\s|\_]+$/; //鍙厑璁镐娇鐢ㄦ暟瀛�-绌烘牸绛�
+  var reg = /^[\d|\-|\s|\_]+$/; //只允许使用数字-空格等
 
   return reg.test( tel );
 }
@@ -100,12 +100,12 @@ Utils.isTime = function(val)
 }
 
 Utils.x = function(e)
-{ //褰撳墠榧犳爣X鍧愭爣
+{ //当前鼠标X坐标
     return Browser.isIE?event.x + document.documentElement.scrollLeft - 2:e.pageX;
 }
 
 Utils.y = function(e)
-{ //褰撳墠榧犳爣Y鍧愭爣
+{ //当前鼠标Y坐标
     return Browser.isIE?event.y + document.documentElement.scrollTop - 2:e.pageY;
 }
 

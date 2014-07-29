@@ -1,22 +1,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--底部导航 start-->
+
 <div class="footer block">
 <div class="footerup">
   <div class="footercont">
     <ul class="nums clearfix">
-      <li class="first"> <a href="#" target="_blank"> <span>7</span> <strong>
+      <li class="first"> <a href="javascript:void(0)"> <span>7</span> <strong>
         <label>天</label>
         退货保障 </strong> </a> </li>
-      <li class="line">|</li>
-      <li class="second"> <a href="#" target="_blank"> <span>15</span> <strong>
+
+      <li class="second"> <a href="javascript:void(0)"> <span>15</span> <strong>
         <label>天</label>
         换货承诺 </strong> </a> </li>
-      <li class="line">|</li>
-      <li class="third"> <a href="#" target="_blank"> <span>299</span> <strong>
+
+      <li class="third"> <a href="javascript:void(0)"> <span>299</span> <strong>
         <label>元起</label>
         全场包邮 </strong> </a> </li>
-      <li class="line"></li>
-      <li class="fourth"> <a href="#" target="_blank"> <span>正品</span> <strong>
+
+      <li class="fourth"> <a href="javascript:void(0)"> <span>正品</span> <strong>
         <label>跨境试点</label>
         防伪溯源 </strong> </a> </li>
     </ul>
@@ -26,19 +27,16 @@
     <div class="service clearfix ">
                         <dl>
         <dt><a href="article_cat.php?id=5" title="新手上路 ">新手上路 </a></dt>
-                <dd><a href="article.php?id=9" title="售后流程">售后流程</a></dd>
+                <dd><a href="article.php?id=9" title="售后流程">常见问题</a></dd>
                 <dd><a href="article.php?id=10" title="注册购物流程">注册购物流程</a></dd>
-                <dd><a href="article.php?id=11" title="关于进口税">关于进口税</a></dd>
               </dl>
                         <dl>
         <dt><a href="article_cat.php?id=9" title="关于我们">关于我们</a></dt>
                 <dd><a href="article.php?id=24" title="了解海狗商城">了解海狗商城</a></dd>
                 <dd><a href="article.php?id=4" title="联系我们">联系我们</a></dd>
-                <dd><a href="article.php?id=25" title="加入我们">加入我们</a></dd>
               </dl>
               <dl>
         <dt><a href="article_cat.php?id=13" title="关于海淘">关于海淘</a></dt>
-                <dd><a href="article.php?id=36" title="淘全球">淘全球</a></dd>
                 <dd><a href="article.php?id=37" title="注意事项">注意事项</a></dd>
                 <dd><a href="article.php?id=38" title="海淘流程">海淘流程</a></dd>
               </dl>
@@ -55,7 +53,7 @@
         <ul>
           <li class="item1"> <span class="icon-common icon-common-tel"></span>400-018-7286</li>
           <li class="item2"> 仅收市话费，周一至周五9:00-17:00 </li>
-        <li class="item3 clearfix"> <a style="height: 48px;width:173px;" href="http://wpa.qq.com/msgrd?V=1&amp;uin=405704570&amp;site=qq&amp;menu=yes" target="_blank"><img src="goods_files/qq.png"></a> </li>
+        <li class="item3 clearfix"> <a target="_blank" href="http://wpa.qq.com/msgrd?V=1&amp;uin=405704570&amp;site=qq&amp;menu=yes" class="btn btn-primary btn-small" rel="nofollow">QQ在线客服</a></li>
         </ul>
       </div>
     </div>

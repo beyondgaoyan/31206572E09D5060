@@ -28,7 +28,7 @@ $_LANG['js_languages']['todolist_save'] = '保存';
 $_LANG['js_languages']['todolist_clear'] = '清除';
 $_LANG['js_languages']['todolist_confirm_save'] = '是否将更改保存到记事本？';
 $_LANG['js_languages']['todolist_confirm_clear'] = '是否清空内容？';
-$_LANG['auto_redirection'] = '如果您不做出选择，将在 <span id="spanSeconds">3</span> 秒后跳转到第一个链接地址。';
+$_LANG['auto_redirection'] = '如果您不做出选择，将在 <span id="spanSeconds">2</span> 秒后跳转到第一个链接地址。';
 $_LANG['password_rule'] = '密码应只包含英文字符、数字.长度在6--16位之间';
 $_LANG['username_rule'] = '用户名应为汉字、英文字符、数字组合，3到15位';
 $_LANG['plugins_not_found'] = '插件 %s 无法定位';

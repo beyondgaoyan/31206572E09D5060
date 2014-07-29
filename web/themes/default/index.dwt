@@ -56,21 +56,21 @@
 <div class="blank"></div>
 <!-- 首屏轮播 -->
 <!-- 明星单品 -->
-<div style="margin: 0px auto; width: 1240px;" class="ad_index_big">
-<a href="#"><img style="height: 300px; width: 620px;" src="http://www.ikjtao.com/themes/xiaomi/images/moonyzhiniaoku595x300.jpg"></a>
-<a href="#"><img style="height: 300px; width: 620px;" src="http://www.ikjtao.com/themes/xiaomi/images/moonylalaku595x300.jpg"></a>
-<a href="#"><img style="height: 320px; width: 620px;" src="http://www.ikjtao.com/themes/xiaomi/images/595x320huawang.jpg"></a>
-<a href="#"><img style="height: 320px; width: 620px;" src="http://www.ikjtao.com/themes/xiaomi/images/595x320niulan.jpg"></a>
-<a href="#"><img style="width:248px; height:368px;" src="http://www.ikjtao.com/themes/xiaomi/images/naiping1.jpg"></a>
-<a href="#"><img style="width:248px; height:368px;" src="http://www.ikjtao.com/themes/xiaomi/images/kafei2.jpg"></a>
-<a href="#"><img style="width:248px; height:368px;" src="http://www.ikjtao.com/themes/xiaomi/images/erwenji3.jpg"></a>
-<a href="#"><img style="width:248px; height:368px;" src="http://www.ikjtao.com/themes/xiaomi/images/naizui4.jpg"></a>
-<a href="#"><img style="width:248px; height:368px;" src="http://www.ikjtao.com/themes/xiaomi/images/weishengjin5.jpg"></a>
-<a href="#"><img style="width:248px; height:341px;" src="http://www.ikjtao.com/themes/xiaomi/images/wmf6.jpg"></a>
-<a href="#"><img style="width:248px; height:341px;" src="http://www.ikjtao.com/themes/xiaomi/images/shougongzao7.jpg"></a>
-<a href="#"><img style="width:248px; height:341px;" src="http://www.ikjtao.com/themes/xiaomi/images/inza200ml8.jpg"></a>
-<a href="#"><img style="width:248px; height:341px;" src="http://www.ikjtao.com/themes/xiaomi/images/lvxin9.jpg"></a>
-<a href="#"><img style="width:248px; height:341px;" src="http://www.ikjtao.com/themes/xiaomi/images/xinaiqi10.jpg"></a>
+<div style="margin: 0px auto; width: 1240px;" class="ad_index_big4">
+<!-- TemplateBeginEditable name="首页第一屏4图广告广告位" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+<div style="margin: 0px auto; width: 1240px;" class="ad_index_big10">
+ <!-- TemplateBeginEditable name="首页第二屏10图广告" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
 </div>
 <!-- 明星单品 -->
 </div>

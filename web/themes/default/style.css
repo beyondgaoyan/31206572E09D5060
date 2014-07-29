@@ -933,7 +933,7 @@ border-bottom-right-radius: 5px;}
 .root61 .footer{ width: 1240px;}
 .footer {margin-top: 20px;width: 1240px;overflow: hidden;}
 .footer .footerup {padding: 10px 10px 10px 10px;background: #fff;}
-.footer .footercont {background: #f5f7fa;}
+.footer .footercont {background: #fff;}
 .footer .nums {padding: 20px 0 20px 0;color: #656d78;font-size: 15px;border-bottom: 1px solid #ededed;}
 .footer ul, .footer li, .footer dl, .footer dt, .footer dd, .footer a, .footer strong, .footer label, .footer em {list-style: none;padding: 0;margin: 0;}
 .root61 .footer .nums li{ width:291px;}
@@ -946,7 +946,7 @@ border-bottom-right-radius: 5px;}
 .footer .nums li.line {width: 1px;height: 38px;font-size: 0;background: #ccd0d9;}
 .footer .nums li a:hover {color: #ff6f3d;}
 .footer .service {color: #434a54;font-size: 12px;padding: 20px 0 20px 0;}
-.footer .service dl {float: left;width: 10%;padding-left: 4.4%;}
+.footer .service dl {float: left;width: 10%;padding-left: 4.4%; border-right: 1px solid #ccd0d9;height: 101px;}
 .footer .service dl dt {font-weight: 700;margin-bottom: 6px;}
 .footer .service dl dd {height: 24px;line-height: 24px;}
 .footer .service dl dd a {display: inline-block;height: 24px;line-height: 24px;cursor: pointer;}
@@ -970,7 +970,7 @@ border-bottom-right-radius: 5px;}
 .icon-common-tel {width: 31px;height: 22px;background-position: -177px -5px;}
 .footer .service .online ul .item2 {line-height: 20px;margin-bottom: 6px;font-size: 12px;}
 .footer .service .online ul .item3 {text-align: left;}
-.footer .service .online ul .item3 a {float: right;display: block;width: 190px;height: 40px;line-height: 40px;color: #fff;font-size: 16px;overflow: hidden;text-decoration: none;border-radius: 6px;}
+.footer .service .online ul .item3 a {float: right;display: block;width: 190px;height: 40px;line-height: 40px;color: #fff;font-size: 16px;overflow: hidden;text-decoration: none}
 .footer .service .online ul .item3 a span {margin-right: 8px;vertical-align: middle;_margin-top: 5px;_vertical-align: 0;}
 .icon-common-face {width: 28px;height: 27px;background-position: -148px 0;}
 .btn-green:hover, .btn-green:focus {color: #fff;background-color: #8cc84d;}
@@ -1384,8 +1384,8 @@ font-weight: bold;
 color: #FFF;
 font-family: Microsoft YaHei;
 background: url("images/sprite.png") -212px -1133px no-repeat;}
-.ad_index_big img{float:left;}
-
+.ad_index_big4 img,ad_index_big10 img{float:left;}
+.ad_index_big4 a{margin: 10px 0;}
 
 
 

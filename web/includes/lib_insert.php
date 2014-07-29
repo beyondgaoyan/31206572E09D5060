@@ -391,5 +391,24 @@ function insert_vote()
 
     return $val;
 }
+//销售数量 by gaoyan
+function insert_buy_sum($arr)
 
+{
+
+$sql = "select sum(goods_number) from " . $GLOBALS['ecs']->table('order_goods') . " AS g ,".$GLOBALS['ecs']->table('order_info') . " AS o WHERE o.order_id=g.order_id and g.goods_id = " . $arr['goods_id']  ;
+
+    $total = $GLOBALS['db']->getOne($sql);
+
+    if($total){
+
+       return $total;
+
+    }else{
+
+       return 0;
+
+    }
+
+}
 ?>

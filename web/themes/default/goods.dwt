@@ -76,15 +76,15 @@ changePrice();
        <p style=" padding:4px 0;">
               <strong>市场价格：</strong><font class="market" style="text-decoration:line-through;">{$goods.market_price}</font><br>
               
-       <span style="letter-spacing:0.5em;">跨</span><span style="letter-spacing:0.5em;">境</span>价：<b class="price-num" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</b><span style="font-size: 14px; font-weight:bold;color: #ff6f3d;"></span>
+       <span style="letter-spacing:0.5em;">海狗价</span>：<b class="price-num" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</b><span style="font-size: 14px; font-weight:bold;color: #ff6f3d;"></span>
        </p>
         <p style=" padding:4px 0;">
        <label>商品评价：</label>
       <img src="/themes/default/imagesgy/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}"><a style="text-decoration:none; padding-left:8px;" href="javascript:void(0)" id="goodsToComment" onclick="gaq_push('#ECS_COMMENT')"> 已有0人评价 &gt;</a>
        </p>
-       <span class="letter-spacing-2">税</span>率：<b class="price-num" id="ECS_SHOPPRICE">10</b><span style="font-size: 14px; font-weight:bold;color: #ff6f3d;">%</span> <span style="font-family: Arial,'Microsoft YaHei';font-size:14px;color:red; cursor:pointer; font-weight:bold;text-decoration: underline;" title="购买须知：以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。应征税额在50元（含50元）以下的，海关予以免征。消费者购买宁波跨境贸易电子商务进口商品，以“个人自用、合理数量”为原则，参照《海关总署公告2010年第43号（关于调整进出境个人邮递物品管理措施有关事宜）》要求，每次限值为1000元人民币，超出规定限值的，应按照货物规定办理通关手续。但单次购买仅有一件商品且不可分割的，虽超出规定限值，经海关审核确属个人自用的，可以参照个人物品规定办理通关手续。对于违反规定，超出个人自用合理数量购买的，系统将予以退单，情节严重的，将追究个人法律责任。">购买须知</span>
+       <span class="letter-spacing-2">税</span>率：<b class="price-num">{$goods.tariff}</b><span style="font-size: 14px; font-weight:bold;color: #ff6f3d;">%</span> <span style="font-family: Arial,'Microsoft YaHei';font-size:14px;color:red; cursor:pointer; font-weight:bold;text-decoration: underline;" title="购买须知：以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。应征税额在50元（含50元）以下的，海关予以免征。消费者购买宁波跨境贸易电子商务进口商品，以“个人自用、合理数量”为原则，参照《海关总署公告2010年第43号（关于调整进出境个人邮递物品管理措施有关事宜）》要求，每次限值为1000元人民币，超出规定限值的，应按照货物规定办理通关手续。但单次购买仅有一件商品且不可分割的，虽超出规定限值，经海关审核确属个人自用的，可以参照个人物品规定办理通关手续。对于违反规定，超出个人自用合理数量购买的，系统将予以退单，情节严重的，将追究个人法律责任。">购买须知</span>
        <p style=" padding:4px 0;">
-       <span>已 售 出：</span>11       </p>
+       <span>已 售 出：</span>{insert name='buy_sum' goods_id=$goods.goods_id}</p>
      </div>
      <!--<span style="color:red;">征税说明：以商品实际销售价格作为完税价格（征税基数），参照行邮税税率征收税款。应征税额在50元（含50元）以下的，海关予以免征。</span>-->
       <ul>
@@ -114,6 +114,10 @@ changePrice();
        <dd>
        <strong>重量：</strong>{$goods.goods_weight}</dd>
       </li>
+      <li class="clearfix">
+       <dd>
+       <strong>产地：</strong>{$goods.originplace}</dd>
+      </li>
                           
               
       	         </ul> 
@@ -128,7 +132,7 @@ changePrice();
        <strong style="float:left; padding-top:5px;">购买数量：</strong>
         <input name="number" id="number" value="1" size="4" onblur="changePrice()" style="border:1px solid #ccc; text-align:center;float:left; height:23px; line-height:23px; color:#969593  " type="text">
 		
-		<span style="height:23px; line-height:23px; padding-left:20px;">总价：<b style="color:#ff6f3d" id="ECS_GOODS_AMOUNT"></b></span>
+		<span style="height:23px; line-height:23px; padding-left:20px;">总价：<b style="color:#ff6f3d; font-size:20px;" id="ECS_GOODS_AMOUNT"></b></span>
        </dd>
         </li>
        </ul>
