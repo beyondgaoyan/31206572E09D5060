@@ -97,7 +97,7 @@
             <tr>
               <td bgcolor="#ffffff">
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
-              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} -->，税费共计：{$goods_tariff}
+              购物金额小计：{$goods_price}（商品小计：{$goods_amount}＋税额：{$goods_tariff}）
               </td>
               <td align="right" bgcolor="#ffffff">
                 <!-- <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" /> -->

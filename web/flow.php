@@ -529,7 +529,7 @@ elseif ($_REQUEST['step'] == 'checkout')
      */
     $total = order_fee($order, $cart_goods, $consignee);
 	//跨境购商品超过1件金额超过1000将不能下单 by gaoyan
-	if($total['goods_number'] > 1 && $total['amount'] > 1000){
+	if($total['goods_number'] > 1 && $total['goods_price'] > 1000){
 		show_message('应海关免税要求，单个商品数量超过1件时，小计金额不能超过1000元！', '返回购物车', 'flow.php?step=cart', 'warning');
 	}
 
@@ -2133,7 +2133,9 @@ else
         $cart_goods['total']['market_price'], $cart_goods['total']['saving'], $cart_goods['total']['save_rate']));
 		
 	//显示税费 by gaoyan
-	$smarty->assign('goods_tariff',         price_format($cart_goods['total']['goods_tariff'],true));
+	$smarty->assign('goods_price',         price_format($cart_goods['total']['goods_price'],false));
+	$smarty->assign('goods_amount',         price_format($cart_goods['total']['goods_amount'],false));
+	$smarty->assign('goods_tariff',         price_format($cart_goods['total']['goods_tariff'],false));
     // 显示收藏夹内的商品
     if ($_SESSION['user_id'] > 0)
     {

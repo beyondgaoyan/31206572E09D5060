@@ -1619,7 +1619,7 @@ function get_cart_goods()
     {
         $total['goods_price']  += $row['goods_price'] * $row['goods_number'];
         $total['market_price'] += $row['market_price'] * $row['goods_number'];
-		$total['goods_tariff'] += ($total['goods_price'] * $row['tariff'])/100;
+		$total['goods_tariff'] += ($row['goods_price'] * $row['goods_number'] * $row['tariff'])/100;//by gaoyan
 		
         $row['subtotal']     = price_format($row['goods_price'] * $row['goods_number'], false);
         $row['goods_price']  = price_format($row['goods_price'], false);
@@ -1659,6 +1659,7 @@ function get_cart_goods()
         }
         $goods_list[] = $row;
     }
+    $total['goods_tariff'] = ($total['goods_tariff']>50) ? $total['goods_tariff'] : 0;//by goayan
     $total['goods_amount'] = $total['goods_price'];
     $total['saving']       = price_format($total['market_price'] - $total['goods_price'], false);
     if ($total['market_price'] > 0)
@@ -1666,7 +1667,8 @@ function get_cart_goods()
         $total['save_rate'] = $total['market_price'] ? round(($total['market_price'] - $total['goods_price']) *
         100 / $total['market_price']).'%' : 0;
     }
-    $total['goods_price']  = price_format($total['goods_price'], false);
+    //购物车页面小计 增加税费和
+    $total['goods_price']  = price_format($total['goods_price']+$total['goods_tariff'], false);
     $total['market_price'] = price_format($total['market_price'], false);
     $total['real_goods_count']    = $real_goods_count;
     $total['virtual_goods_count'] = $virtual_goods_count;
