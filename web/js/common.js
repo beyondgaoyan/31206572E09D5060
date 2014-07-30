@@ -1147,3 +1147,21 @@ function cancel_div()
     i++;
   }
 }
+//购物车鼠标滑过 by gaoyan
+$(document).ready(function(){
+  $("#ECS_CARTINFO").mouseover(function(){
+  	$("#J_miniCart").addClass("mini-cart-on");
+  	$("#J_miniCartList").show();
+  });
+  $("#ECS_CARTINFO").mouseout(function(){
+	  $("#J_miniCart").removeClass("mini-cart-on");
+  	$("#J_miniCartList").hide();
+  });
+});
+
+
+
+
+
+
+

@@ -66,7 +66,7 @@ $(document).ready(function(){
       <div style="z-index:30;" id="shake_area" class="shake-area">
         <div class="enter-area">
           <input type="text" autocomplete="off" data-rule="(^[\w.\-]+@(?:[a-z0-9]+(?:-[a-z0-9]+)*\.)+[a-z]{2,6}$)|(^1\d{10}$)|(^\d{3,}$)|(^\++\d{2,}$)" id="miniLogin_username" class="enter-item first-enter-item" name="username">
-          <i id="message_INPUT_IDENTITY" class="placeholder">邮箱/手机号码/小米ID</i>
+          <i id="message_INPUT_IDENTITY" class="placeholder">用户名</i>
 
         </div>
         <div style="z-index:20;" class="enter-area">

@@ -124,8 +124,8 @@ function insert_cart_info()
 //by gy
 	$return_html = '';
 if($number>0){
-$return_html='<div style="float:left"><a href="flow.php">购物车 <b>2</b></a></div><ul class="car_ul">';
-        $sqls = "SELECT c.*,g.* ".
+$return_html='<a id="J_miniCart" class="mini-cart" href="flow.php"><i class="iconfont"></i>购物车<span class="mini-cart-num J_cartNum">('.$number.')</span></a><div id="J_miniCartList" class="mini-cart-list"><ul>';
+        $sqls = "SELECT c.*,g.*,c.goods_number as c_goods_number ".
             "FROM " .$GLOBALS['ecs']->table('cart'). " AS c ".
             "LEFT JOIN " .$GLOBALS['ecs']->table('goods'). " AS g ".
             "ON g.goods_id=c.goods_id ".
@@ -134,17 +134,17 @@ $return_html='<div style="float:left"><a href="flow.php">购物车 <b>2</b></a><
     $rows = $GLOBALS['db']->GetAll($sqls);
     foreach($rows AS $v){
     	$goods_url = build_uri('goods', array('gid' => $v['goods_id']), $v['goods_name']);
-	    $return_html .= '<li><div class="f_l"><a href="flow.php"> </a><a href="'.$goods_url.'"><img alt="'.$v['goods_name'].'" style="width:50px; height:50px; border:1px solid #e1e1e1; float:left" src="'.$v['goods_thumb'].'"></a> <a href="'.$goods_url.'" class="b2">'.$v['goods_name'].'</a> </div> <div class="f_r"> <b>'.$v['goods_price'].'×'.$v['goods_number'].'</b> <a onclick="deleteCartGoods('.$v['rec_id'].')" href="javascript:" class="del">删除</a> </div>  </li>';
+	    $return_html .= '<li class="clearfix"><a class="pic" href="'.$goods_url.'"><img alt="'.$v['goods_name'].'" style="width:60px; height:60px;" src="'.$v['goods_thumb'].'"></a><a class="name" href="'.$goods_url.'">'.$v['goods_name'].'</a><span class="price">'.$v['goods_price'].'×'.$v['c_goods_number'].'</span>
+		<a class="btn-del delItem" href="javascript:void(0)" onclick="deleteCartGoods('.$v['rec_id'].')"><i class="iconfont"></i></a>
+	    </li>';
     }
 
-    $return_html .='<li style=" text-align:right; padding-right:20px; border-bottom:none;">  <a href="flow.php?step=checkout"><img alt="checkout" src="themes/default/imagesgy/checkout_top.gif" style=" margin-left:10px;"></a>  </li><div class="dang"> </div></ul>';
+    $return_html .='</ul><div class="count clearfix"><span class="total">共计：'.$number.'件商品<strong>合计：<em>'.price_format($amount, false).'</em></strong></span><a class="btn btn-primary" href="flow.php?step=cart">去购物车结算</a></div></div>';
 	
 	
 	
 } else {
-	$return_html='<p><a href="flow.php">  <div style="float:left">购物车 <b>0</b></div> <ul class="car_ul">  <a href="#" style="font-size: 14px;text-align: center;padding: 20px;
-color: #aab2bd;">购物车中还没有商品，赶紧选购吧！</a>  <div class="dang"> </div> </ul>
-</a></p>';
+	$return_html='<a id="J_miniCart" class="mini-cart" href="flow.php"><i class="iconfont"></i>购物车<span class="mini-cart-num J_cartNum">(0)</span></a><div id="J_miniCartList" class="mini-cart-list"><p class="loading">购物车中还没有商品，赶快选购吧!</p></div>';
 }
 
 

@@ -2096,76 +2096,12 @@ elseif ($_REQUEST['step'] == 'delete_cart_goods')
 
     include_once('includes/cls_json.php');
     $json = new JSON;
-    
-	$_POST['id']=strip_tags(urldecode($_POST['id']));
-    $_POST['id'] = json_str_iconv($_POST['id']);
-
-    if (!empty($_REQUEST['id']))
-    {
-        if (!is_numeric($_REQUEST['id']) || intval($_REQUEST['id']) <= 0)
-        {
-            ecs_header("Location:./\n");
-        }
-        $goods_id = intval($_REQUEST['id']);
-        exit;
-    }
-
-    $result = array('error' => 0, 'message' => '', 'content' => '', 'goods_id' => '');
-    $json  = new JSON;
-
-    if (empty($_POST['goods']))
-    {
-        $result['error'] = 1;
-        die($json->encode($result));
-    }
-
-    $goods = $json->decode($_POST['goods']);
-print_r($_REQUEST);exit;
-    /* 取得购物类型 */
-    $flow_type = isset($_SESSION['flow_type']) ? intval($_SESSION['flow_type']) : CART_GENERAL_GOODS;
-
-    /* 获得收货人信息 */
-    $consignee = get_consignee($_SESSION['user_id']);
-
-    /* 对商品信息赋值 */
-    $cart_goods = cart_goods($flow_type); // 取得商品列表，计算合计
-
-    if (empty($cart_goods) || !check_consignee_info($consignee, $flow_type))
-    {
-        $result['error'] = $_LANG['no_goods_in_cart'];
-    }
-    else
-    {
-        /* 取得购物流程设置 */
-        $smarty->assign('config', $_CFG);
-
-        /* 取得订单信息 */
-        $order = flow_order_info();
-
-        $order['pay_id'] = intval($_REQUEST['payment']);
-        $payment_info = payment_info($order['pay_id']);
-        $result['pay_code'] = $payment_info['pay_code'];
-
-        /* 保存 session */
-        $_SESSION['flow_order'] = $order;
-
-        /* 计算订单的费用 */
-        $total = order_fee($order, $cart_goods, $consignee);
-        $smarty->assign('total', $total);
-
-        /* 取得可以得到的积分和红包 */
-        $smarty->assign('total_integral', cart_amount(false, $flow_type) - $total['bonus'] - $total['integral_money']);
-        $smarty->assign('total_bonus',    price_format(get_total_bonus(), false));
-
-        /* 团购标志 */
-        if ($flow_type == CART_GROUP_BUY_GOODS)
-        {
-            $smarty->assign('is_group_buy', 1);
-        }
-
-        $result['content'] = $smarty->fetch('library/order_total.lbi');
-    }
-
+	$rec_id = intval($_POST['id']);
+    flow_drop_cart_goods($rec_id);
+	flow_drop_cart_goods($rec_id);
+    $result = array('error' => 0, 'message' => '', 'content' => '', 'goods_id' => '');    
+	$result['content'] = insert_cart_info();
+	$result['goods_id']=$goods_id;
     echo $json->encode($result);
     exit;
 }

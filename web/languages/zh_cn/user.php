@@ -374,8 +374,8 @@ $_LANG['virtual_card_info'] = '虚拟卡信息';
 /* 取回密码 */
 $_LANG['back_home_lnk'] = '返回首页';
 $_LANG['get_password_lnk'] = '返回获取密码页面';
-$_LANG['get_password_by_question'] = '密码问题找回密码';
-$_LANG['get_password_by_mail'] = '注册邮件找回密码';
+$_LANG['get_password_by_question'] = '密码问题找回';
+$_LANG['get_password_by_mail'] = '邮件找回';
 $_LANG['back_retry_answer'] = '返回重试';
 
 /* 登录 注册 */

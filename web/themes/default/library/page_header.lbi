@@ -50,12 +50,8 @@ var process_request = "{$lang.process_request}";
     </script>
         </form>
         </div>
-        <div class="cart-section">
-            <a id="J_miniCart" class="mini-cart" href="flow.php"><i class="iconfont"></i>购物车<span class="mini-cart-num J_cartNum">(1)</span></a>
-            <div id="J_miniCartList" class="mini-cart-list">
-                <p class="loading">数据加载中，请稍后...</p>
-            </div>
-        </div>
+        {include file='library/cart.lbi'} 
+
     </div>
     <div class="header-nav clearfix">
         <div id="J_categoryContainer" class="nav-category" onmouseover="this.className='nav-category nav-category_on'" onmouseout="this.className='nav-category'">
