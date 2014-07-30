@@ -1,4 +1,5 @@
-config.php
-temp/*
-temp
-temp/
+/data/config.php
+/temp/*
+/temp
+/temp/
+/phpmyadmin/
