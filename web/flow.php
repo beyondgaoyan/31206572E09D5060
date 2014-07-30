@@ -530,7 +530,7 @@ elseif ($_REQUEST['step'] == 'checkout')
     $total = order_fee($order, $cart_goods, $consignee);
 	//跨境购商品超过1件金额超过1000将不能下单 by gaoyan
 	if($total['goods_number'] > 1 && $total['goods_price'] > 1000){
-		show_message('应海关免税要求，单个商品数量超过1件时，小计金额不能超过1000元！', '返回购物车', 'flow.php?step=cart', 'warning');
+		show_message('根据海关规定，跨境购商品单笔订单总价不可以超过1000元，如果单个订单为一件且不可分割的商品除外。', '返回购物车', 'flow.php?step=cart', 'warning');
 	}
 
     $smarty->assign('total', $total);
