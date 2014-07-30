@@ -38,6 +38,9 @@
       <!-- {/if} -->
       <!-- {if $total.card_fee > 0} 贺卡费用-->
       + {$lang.card_fee}: <font class="f4_b">{$total.card_fee_formated}</font>
+      <!-- {/if} -->
+      <!-- {if $total.goods_tariff_formated > 50} 税费 by gaoyan-->
+      + 税费: <font class="f4_b">{$total.goods_tariff_formated}</font>
       <!-- {/if} -->    </td>
   </tr>
   <!-- {if $total.surplus > 0 or $total.integral > 0 or $total.bonus > 0} 使用余额或积分或红包 -->

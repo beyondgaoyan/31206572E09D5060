@@ -571,7 +571,6 @@ function order_fee($order, $goods, $consignee)
                     'pay_fee'          => 0,
                     'tax'              => 0);
     $weight = 0;
-
     /* 商品总价 */
     foreach ($goods AS $val)
     {
@@ -583,6 +582,8 @@ function order_fee($order, $goods, $consignee)
 
         $total['goods_price']  += $val['goods_price'] * $val['goods_number'];
         $total['market_price'] += $val['market_price'] * $val['goods_number'];
+        $total['goods_number'] += $val['goods_number'];
+        $total['goods_tariff'] += ($val['goods_price'] * $val['tariff'])/100;
     }
 
     $total['saving']    = $total['market_price'] - $total['goods_price'];
@@ -591,6 +592,8 @@ function order_fee($order, $goods, $consignee)
     $total['goods_price_formated']  = price_format($total['goods_price'], false);
     $total['market_price_formated'] = price_format($total['market_price'], false);
     $total['saving_formated']       = price_format($total['saving'], false);
+    //税费 by gaoyan
+    $total['goods_tariff_formated']       = price_format($total['goods_tariff'], true);
 
     /* 折扣 */
     if ($order['extension_code'] != 'group_buy')
@@ -719,6 +722,10 @@ function order_fee($order, $goods, $consignee)
     {
         $total['amount'] = $total['goods_price'] - $total['discount'] + $total['tax'] + $total['pack_fee'] + $total['card_fee'] +
             $total['shipping_fee'] + $total['shipping_insure'] + $total['cod_fee'];
+            //50内免税费 by gaoyan
+            if($total['goods_tariff']>50){
+	            $total['amount'] += $total['goods_tariff'];
+            }
 
         // 减去红包金额
         $use_bonus        = min($total['bonus'], $max_amount); // 实际减去的红包金额
@@ -858,9 +865,10 @@ function get_order_sn()
  */
 function cart_goods($type = CART_GENERAL_GOODS)
 {
+//by gaoyan
     $sql = "SELECT rec_id, user_id, goods_id, goods_name, goods_sn, goods_number, " .
             "market_price, goods_price, goods_attr, is_real, extension_code, parent_id, is_gift, is_shipping, " .
-            "goods_price * goods_number AS subtotal " .
+            "goods_price * goods_number AS subtotal,tariff " .
             "FROM " . $GLOBALS['ecs']->table('cart') .
             " WHERE session_id = '" . SESS_ID . "' " .
             "AND rec_type = '$type'";
@@ -1015,11 +1023,12 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0)
     $_parent_id = $parent;
 
     /* 取得商品信息 */
+    //增加税率 by gaoyan
     $sql = "SELECT g.goods_name, g.goods_sn, g.is_on_sale, g.is_real, ".
                 "g.market_price, g.shop_price AS org_price, g.promote_price, g.promote_start_date, ".
                 "g.promote_end_date, g.goods_weight, g.integral, g.extension_code, ".
                 "g.goods_number, g.is_alone_sale, g.is_shipping,".
-                "IFNULL(mp.user_price, g.shop_price * '$_SESSION[discount]') AS shop_price ".
+                "IFNULL(mp.user_price, g.shop_price * '$_SESSION[discount]') AS shop_price, g.tariff ".
             " FROM " .$GLOBALS['ecs']->table('goods'). " AS g ".
             " LEFT JOIN " . $GLOBALS['ecs']->table('member_price') . " AS mp ".
                     "ON mp.goods_id = g.goods_id AND mp.user_rank = '$_SESSION[user_rank]' ".
@@ -1127,7 +1136,8 @@ function addto_cart($goods_id, $num = 1, $spec = array(), $parent = 0)
         'is_shipping'   => $goods['is_shipping'],
         'rec_type'      => CART_GENERAL_GOODS
     );
-
+    //增加税率 by gaoyan
+	$parent['tariff'] = $goods['tariff'];
     /* 如果该配件在添加为基本件的配件时，所设置的“配件价格”比原价低，即此配件在价格上提供了优惠， */
     /* 则按照该配件的优惠价格卖，但是每一个基本件只能购买一个优惠价格的“该配件”，多买的“该配件”不享 */
     /* 受此优惠 */
@@ -1608,7 +1618,8 @@ function get_cart_goods()
     {
         $total['goods_price']  += $row['goods_price'] * $row['goods_number'];
         $total['market_price'] += $row['market_price'] * $row['goods_number'];
-
+		$total['goods_tariff'] += ($total['goods_price'] * $row['tariff'])/100;
+		
         $row['subtotal']     = price_format($row['goods_price'] * $row['goods_number'], false);
         $row['goods_price']  = price_format($row['goods_price'], false);
         $row['market_price'] = price_format($row['market_price'], false);

@@ -292,6 +292,7 @@ $_LANG['insure'] = '保价费';
 $_LANG['pay_fee'] = '手续费';
 $_LANG['pack_fee'] = '包装费';
 $_LANG['card_fee'] = '贺卡费';
+$_LANG['goods_tariff'] = '税费';
 $_LANG['no_pack'] = '不要包装';
 $_LANG['no_card'] = '不要贺卡';
 $_LANG['add_to_order'] = '加入订单';

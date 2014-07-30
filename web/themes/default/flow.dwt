@@ -39,11 +39,9 @@
     <h6><span>{$lang.goods_list}</span></h6>
         <form id="formCart" name="formCart" method="post" action="flow.php">
            <table width="99%" align="center" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
-            <tr>
+            <tr style="border-bottom:1px solid #ccc">
+            	<th bgcolor="#ffffff"></th>
               <th bgcolor="#ffffff">{$lang.goods_name}</th>
-      <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
-              <th bgcolor="#ffffff">{$lang.goods_attr}</th>
-              <!-- {/if} -->
               <!-- {if $show_marketprice} 显示市场价 -->
               <th bgcolor="#ffffff">{$lang.market_prices}</th>
               <!-- {/if} -->
@@ -53,17 +51,11 @@
               <th bgcolor="#ffffff">{$lang.handle}</th>
             </tr>
             <!-- {foreach from=$goods_list item=goods} -->
-            <tr>
+            <tr style="border-bottom:1px solid #ccc">
+            <td bgcolor="#ffffff"><a href="goods.php?id={$goods.goods_id}" target="_blank"><img width="80" height="80" src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a></td>
               <td bgcolor="#ffffff" align="center">
                 <!-- {if $goods.goods_id gt 0 && $goods.extension_code neq 'package_buy'} 商品 -->
-                  <!-- {if $show_goods_thumb eq 1} -->
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
-                  <!-- {elseif $show_goods_thumb eq 2} -->
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank"><img src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a>
-                  <!-- {else} -->
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank"><img src="{$goods.goods_thumb}" border="0" title="{$goods.goods_name|escape:html}" /></a><br />
-                    <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
-                  <!-- {/if} -->
+                  <a href="goods.php?id={$goods.goods_id}" target="_blank" class="f6">{$goods.goods_name}</a>
                   <!-- {if $goods.parent_id gt 0} 配件 -->
                   <span style="color:#FF0000">（{$lang.accessories}）</span>
                   <!-- {/if} -->
@@ -81,23 +73,20 @@
                   {$goods.goods_name}
                 <!-- {/if} -->
               </td>
-              <!-- {if $show_goods_attribute eq 1} 显示商品属性 -->
-              <td bgcolor="#ffffff">{$goods.goods_attr|nl2br}</td>
-              <!-- {/if} -->
               <!-- {if $show_marketprice} 显示市场价 -->
-              <td align="right" bgcolor="#ffffff">{$goods.market_price}</td>
+              <td align="center" bgcolor="#ffffff">{$goods.market_price}</td>
               <!-- {/if} -->
-              <td align="right" bgcolor="#ffffff">{$goods.goods_price}</td>
-              <td align="right" bgcolor="#ffffff">
+              <td align="center" bgcolor="#ffffff">{$goods.goods_price}</td>
+              <td align="center" bgcolor="#ffffff">
                 <!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
                 <input type="text" name="goods_number[{$goods.rec_id}]" id="goods_number_{$goods.rec_id}" value="{$goods.goods_number}" size="4" class="inputBg" style="text-align:center " onkeydown="showdiv(this)"/>
                 <!-- {else} -->
                 {$goods.goods_number}
                 <!-- {/if} -->
               </td>
-              <td align="right" bgcolor="#ffffff">{$goods.subtotal}</td>
+              <td align="center" bgcolor="#ffffff">{$goods.subtotal}</td>
               <td align="center" bgcolor="#ffffff">
-                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; " class="f6">{$lang.drop}</a>
+                <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_goods&amp;id={$goods.rec_id}'; " class="del J_delGoods"><i class="iconfont"></i></a>
                 <!-- {if $smarty.session.user_id gt 0 && $goods.extension_code neq 'package_buy'} 如果登录了，可以加入收藏 -->
                 <a href="javascript:if (confirm('{$lang.drop_goods_confirm}')) location.href='flow.php?step=drop_to_collect&amp;id={$goods.rec_id}'; " class="f6">{$lang.drop_to_collect}</a>
                 <!-- {/if} -->            </td>
@@ -108,7 +97,7 @@
             <tr>
               <td bgcolor="#ffffff">
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
-              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} -->
+              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}，<!-- {/if} -->税费共计：{$goods_tariff}
               </td>
               <td align="right" bgcolor="#ffffff">
                 <input type="button" value="{$lang.clear_cart}" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" />
@@ -120,8 +109,7 @@
         </form>
         <table width="99%" align="center" border="0" cellpadding="5" cellspacing="0" bgcolor="#dddddd">
           <tr>
-            <td bgcolor="#ffffff"><a href="./"><img src="images/continue.gif" alt="continue" /></a></td>
-            <td bgcolor="#ffffff" align="right"><a href="flow.php?step=checkout"><img src="images/checkout.gif" alt="checkout" /></a></td>
+            <td bgcolor="#ffffff" align="right"><a class="btn btn-lineDakeLight btn-back" href="./">继续购物</a> <a id="toCheckBtn" class="btn btn-primary btn-next" href="flow.php?step=checkout" style="margin-left:10px;">去结账</a></td>
           </tr>
         </table>
        <!-- {if $smarty.session.user_id gt 0} -->
@@ -329,7 +317,7 @@
         <!-- {/foreach} -->
         <!-- {/if} -->
 
-        <!-- {if $step eq "checkout"} 开始订单确认界面 -->
+        <!-- 开始订单确认界面 {if $step eq "checkout"}  -->
         <form action="flow.php" method="post" name="theForm" id="theForm" onsubmit="return checkOrderForm(this)">
         <script type="text/javascript">
         var flow_no_payment = "{$lang.flow_no_payment}";

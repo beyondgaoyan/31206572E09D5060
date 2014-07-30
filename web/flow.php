@@ -528,11 +528,16 @@ elseif ($_REQUEST['step'] == 'checkout')
      * 计算订单的费用
      */
     $total = order_fee($order, $cart_goods, $consignee);
+	//跨境购商品超过1件金额超过1000将不能下单 by gaoyan
+	if($total['goods_number'] > 1 && $total['amount'] > 1000){
+		show_message('跨境购一件以上的商品总价不能超过1000元，请到购物车中修改后重新结算。', '返回购物车', 'flow.php?step=cart', 'warning',false);
+	}
 
     $smarty->assign('total', $total);
     $smarty->assign('shopping_money', sprintf($_LANG['shopping_money'], $total['formated_goods_price']));
     $smarty->assign('market_price_desc', sprintf($_LANG['than_market_price'], $total['formated_market_price'], $total['formated_saving'], $total['save_rate']));
-
+	//显示税费 by gaoyan
+	$smarty->assign('goods_tariff',         price_format($cart_goods['total']['goods_tariff'],true));
     /* 取得配送列表 */
     $region            = array($consignee['country'], $consignee['province'], $consignee['city'], $consignee['district']);
     $shipping_list     = available_shipping_list($region);
@@ -2126,7 +2131,9 @@ else
     $smarty->assign('shopping_money',         sprintf($_LANG['shopping_money'], $cart_goods['total']['goods_price']));
     $smarty->assign('market_price_desc',      sprintf($_LANG['than_market_price'],
         $cart_goods['total']['market_price'], $cart_goods['total']['saving'], $cart_goods['total']['save_rate']));
-
+		
+	//显示税费 by gaoyan
+	$smarty->assign('goods_tariff',         price_format($cart_goods['total']['goods_tariff'],true));
     // 显示收藏夹内的商品
     if ($_SESSION['user_id'] > 0)
     {

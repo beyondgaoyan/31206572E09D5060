@@ -1,11 +1,8 @@
 /*
-Template Name: ECSHOP模板堂www.ecmoban.com
-Template URI: http://www.ecmoban.com/
-Description: ECSHOP模板堂(www.ecmoban.com).
+Template Name: 海狗商城www.higoshop.com
+Template URI: http://www.higoshop.com/
+Description: 第一版.
 Version: 2.7.3
-Author: ECSHOP Team
-Author URI: http://www.ecshop.com/
-Logo filename: logo.gif
 */
 
 /* ====================
@@ -1631,7 +1628,7 @@ a:hover, a:focus {
     color: #333;
 }
 .btn-lineDakeLight {
-    background-color: #fafafa;
+    background-color: #f1f1f1;
     border-color: #f3f3f3;
     color: #333;
 }
