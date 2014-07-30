@@ -100,9 +100,11 @@ var process_request = "{$lang.process_request}";
                             </ul>
         </div>
     </div>
+<!--
     <div class="open-buy-info">
         <a href="#">下轮开放购买：7月22日星期二</a>
     </div>
+-->
 </div>
 
 

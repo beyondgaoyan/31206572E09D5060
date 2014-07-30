@@ -82,12 +82,14 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $children = get_children($cat_id);
 
     $cat = get_cat_info($cat_id);   // 获得分类的相关信息
-
     if (!empty($cat))
     {
         $smarty->assign('keywords',    htmlspecialchars($cat['keywords']));
         $smarty->assign('description', htmlspecialchars($cat['cat_desc']));
         $smarty->assign('cat_style',   htmlspecialchars($cat['style']));
+        //by gaoyan
+        $smarty->assign('cat_name',   htmlspecialchars($cat['cat_name']));
+        
     }
     else
     {
@@ -331,7 +333,9 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('page_title',       $position['title']);    // 页面标题
     $smarty->assign('ur_here',          $position['ur_here']);  // 当前位置
 
-    $smarty->assign('categories',       get_categories_tree($cat_id)); // 分类树
+    $smarty->assign('categories',       get_categories_tree()); // 分类树
+    $smarty->assign('categories_child',       get_categories_tree($cat_id)); // 下级分类树 by gaoyan
+
     $smarty->assign('helps',            get_shop_help());              // 网店帮助
     $smarty->assign('top_goods',        get_top10());                  // 销售排行
     $smarty->assign('show_marketprice', $_CFG['show_marketprice']);
@@ -382,13 +386,7 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
         $page = $max_page;
     }
     $goodslist = category_get_goods($children, $brand, $price_min, $price_max, $ext, $size, $page, $sort, $order);
-    if($display == 'grid')
-    {
-        if(count($goodslist) % 2 != 0)
-        {
-            $goodslist[] = array();
-        }
-    }
+
     $smarty->assign('goods_list',       $goodslist);
     $smarty->assign('category',         $cat_id);
     $smarty->assign('script_name', 'category');

@@ -154,6 +154,7 @@ if ($_REQUEST['step'] == 'add_to_cart')
 
             $result['content'] = insert_cart_info();
             $result['one_step_buy'] = $_CFG['one_step_buy'];
+            $result['goods_id'] = stripslashes($goods->goods_id);//by gaoyan
         }
         else
         {

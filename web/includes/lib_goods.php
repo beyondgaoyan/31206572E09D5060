@@ -1503,4 +1503,20 @@ function get_products_info($goods_id, $spec_goods_attr_id)
     }
     return $return_array;
 }
+//by gaoyan
+function getads($cat,$num)
+{
+$time = gmtime();
+$sql = "SELECT * FROM " . $GLOBALS['ecs']->table('ad') . " where position_id=".$cat." and start_time <= '" . $time . "' AND end_time >= '" . $time . "' ORDER BY ad_id desc limit ".$num;
+$res = $GLOBALS['db']->getAll($sql);
+$arr = array();
+foreach ($res AS $idx => $row)
+{
+$arr[$idx]['id'] = $row['ad_id'];
+$arr[$idx]['title'] = $row['ad_name'];
+$arr[$idx]['ad_link'] = $row['ad_link'];
+$arr[$idx]['ad_code'] = "data/afficheimg/".$row['ad_code'];
+}
+return $arr;
+}
 ?>

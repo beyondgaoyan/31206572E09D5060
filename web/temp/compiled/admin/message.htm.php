@@ -39,7 +39,7 @@
 <?php if ($this->_var['auto_redirect']): ?>
 <script language="JavaScript">
 <!--
-var seconds = 3;
+var seconds = 2;
 var defaultUrl = "<?php echo $this->_var['default_url']; ?>";
 
 

@@ -153,7 +153,9 @@ if (!$smarty->is_cached('index.dwt', $cache_id))
         }
         $smarty->assign('cat_rec', $cat_rec);
     }
-
+	//by gaoyan
+	$smarty->assign("banner1",getads(1,5));
+	$smarty->assign("banner2",getads(2,4));
     /* 页面中的动态内容 */
     assign_dynamic('index');
 }

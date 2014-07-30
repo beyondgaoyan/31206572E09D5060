@@ -202,7 +202,7 @@ function assign_ur_here($cat = 0, $str = '')
                 {
                     $page_title = htmlspecialchars($val['cat_name']) . '_' . $page_title;
                     $args       = array($key => $val['cat_id']);
-                    $ur_here   .= ' <code>&gt;</code> <a href="' . build_uri($type, $args, $val['cat_name']) . '">' .
+                    $ur_here   .= ' <code> / </code> <a href="' . build_uri($type, $args, $val['cat_name']) . '">' .
                                     htmlspecialchars($val['cat_name']) . '</a>';
                 }
             }
@@ -215,7 +215,7 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['group_buy_goods'] . '_' . $page_title;
                 $args       = array('gbid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="group_buy.php">' .
+                $ur_here   .= ' <code> / </code> <a href="group_buy.php">' .
                                 $GLOBALS['_LANG']['group_buy_goods'] . '</a>';
             }
             /* 拍卖 */
@@ -223,7 +223,7 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['auction'] . '_' . $page_title;
                 $args       = array('auid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="auction.php">' .
+                $ur_here   .= ' <code> / </code> <a href="auction.php">' .
                                 $GLOBALS['_LANG']['auction'] . '</a>';
             }
             /* 夺宝 */
@@ -231,14 +231,14 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['snatch'] . '_' . $page_title;
                 $args       = array('id' => '0');
-                $ur_here   .= ' <code> &gt; </code><a href="snatch.php">' .                                 $GLOBALS['_LANG']['snatch_list'] . '</a>';
+                $ur_here   .= ' <code>  / </code><a href="snatch.php">' .                                 $GLOBALS['_LANG']['snatch_list'] . '</a>';
             }
             /* 批发 */
             elseif ('wholesale' == $filename)
             {
                 $page_title = $GLOBALS['_LANG']['wholesale'] . '_' . $page_title;
                 $args       = array('wsid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="wholesale.php">' .
+                $ur_here   .= ' <code> / </code> <a href="wholesale.php">' .
                                 $GLOBALS['_LANG']['wholesale'] . '</a>';
             }
             /* 积分兑换 */
@@ -246,7 +246,7 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['exchange'] . '_' . $page_title;
                 $args       = array('wsid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="exchange.php">' .
+                $ur_here   .= ' <code> / </code> <a href="exchange.php">' .
                                 $GLOBALS['_LANG']['exchange'] . '</a>';
             }
             /* 其他的在这里补充 */
@@ -257,7 +257,7 @@ function assign_ur_here($cat = 0, $str = '')
     if (!empty($str))
     {
         $page_title  = $str . '_' . $page_title;
-        $ur_here    .= ' <code>&gt;</code> ' . $str;
+        $ur_here    .= ' <code> / </code> ' . $str;
     }
 
     /* 返回值 */
