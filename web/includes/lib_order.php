@@ -583,7 +583,7 @@ function order_fee($order, $goods, $consignee)
         $total['goods_price']  += $val['goods_price'] * $val['goods_number'];
         $total['market_price'] += $val['market_price'] * $val['goods_number'];
         $total['goods_number'] += $val['goods_number'];
-        $total['goods_tariff'] += ($val['goods_price'] * $val['tariff'])/100;
+        $total['goods_tariff'] += ($val['goods_price'] * $val['goods_number'] * $val['tariff'])/100;
     }
 
     $total['saving']    = $total['market_price'] - $total['goods_price'];
@@ -593,6 +593,7 @@ function order_fee($order, $goods, $consignee)
     $total['market_price_formated'] = price_format($total['market_price'], false);
     $total['saving_formated']       = price_format($total['saving'], false);
     //税费 by gaoyan
+    if($total['goods_tariff']<=50) $total['goods_tariff']=0;
     $total['goods_tariff_formated']       = price_format($total['goods_tariff'], true);
 
     /* 折扣 */

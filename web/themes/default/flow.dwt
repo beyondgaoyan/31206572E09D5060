@@ -97,10 +97,10 @@
             <tr>
               <td bgcolor="#ffffff">
               <!-- {if $discount gt 0} -->{$your_discount}<br /><!-- {/if} -->
-              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}，<!-- {/if} -->税费共计：{$goods_tariff}
+              {$shopping_money}<!-- {if $show_marketprice} -->，{$market_price_desc}<!-- {/if} -->，税费共计：{$goods_tariff}
               </td>
               <td align="right" bgcolor="#ffffff">
-                <input type="button" value="{$lang.clear_cart}" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" />
+                <!-- <input type="button" value="清空购物车" class="bnt_blue_1" onclick="location.href='flow.php?step=clear'" /> -->
                 <input name="submit" type="submit" class="bnt_blue_1" value="{$lang.update_cart}" />
               </td>
             </tr>
