@@ -503,7 +503,8 @@ else
 
     assign_template();
     assign_dynamic('search');
-    $position = assign_ur_here(0, $ur_here . ($_REQUEST['keywords'] ? '_' . $_REQUEST['keywords'] : ''));
+    //by gaoyan
+    $position = assign_ur_here(0, $ur_here . ($_REQUEST['keywords'] ? '<code> / </code>' . $_REQUEST['keywords'] : ''));
     $smarty->assign('page_title', $position['title']);    // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
     $smarty->assign('intromode',      $intromode);
