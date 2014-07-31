@@ -445,6 +445,10 @@ function register()
   var mobile_phone = frm.elements['extend_field5'] ? Utils.trim(frm.elements['extend_field5'].value) : '';
   var passwd_answer = frm.elements['passwd_answer'] ? Utils.trim(frm.elements['passwd_answer'].value) : '';
   var sel_question =  frm.elements['sel_question'] ? Utils.trim(frm.elements['sel_question'].value) : '';
+  //by gaoyan
+  var idcard =  frm.elements['idcard'] ? Utils.trim(frm.elements['idcard'].value) : '';
+  var truename =  frm.elements['truename'] ? Utils.trim(frm.elements['truename'].value) : '';
+  var mobilenum =  frm.elements['mobilenum'] ? Utils.trim(frm.elements['mobilenum'].value) : '';
 
 
   var msg = "";
@@ -555,7 +559,160 @@ function register()
     return true;
   }
 }
+/* *
+ * 处理注册用户 by gaoyan
+ */
+function registerkjg()
+{
+  var frm  = document.forms['formUser'];
+  var username  = Utils.trim(frm.elements['username'].value);
+  var email  = frm.elements['email'].value;
+  var password  = Utils.trim(frm.elements['password'].value);
+  var confirm_password = Utils.trim(frm.elements['confirm_password'].value);
+  var checked_agreement = frm.elements['agreement'].checked;
+  var msn = frm.elements['extend_field1'] ? Utils.trim(frm.elements['extend_field1'].value) : '';
+  var qq = frm.elements['extend_field2'] ? Utils.trim(frm.elements['extend_field2'].value) : '';
+  var home_phone = frm.elements['extend_field4'] ? Utils.trim(frm.elements['extend_field4'].value) : '';
+  var office_phone = frm.elements['extend_field3'] ? Utils.trim(frm.elements['extend_field3'].value) : '';
+  var mobile_phone = frm.elements['extend_field5'] ? Utils.trim(frm.elements['extend_field5'].value) : '';
+  var passwd_answer = frm.elements['passwd_answer'] ? Utils.trim(frm.elements['passwd_answer'].value) : '';
+  var sel_question =  frm.elements['sel_question'] ? Utils.trim(frm.elements['sel_question'].value) : '';
+  //by gaoyan
+  var idcard =  frm.elements['idcard'] ? Utils.trim(frm.elements['idcard'].value) : '';
+  var truename =  frm.elements['truename'] ? Utils.trim(frm.elements['truename'].value) : '';
+  var mobilenum =  frm.elements['mobilenum'] ? Utils.trim(frm.elements['mobilenum'].value) : '';
 
+
+  var msg = "";
+  // 检查输入
+  var msg = '';
+  if (username.length == 0)
+  {
+    msg += username_empty + '\n';
+  }
+  else if (username.match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+  {
+    msg += username_invalid + '\n';
+  }
+  else if (username.length < 3)
+  {
+    //msg += username_shorter + '\n';
+  }
+
+  if (email.length == 0)
+  {
+    msg += email_empty + '\n';
+  }
+  else
+  {
+    if ( ! (Utils.isEmail(email)))
+    {
+      msg += email_invalid + '\n';
+    }
+  }
+  if (password.length == 0)
+  {
+    msg += password_empty + '\n';
+  }
+  else if (password.length < 6)
+  {
+    msg += password_shorter + '\n';
+  }
+  if (/ /.test(password) == true)
+  {
+	msg += passwd_balnk + '\n';
+  }
+  if (confirm_password != password )
+  {
+    msg += confirm_password_invalid + '\n';
+  }
+  if(checked_agreement != true)
+  {
+    msg += agreement + '\n';
+  }
+
+  if (msn.length > 0 && (!Utils.isEmail(msn)))
+  {
+    msg += msn_invalid + '\n';
+  }
+
+  if (qq.length > 0 && (!Utils.isNumber(qq)))
+  {
+    msg += qq_invalid + '\n';
+  }
+
+  if (office_phone.length>0)
+  {
+    var reg = /^[\d|\-|\s]+$/;
+    if (!reg.test(office_phone))
+    {
+      msg += office_phone_invalid + '\n';
+    }
+  }
+  if (home_phone.length>0)
+  {
+    var reg = /^[\d|\-|\s]+$/;
+
+    if (!reg.test(home_phone))
+    {
+      msg += home_phone_invalid + '\n';
+    }
+  }
+  if (mobile_phone.length>0)
+  {
+    var reg = /^[\d|\-|\s]+$/;
+    if (!reg.test(mobile_phone))
+    {
+      msg += mobile_phone_invalid + '\n';
+    }
+  }
+  if (passwd_answer.length > 0 && sel_question == 0 || document.getElementById('passwd_quesetion') && passwd_answer.length == 0)
+  {
+    msg += no_select_question + '\n';
+  }
+
+  for (i = 4; i < frm.elements.length - 4; i++)	// 从第五项开始循环检查是否为必填项
+  {
+	needinput = document.getElementById(frm.elements[i].name + 'i') ? document.getElementById(frm.elements[i].name + 'i') : '';
+
+	if (needinput != '' && frm.elements[i].value.length == 0)
+	{
+	  msg += '- ' + needinput.innerHTML + msg_blank + '\n';
+	}
+  }
+
+//by gaoyan
+if (idcard.length == 0)
+  {
+    msg += '- 身份证号不能为空' + '\n';
+  }
+  else if (idcard.match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+  {
+    msg += '- 请正确填写身份证号' + '\n';
+  }
+  else if (idcard.length < 16)
+  {
+    msg += '- 身份证号错误' + '\n';
+  }
+  if (truename.length == 0)
+  {
+    msg += '- 真实姓名不能为空' + '\n';
+  }
+  if (mobilenum.length == 0)
+  {
+    msg += '- 手机号不能为空' + '\n';
+  }
+  
+  if (msg.length > 0)
+  {
+    alert(msg);
+    return false;
+  }
+  else
+  {
+    return true;
+  }
+}
 /* *
  * 用户中心订单保存地址信息
  */

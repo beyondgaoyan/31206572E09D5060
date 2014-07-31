@@ -29,13 +29,14 @@ $back_act='';
 
 
 // 不需要登录的操作或自己验证是否登录（如ajax处理）的act
+//by gaoyan  增加一站式注册页面
 $not_login_arr =
-array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
+array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer','registerkjg');
 
 /* 显示页面的action列表 */
 $ui_arr = array('register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
 'message_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
-'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer');
+'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer','registerkjg');
 $smarty->assign('categories',       get_categories_tree()); // 分类树
 /* 未登录处理 */
 if (empty($_SESSION['user_id']))
@@ -136,7 +137,34 @@ if ($action == 'register')
 //    $smarty->assign('back_act', $back_act);
     $smarty->display('user_passport.dwt');
 }
+/* 显示一站式会员注册界面 by gaoyan*/
+if ($action == 'registerkjg')
+{
+    if ((!isset($back_act)||empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    {
+        $back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
+    }
 
+    /* 取出注册扩展字段 */
+    $sql = 'SELECT * FROM ' . $ecs->table('reg_fields') . ' WHERE type < 2 AND display = 1 ORDER BY dis_order, id';
+    $extend_info_list = $db->getAll($sql);
+    $smarty->assign('extend_info_list', $extend_info_list);
+
+    /* 验证码相关设置 */
+    if ((intval($_CFG['captcha']) & CAPTCHA_REGISTER) && gd_version() > 0)
+    {
+        $smarty->assign('enabled_captcha', 1);
+        $smarty->assign('rand',            mt_rand());
+    }
+
+    /* 密码提示问题 */
+    $smarty->assign('passwd_questions', $_LANG['passwd_questions']);
+
+    /* 增加是否关闭注册 */
+    $smarty->assign('shop_reg_closed', $_CFG['shop_reg_closed']);
+//    $smarty->assign('back_act', $back_act);
+    $smarty->display('user_passport.dwt');
+}
 /* 注册会员的处理 */
 elseif ($action == 'act_register')
 {
@@ -161,8 +189,47 @@ elseif ($action == 'act_register')
         $other['mobile_phone'] = isset($_POST['extend_field5']) ? $_POST['extend_field5'] : '';
         $sel_question = empty($_POST['sel_question']) ? '' : compile_str($_POST['sel_question']);
         $passwd_answer = isset($_POST['passwd_answer']) ? compile_str(trim($_POST['passwd_answer'])) : '';
+			
+		//先处理跨境购 by gaoyan
+		$idcard = isset($_POST['idcard']) ? trim($_POST['idcard']) : '';
+		$truename = isset($_POST['truename']) ? trim($_POST['truename']) : '';
+		$mobilenum = isset($_POST['mobilenum']) ? trim($_POST['mobilenum']) : '';
+		if($idcard && $truename && $mobilenum){
+			
+			//发送请求，获得接口新增修改数据
+			$time = date("Y-m-d H:i:s");
+            $xml_data = '<?xm?><Message><Body>';
+            $xml_data.="<OrderFrom>0000</OrderFrom>";
+            $xml_data.="<Idnum>$idcard</Idnum>";
+            $xml_data.="<Name>$truename</Name>";
+            $xml_data.="<Account>$username</Account>";
+            $xml_data.="<Phone>$mobilenum</Phone>";
+            $xml_data.="<Email>$email</Email>";
+            $xml_data.="</Body></Message>";
+            $url_get = '';
+            $url_get .="userid=higoshop&timestamp=".urlencode($time);
+            $sign = "higoshop68848eaf-a2ff-42ab-8c1a-5ed96d65af65".$time;
+            
+            $url_get .="&sign=".md5($sign);
+            $url_get .="&xmlstr=".$xml_data;
+            $url_get .="&xmlstr=".$xml_data;
+            $url = 'http://i.trainer.kjb2c.com/msg/regapi.do?'.$url_get;
+            $header[] = "Content-type:text/xml";
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_MUTE, 1);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
 
-
+            $resp = curl_exec($ch);
+            curl_close($ch);
+            $result = simplexml_load_string($resp);
+            if($result->Body->Result=='F'){
+	            show_message($result->Body->Remark);
+            }
+		}
         $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
 
         if(empty($_POST['agreement']))
@@ -238,6 +305,11 @@ elseif ($action == 'act_register')
                 send_regiter_hash($_SESSION['user_id']);
             }
             $ucdata = empty($user->ucdata)? "" : $user->ucdata;
+			//购物车登陆直接跳转到结算 by gaoyan
+	        if(!empty($_SESSION['acturl'])){
+		        ecs_header("Location: $_SESSION[acturl]\n");
+				exit;
+	        }
             show_message(sprintf($_LANG['register_success'], $username . $ucdata), array($_LANG['back_up_page'], $_LANG['profile_lnk']), array($back_act, 'user.php'), 'info');
         }
         else
@@ -359,6 +431,11 @@ elseif ($action == 'act_login')
         recalculate_price();
 
         $ucdata = isset($user->ucdata)? $user->ucdata : '';
+        //购物车登陆直接跳转到结算 by gaoyan
+        if(!empty($_SESSION['acturl'])){
+	        ecs_header("Location: $_SESSION[acturl]\n");
+			exit;
+        }
         show_message($_LANG['login_success'] . $ucdata , array($_LANG['back_up_page'], $_LANG['profile_lnk']), array($back_act,'user.php'), 'info');
     }
     else

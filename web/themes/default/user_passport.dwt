@@ -53,7 +53,7 @@ $(document).ready(function(){
 <link href="themes/default/reg.css" rel="stylesheet" type="text/css" />
 <div class="layout">
   <div class="nl-content">
-    <div id="custom_display_1" class="nl-logo-area"><a href="javascript:void(0)"><img src="themes/default/imagesgy/icon-common.png" id="logo-img"></a></div>
+    <div id="custom_display_1" class="nl-logo-area"><a href="./"><img src="themes/default/imagesgy/icon-common.png" id="logo-img"></a></div>
     <h1 id="custom_display_256" class="nl-login-title"><span id="message_LOGIN_TITLE">一个帐号，把全世界的商品收入囊中！</span></h1>
     <h2 id="lsrp_appName" class="nl-login-title lsrp-appname"></h2>
     <div id="custom_display_2">
@@ -106,8 +106,14 @@ $(document).ready(function(){
         </div>
       </div>
       <span id="custom_display_128">
-        <a target="_blank" id="message_REGISTER" class="button" href="user.php?act=register">注册新用户</a>
+        <a id="message_REGISTER" class="button" href="user.php?act=registerkjg">注册一站式新用户</a>
       </span>
+<!--
+      <span id="custom_display_128">
+        <a id="message_REGISTER" class="button" href="user.php?act=register">仅注册新用户</a>
+      </span>
+-->
+
     </form>
   </div>
     </div>
@@ -257,6 +263,7 @@ $(document).ready(function(){
 	</dl>  
       </form><!-- phone end -->
       <p class="p_cor_hui">点击“立即注册”，即表示您同意并愿意遵守<a target="_blank" class="cor_yellow" href="article.php?cat_id=-1">用户协议</a></p>
+      <p class="p_cor_hui">用户还需要在宁波跨境贸易电子商务服务平台进行注册，填写真实身份信息并关联本网站用户名， 才能购买本站的免税商品。</p>
     </div>
     <div class="suc_botm"></div><!--这部分是卷角效果-->
   </div>
@@ -276,7 +283,122 @@ $(document).ready(function(){
 <!--{/if}-->
 <!--{/if}-->
 <!--#会员注册界面 end-->
+<!--*一站式会员注册界面 start-->
 
+    <!--{if $action eq 'registerkjg'}-->
+    <!-- {if $shop_reg_closed eq 1} -->
+    <div class="usBox">
+      <div class="usBox_2 clearfix">
+        <div class="f1 f5" align="center">{$lang.shop_register_closed}</div>
+      </div>
+    </div>
+    <!-- {else} -->
+    {insert_scripts files='utils.js'}
+<link href="themes/default/reg2.css" rel="stylesheet" type="text/css" />
+<div class="top">
+	<div class="logo">
+    
+        <a href="/"><img alt="小米logo" src="themes/default/imagesgy/icon-common.png"></a>        
+      
+	</div>
+</div>
+
+<div class="suc_content reg-account nojsp">
+  <div class="suc_kuang">
+    <div class="hei_513">
+      <h4 class="h4_suc">注册一站式新用户</h4>
+      <p class="suc_p">如果您已拥有帐号，则可
+        
+          <a class="cor_yellow" href="user.php">在此登录</a>
+        
+      </p>
+ 
+     
+      <form action="user.php" method="post" name="formUser" onsubmit="return registerkjg();">
+
+	<dl style="" class="login-dl clearfix">
+	  <dt class="dt_l">用户名：</dt>
+	  <dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="username" isrequired="true" value=""  name="username" class="input_kuang">
+           
+            <span id="phoneCode" class="check_tips error_tip">手机号码格式错误</span>
+            <span class="check_tips empty_tip">请输入手机号码</span>
+            <span class="check_tips succ_tips"></span>
+            <span class="check_tips fbdn_tip">您的操作频率过快，请稍后再试。</span>
+            <span class="check_tips custom_tip"></span>
+            
+          </dd>
+            <dt class="dt_l">邮箱：</dt>
+    <dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="email" isrequired="true" value=""  name="email" class="input_kuang">
+           
+            <span id="phoneCode" class="check_tips error_tip">手机号码格式错误</span>
+            <span class="check_tips empty_tip">请输入手机号码</span>
+            <span class="check_tips succ_tips"></span>
+            <span class="check_tips fbdn_tip">您的操作频率过快，请稍后再试。</span>
+            <span class="check_tips custom_tip"></span>
+            
+          </dd>
+          <dt class="dt_l">设置密码：</dt>
+          <dd id="pwdTd2" class="dd_r clearfix dd_r_pos">
+            <input type="password" autocomplete="off" name="password" id="password" isrequired="true" class="input_kuang item val_m errortip password">
+            <span style="color:#FF0000" id="password_notice"></span>
+	  </dd>
+          <dt class="dt_l">确认密码：</dt>
+	  <dd style="position:relative;" class="dd_r clearfix">
+            <input type="password" autocomplete="off" repeat="#phone_pwd" isrequired="true" name="confirm_password" id="confirm_password" class="input_kuang val_m item errortip">
+            <span style="color:#FF0000" id="conform_password_notice"></span>
+	    <div id="security_tips" style="padding:20px;margin-left:320px;margin-top:-210px;display:none;z-index:100;position:absolute;background:rgb(236,236,236);border:1px solid #d9d9d9;width:600px;">
+	        
+	        
+	    </div>
+	  </dd></dl>
+	  <dl style="" class="login-dl clearfix">
+	  <div style="border-top: 1px solid #ccc;color: red;font-size: 16px;margin: 0;padding: 10px 0 10px 100px;">跨境购平台注册信息，请一定要正确输入，如果输入错误，将影响通关和发货！</div>
+	  	    <dt class="dt_l">身份证号：</dt>
+			<dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="idcard" isrequired="true" value=""  name="idcard" class="input_kuang">
+          </dd>
+	       <dt class="dt_l">真实姓名：</dt>
+			<dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="truename" isrequired="true" value=""  name="truename" class="input_kuang">
+          </dd>  
+	       <dt class="dt_l">手机号：</dt>
+			<dd style="height:auto;" id="phoneInner" class="dd_r clearfix">
+            <input type="text" autocomplete="off" id="mobilenum" isrequired="true" value=""  name="mobilenum" class="input_kuang">
+          </dd>  
+	  <dt class="dt_l">&nbsp;</dt>
+	  <dd class="dd_r clearfix la_height">
+	   <input name="act" type="hidden" value="act_register" >
+          <input type="hidden" name="back_act" value="{$back_act}" />
+          <input name="agreement" type="hidden" value="1" checked="checked" />
+            <div class="sub_login flt_l"><input type="submit" value="立即注册" class="no_bg"></div>
+          </dd>
+	</dl>  
+      </form><!-- phone end -->
+
+      <p class="p_cor_hui"><a target="_blank" href="http://www.kjb2c.com/portal/faq.do">点击查看为什么要输入身份证号？</a></p>
+      <p class="p_cor_hui">点击“立即注册”，即表示您同意并愿意遵守<a target="_blank" class="cor_yellow" href="article.php?cat_id=-1">用户协议</a></p>
+      
+    </div>
+    <div class="suc_botm"></div><!--这部分是卷角效果-->
+  </div>
+</div>
+<div style="width:auto;" class="footer">
+  <ul class="links">
+    <li class="copyright"><span> © 2005-2014 海狗商城 版权所有，并保留所有权利。
+ <a href="http://www.miibeian.gov.cn/" target="_blank"> 浙ICP备14021928号-1</a></span></li>
+  </ul>
+</div>
+
+
+
+
+
+
+<!--{/if}-->
+<!--{/if}-->
+<!--#一站式会员注册界面 end-->
 <!--*找回密码界面 -->
     <!--{if $action eq 'get_password'} -->
     {insert_scripts files='utils.js'}

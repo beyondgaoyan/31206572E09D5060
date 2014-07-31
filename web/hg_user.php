@@ -53,5 +53,5 @@ echo $url;
            
             $result = simplexml_load_string($resp);
             echo "<pre>";
-            print_r($result);
+            print_r($result->Body);
 ?>
