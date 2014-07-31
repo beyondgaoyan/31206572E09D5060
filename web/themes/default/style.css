@@ -2289,7 +2289,7 @@ a:hover, a:focus {
 }
 .site-topbar .topbar-info {
     float: right;
-    line-height: 1.5;
+    /* line-height: 1.5; */
     position: relative;
     text-align: right;
 }

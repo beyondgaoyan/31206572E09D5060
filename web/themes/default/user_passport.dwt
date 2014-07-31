@@ -130,7 +130,7 @@ $(document).ready(function(){
 
 <!--*会员注册界面 start-->
 
-    <!--{if $action eq 'register'}-->
+    <!--{if $action eq 'register2'}-->
     <!-- {if $shop_reg_closed eq 1} -->
     <div class="usBox">
       <div class="usBox_2 clearfix">
@@ -285,7 +285,7 @@ $(document).ready(function(){
 <!--#会员注册界面 end-->
 <!--*一站式会员注册界面 start-->
 
-    <!--{if $action eq 'registerkjg'}-->
+    <!--{if ($action eq 'registerkjg') || $action eq 'register'}-->
     <!-- {if $shop_reg_closed eq 1} -->
     <div class="usBox">
       <div class="usBox_2 clearfix">

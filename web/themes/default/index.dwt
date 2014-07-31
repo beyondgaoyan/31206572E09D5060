@@ -15,7 +15,8 @@
 <link href="themes/default/index.css" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
 {* 包含脚本文件 *}
-
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
+{insert_scripts files='common.js,global.js,compare.js'}
 {insert_scripts files='common.js,index.js'}
 </head>
 <body class="root61">
