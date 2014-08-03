@@ -495,26 +495,7 @@ elseif ($_REQUEST['act'] == 'add_js')
     assign_query_info();
     $smarty->display('ads_js.htm');
 }
-/*------------------------------------------------------ */
-//-- 编辑广告排序 sort_order by gaoyan
-/*------------------------------------------------------ */
-elseif ($_REQUEST['act'] == 'edit_sort_order')
-{
-    check_authz_json('ad_manage');
 
-    $id      = intval($_POST['id']);
-    $sort_order = json_str_iconv(trim($_POST['val']));
-
-    if ($exc->edit("sort_order = '$sort_order'", $id))
-    {
-        admin_log($sort_order,'edit','ads');
-        make_json_result(stripslashes($sort_order));
-    }
-    else
-    {
-        make_json_error($db->error());
-    }
-}
 /*------------------------------------------------------ */
 //-- 编辑广告名称
 /*------------------------------------------------------ */

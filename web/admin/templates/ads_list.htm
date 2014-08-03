@@ -9,8 +9,7 @@
 {/if}
 
 <table cellpadding="3" cellspacing="1">
-  <tr><!-- by gaoyan -->
-	<th><a href="javascript:listTable.sort('sort_order'); ">排序</a>{$sort_sort_order}</th>
+  <tr>
     <th><a href="javascript:listTable.sort('ad_name'); ">{$lang.ad_name}</a>{$sort_ad_name}</th>
     <th><a href="javascript:listTable.sort('position_id'); ">{$lang.position_id}</a>{$sort_position_id}</th>
     <th><a href="javascript:listTable.sort('media_type'); ">{$lang.media_type}</a>{$sort_media_type}</th>
@@ -22,9 +21,6 @@
   </tr>
   {foreach from=$ads_list item=list}
   <tr>
-    <td class="first-cell">
-    <span onclick="javascript:listTable.edit(this, 'edit_sort_order', {$list.ad_id})">{$list.sort_order}</span>
-    </td>
     <td class="first-cell">
     <span onclick="javascript:listTable.edit(this, 'edit_ad_name', {$list.ad_id})">{$list.ad_name|escape:html}</span>
     </td>
