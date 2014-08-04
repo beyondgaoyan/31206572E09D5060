@@ -46,7 +46,7 @@ a:hover {color: #ff6f3d;text-decoration: none;}
 .word{word-break:break-all;}
 
 /*边框*/
-.B_blue{border:1px solid #e2e2e2;}
+.B_blue{border:1px solid #e2e2e2; width: 220px; height: 220px; margin: 6px;}
 .B_input{border:1px solid #0f97ed;}
 .inputBg{border:1px solid #ccc; height: 25px;
 line-height: 25px; color:#666666}
@@ -3720,3 +3720,4 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 #history_div .hd {height: 50px;border-bottom: 1px solid #e6e9ed;}
 #history_div .hd .title {float: left;margin: 0;padding-left: 20px;font: 400 18px/50px arial,"Hiragino Sans GB","Microsoft YaHei",SimHei,sans-serif;color: #434a54;}
 #history_div .hd .lnks {float: right;margin: 15px 0 0;}
+#history_list{width: 240px;}
