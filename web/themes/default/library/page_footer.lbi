@@ -7,19 +7,19 @@
     <ul class="nums clearfix">
       <li class="first"> <a href="javascript:void(0)"> <span>7</span> <strong>
         <label>天</label>
-        退货保障 </strong> </a> </li>
+        退换货保障 </strong> </a> </li>
 
-      <li class="second"> <a href="javascript:void(0)"> <span>15</span> <strong>
-        <label>天</label>
-        换货承诺 </strong> </a> </li>
+      <li class="second"> <a href="javascript:void(0)"> <span>100</span> <strong>
+        <label>％</label>
+        正品保障 </strong> </a> </li>
 
-      <li class="third"> <a href="javascript:void(0)"> <span>299</span> <strong>
-        <label>元起</label>
-        全场包邮 </strong> </a> </li>
+      <li class="third"> <a href="javascript:void(0)"> <span>海关</span> <strong>
+        <label></label>监管</strong> </a> </li>
 
-      <li class="fourth"> <a href="javascript:void(0)"> <span>正品</span> <strong>
-        <label>跨境试点</label>
-        防伪溯源 </strong> </a> </li>
+      <li class="fourth"> <a href="javascript:void(0)"> <span>保税</span> <strong>
+        <label></label>跨境仓储</strong> </a> </li>
+        <li class="fourth"> <a href="javascript:void(0)"> <span>全球</span> <strong>
+        <label></label>采购</strong> </a> </li>
     </ul>
    
     
@@ -46,8 +46,8 @@
         <dd class="sina"> <img src="themes/default/imagesgy/qrcode.png" style="width:75px;"> </dd>
       </dl>
       <dl>
-        <dd class="sina"> <!-- <span class="icon-common icon-common-sina"></span> <a href="http://weibo.com/ikjtao" target="_blank" style="font-weight:bold;"> 官方微博 </a>  --></dd>
-        <dd class="sina"> <img src="themes/default/imagesgy/qrcodehttp.png" style="width:75px;"> </dd>
+        <dt>微信公众号</dt>
+        <dd class="sina"> <img src="themes/default/imagesgy/qrcodehttp.jpg" style="width:75px;"> </dd>
       </dl>
       <div class="online">
         <ul>
