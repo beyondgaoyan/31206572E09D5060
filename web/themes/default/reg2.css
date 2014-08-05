@@ -98,7 +98,7 @@ body {
     background: none repeat scroll 0 0 #f9f9f9;
 }
 .suc_botm {
-    background: url("/static/img/passport/bom_cor.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    background: url(imagesgy/bom_cor.png) no-repeat scroll left bottom rgba(0, 0, 0, 0);
     height: 62px;
 }
 .links {
@@ -337,6 +337,7 @@ i.val_m {
     border-image: none;
     border-style: solid solid none;
     border-width: 1px 1px medium;
+    border:  1px solid #dadada; border-bottom: 0;
     height: auto;
 }
 .error_icontwo {

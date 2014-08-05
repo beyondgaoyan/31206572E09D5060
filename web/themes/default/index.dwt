@@ -54,10 +54,9 @@
 <script type="text/javascript">
 		jQuery(".slideBox2").slide({mainCell:".bd ul",autoPlay:true});
 		</script>
-<div class="blank"></div>
 <!-- 首屏轮播 -->
 <!-- 明星单品 -->
-<div style="margin: 0px auto; width: 1240px;" class="ad_index_big4">
+<div class="block clearfix ad_index_big4">
 <!-- TemplateBeginEditable name="首页第一屏4图广告广告位" -->
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->
 
@@ -65,7 +64,7 @@
  <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
-<div style="margin: 0px auto; width: 1240px;" class="ad_index_big10">
+<div class="block clearfix ad_index_big10">
  <!-- TemplateBeginEditable name="首页第二屏10图广告" -->
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->
 
