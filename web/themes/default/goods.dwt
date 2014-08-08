@@ -536,7 +536,7 @@ function submitComment(frm)
       <div class="xm-box" id="goodsFaq">
                 <div class="hd  clearfix">
                     <h3 class="title">常见问题</h3><a href="#" class="goods-faq-sub" style="display:none">售后服务</a>
-                                        <a href="http://wpa.qq.com/msgrd?V=1&amp;uin=405704570&amp;site=qq&amp;menu=yes" target="_blank" class="goods-online-trigger" id="goodsOnlineTrigger"><i class="icon-common icon-common-people"></i>在线客服&gt;</a>
+                                        <a href="http://wpa.qq.com/msgrd?V=1&amp;uin=2328616357&amp;site=qq&amp;menu=yes" target="_blank" class="goods-online-trigger" id="goodsOnlineTrigger"><i class="icon-common icon-common-people"></i>在线客服&gt;</a>
                                     </div>
                 <div class="bd">
                      <div class="goods-faq-list">

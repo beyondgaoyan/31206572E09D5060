@@ -13,7 +13,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 $time = date("Y-m-d H:i:s");
 $createdate = date("Y-m-d H:i:s");
             $xml_data ="<Message>";
-            $xml_data.="<Header><OrderNo>2014080700003</OrderNo><WaybillNo>2014080740003</WaybillNo><Flag>00</Flag>";
+            $xml_data.="<Header><OrderNo>2014080700002</OrderNo><WaybillNo>2014080740002</WaybillNo><Flag>00</Flag>";
             $xml_data.="</Header></Message>";
 
             $url_get = '';
