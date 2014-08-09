@@ -53,7 +53,11 @@
         <ul>
           <li class="item1"> <span class="icon-common icon-common-tel"></span>400-018-7286</li>
           <li class="item2"> 仅收市话费，周一至周五9:00-17:00 </li>
-        <li class="item3 clearfix"> <a target="_blank" href="http://wpa.qq.com/msgrd?V=1&amp;uin=2328616357&amp;site=qq&amp;menu=yes" class="btn btn-primary btn-small" rel="nofollow">QQ在线客服</a></li>
+          <!-- QQ 号码 {foreach from=$qq item=im} -->
+          <!-- {if $im} -->
+        <li class="item3 clearfix"> <a target="_blank" href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" class="btn btn-primary btn-small" rel="nofollow">QQ在线客服</a></li>
+        <!-- {/if} -->
+      <!-- {/foreach} 结束QQ号码 -->
         </ul>
       </div>
     </div>
