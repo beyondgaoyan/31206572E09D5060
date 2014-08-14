@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 购物车页面头部 -->
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+<div class="site-topbar">
+    <div class="container">
+        <div class="topbar-nav">
+                               欢迎来到海狗商城...
+                        </div>
+        <div class="topbar-info J_userInfo">
+        {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,jquery.SuperSlide.js'}{insert_scripts files='transport.js,utils.js'}
+   <font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font>
+                                                    
+                        </div>
+    </div>
+</div>
+<div class="site-header site-mini-header container">
+    <div class="span4">
+        <div class="site-logo">
+            <a title="小米官网" href="http://www.mi.com/index.php" class="logo ">
+                <i class="iconfont"></i>
+            </a>
+    </div>
+    </div>
+</div>

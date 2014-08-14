@@ -494,10 +494,12 @@ function register()
   {
     msg += confirm_password_invalid + '\n';
   }
+/* by gaoyan
   if(checked_agreement != true)
   {
     msg += agreement + '\n';
   }
+*/
 
   if (msn.length > 0 && (!Utils.isEmail(msn)))
   {
@@ -626,10 +628,12 @@ function registerkjg()
   {
     msg += confirm_password_invalid + '\n';
   }
+/* by gaoyan
   if(checked_agreement != true)
   {
     msg += agreement + '\n';
   }
+*/
 
   if (msn.length > 0 && (!Utils.isEmail(msn)))
   {

@@ -232,10 +232,12 @@ elseif ($action == 'act_register')
 		}
         $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
 
+/* by gaoyan
         if(empty($_POST['agreement']))
         {
             show_message($_LANG['passport_js']['agreement']);
         }
+*/
         if (strlen($username) < 3)
         {
             show_message($_LANG['passport_js']['username_shorter']);
