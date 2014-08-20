@@ -25,11 +25,11 @@ $createdate = date("Y-m-d H:i:s");
 
             $url_get = '';
             $url_get.="userid=higoshop&timestamp=".urlencode($time);
-            $sign = "higoshop68848eaf-a2ff-42ab-8c1a-5ed96d65af65".$time;
+            $sign = "higoshop53c31dfe-800f-4935-9425-02692fd87907".$time;
             
             $url_get.="&sign=".md5($sign);
           $url_get.="&xmlstr=".urlencode($xml_data);
-            $url = 'http://i.trainer.kjb2c.com/msg/rejectedmsg.do?'.$url_get;
+            $url = 'http://i.kjb2c.com/msg/rejectedmsg.do?'.$url_get;
 echo $url;
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();

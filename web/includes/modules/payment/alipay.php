@@ -178,7 +178,9 @@ class alipay
         $seller_email = rawurldecode($_GET['seller_email']);
         $order_sn = str_replace($_GET['subject'], '', $_GET['out_trade_no']);
         $order_sn = trim($order_sn);
-
+		/*自定义--------------获取支付宝交易号 by gaoyan*/
+		//$trade_no = trim($_GET['trade_no']);
+		/* 自定义---end  */  
         /* 检查数字签名是否正确 */
         ksort($_GET);
         reset($_GET);
@@ -221,7 +223,8 @@ class alipay
         }
         elseif ($_GET['trade_status'] == 'TRADE_SUCCESS')
         {
-            /* 改变订单状态 */
+            /* 改变订单状态 by gaoyan*/
+            //order_paid($order_sn, 2,'',$trade_no);
             order_paid($order_sn, 2);
 
             return true;

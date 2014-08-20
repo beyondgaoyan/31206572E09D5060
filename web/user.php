@@ -208,12 +208,12 @@ elseif ($action == 'act_register')
             $xml_data.="</Body></Message>";
             $url_get = '';
             $url_get .="userid=higoshop&timestamp=".urlencode($time);
-            $sign = "higoshop68848eaf-a2ff-42ab-8c1a-5ed96d65af65".$time;
+            $sign = "higoshop53c31dfe-800f-4935-9425-02692fd87907".$time;
             
             $url_get .="&sign=".md5($sign);
             $url_get .="&xmlstr=".$xml_data;
             $url_get .="&xmlstr=".$xml_data;
-            $url = 'http://i.trainer.kjb2c.com/msg/regapi.do?'.$url_get;
+            $url = 'http://i.kjb2c.com/msg/regapi.do?'.$url_get;
             $header[] = "Content-type:text/xml";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_MUTE, 1);

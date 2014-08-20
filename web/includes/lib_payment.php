@@ -137,7 +137,8 @@ function check_money($log_id, $money)
  * @param   string  $note       备注
  * @return  void
  */
-function order_paid($log_id, $pay_status = PS_PAYED, $note = '')
+ //by gaoyan
+function order_paid($log_id, $pay_status = PS_PAYED, $note = '',$trade_no = '')
 {
     /* 取得支付编号 */
     $log_id = intval($log_id);
@@ -173,6 +174,7 @@ function order_paid($log_id, $pay_status = PS_PAYED, $note = '')
                                 " pay_time = '".gmtime()."', " .
                                 " money_paid = order_amount," .
                                 " order_amount = 0 ".
+                               // " trade_no = '$trade_no'"./*自定义---添加支付宝交易号 by gaoyan*/ 
                        "WHERE order_id = '$order_id'";
                 $GLOBALS['db']->query($sql);
 

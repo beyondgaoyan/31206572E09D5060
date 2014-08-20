@@ -13,16 +13,16 @@ require(dirname(__FILE__) . '/includes/init.php');
 $time = date("Y-m-d H:i:s");
 $createdate = date("Y-m-d H:i:s");
             $xml_data ="<Message>";
-            $xml_data.="<Header><CustomsCode>3302461604</CustomsCode><OrgName>宁波海狗电子商务有限公司</OrgName><OrderNo>2014080700003</OrderNo></Header>";
+            $xml_data.="<Header><CustomsCode>3302461604</CustomsCode><OrgName>宁波海狗电子商务有限公司</OrgName><OrderNo>2014081945944</OrderNo></Header>";
             $xml_data.="</Message>";
 
             $url_get = '';
             $url_get.="userid=higoshop&timestamp=".urlencode($time);
-            $sign = "higoshop68848eaf-a2ff-42ab-8c1a-5ed96d65af65".$time;
+            $sign = "higoshop53c31dfe-800f-4935-9425-02692fd87907".$time;
             
             $url_get.="&sign=".md5($sign);
           $url_get.="&xmlstr=".urlencode($xml_data);
-            $url = 'http://i.trainer.kjb2c.com/msg/mftsearchmsg!doSeachbyOrderNo.do?'.$url_get;
+            $url = 'http://i.kjb2c.com/msg/mftsearchmsg!doSeachbyOrderNo.do?'.$url_get;
 echo $url;
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();

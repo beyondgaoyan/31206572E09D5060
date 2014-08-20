@@ -14,21 +14,39 @@ $createdate = date("Y-m-d H:i:s");
             $xml_data ="<Message>";
             $xml_data.="<Header><CustomsCode>3302461604</CustomsCode><OrgName>宁波海狗电子商务有限公司</OrgName><CreateTime>$createdate</CreateTime></Header>";
             $xml_data.="<Body>";
-            $xml_data.="<Order><OrderFrom>0000</OrderFrom><OrderNo>2014080700003</OrderNo><GoodsAmount>280.00</GoodsAmount><PostFee>0</PostFee><Amount>280.00</Amount><BuyerAccount>haigoutest</BuyerAccount><TaxAmount>0</TaxAmount><DisAmount>0</DisAmount><Promotions></Promotions>";
-            $xml_data.="<Goods><Detail>";
-            //可循环
-            $xml_data.="<ProductId>310520146160400001</ProductId><GoodsName>原装进口 日本花王纸尿裤 L54 新生婴儿宝宝尿不湿纸尿片三倍透气</GoodsName><Qty>2</Qty><Unit>千克</Unit><Price>140.00</Price><Amount>280.00</Amount>";
-            $xml_data.="</Detail></Goods>";
+            $xml_data.="<Order>";
+            $xml_data.="<OrderFrom>0000</OrderFrom>";//购物网站代码
+            $xml_data.="<OrderNo>2014081945944</OrderNo>";//订单号
+            $xml_data.="<GoodsAmount>109.50</GoodsAmount>";//订单总金额
+            $xml_data.="<PostFee>4.5</PostFee>";//运费（无运费时请设置0）
+            $xml_data.="<Amount>109.5</Amount>";//买家实付金额
+            $xml_data.="<BuyerAccount>fwl_77</BuyerAccount>";//买家账号
+            $xml_data.="<TaxAmount>0</TaxAmount>";//税额（免税请设置0）
+            $xml_data.="<DisAmount>0</DisAmount>";//优惠金额
+            $xml_data.="<Promotions></Promotions>";//订单优惠清单列表
+			$xml_data.="<Goods>";
+
+            /*可循环 */
+	            $xml_data.="<Detail>";
+		            $xml_data.="<ProductId>310520146160400036</ProductId>";
+		            $xml_data.="<GoodsName>原装进口 日本尤妮佳moony尿不湿L58片 尤尼佳纸尿裤 增量装</GoodsName>";
+		            $xml_data.="<Qty>1</Qty>";
+		            $xml_data.="<Unit>千克</Unit>";
+		            $xml_data.="<Price>105.00</Price>";
+		            $xml_data.="<Amount>105.00</Amount>";
+	            $xml_data.="</Detail>";
+            
+            $xml_data.="</Goods>";
             $xml_data.= "</Order>";
             $xml_data.="</Body></Message>";
 
             $url_get = '';
             $url_get.="userid=higoshop&timestamp=".urlencode($time);
-            $sign = "higoshop68848eaf-a2ff-42ab-8c1a-5ed96d65af65".$time;
+            $sign = "higoshop53c31dfe-800f-4935-9425-02692fd87907".$time;
             
             $url_get.="&sign=".md5($sign);
           $url_get.="&xmlstr=".urlencode($xml_data);
-            $url = 'http://i.trainer.kjb2c.com/msg/ordermsg.do?'.$url_get;
+            $url = 'http://i.kjb2c.com/msg/ordermsg.do?'.$url_get;
 echo $url;
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();
