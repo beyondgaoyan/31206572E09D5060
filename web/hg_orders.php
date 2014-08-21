@@ -1,7 +1,7 @@
 <?php
 
 /**
-* 海关接口-用户相关
+* 海关接口-用户相关  api_order
 */
 
 define('IN_ECS', true);
@@ -47,7 +47,7 @@ $createdate = date("Y-m-d H:i:s");
             $url_get.="&sign=".md5($sign);
           $url_get.="&xmlstr=".urlencode($xml_data);
             $url = 'http://i.kjb2c.com/msg/ordermsg.do?'.$url_get;
-echo $url;
+
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();
 
@@ -68,7 +68,8 @@ echo $url;
             curl_close($ch);
            
             $result = simplexml_load_string($resp);
-echo "<pre>";
-            print_r($result);
+
+            echo($result->Header->Result[0]);
+            
 
 ?>
