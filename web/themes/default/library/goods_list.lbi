@@ -81,13 +81,13 @@
                                                 <li class="">
                             <div class="xm-goods-item">
                                 <div class="item-thumb">
-                                    <a href="{$goods.url}">
+                                    <a href="{$goods.url}" target="_blank">
                                         <img src="{$goods.goods_thumb}" srcset="{$goods.goods_thumb}" alt="{$goods.goods_name}">
                                     </a>
                                 </div>
                                 <div class="item-info">
                                     <h3 class="item-title">
-                                        <a href="{$goods.url}">{$goods.goods_name}</a>
+                                        <a href="{$goods.url}" target="_blank">{$goods.goods_name}</a>
                                     </h3>
                                     <div class="item-price">
                                        <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></div>
