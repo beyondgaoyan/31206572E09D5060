@@ -1525,12 +1525,18 @@ elseif ($_REQUEST['step'] == 'done')
     }
     /* 订单中的总额 */
     $total = order_fee($order, $cart_goods, $consignee);
+
+	//跨境购商品超过1件金额超过1000将不能下单 by gaoyan
+	if($total['goods_number'] > 1 && $total['goods_price'] > 1000){
+		show_message('根据海关规定，跨境购商品单笔订单总价不可以超过1000元，如果单个订单为一件且不可分割的商品除外。', '返回购物车', 'flow.php?step=cart', 'warning');
+	}
     $order['bonus']        = $total['bonus'];
     $order['goods_amount'] = $total['goods_price'];
     $order['discount']     = $total['discount'];
     $order['surplus']      = $total['surplus'];
     $order['tax']          = $total['tax'];
-
+    //增加税费 保存到订单表  by gaoyan
+	$order['tariff_fee'] = !empty($total['goods_tariff']) ? $total['goods_tariff'] : 0;
     // 购物车中的商品能享受红包支付的总额
     $discount_amout = compute_discount_amount();
     // 红包和积分最多能支付的金额为商品总额
@@ -1674,6 +1680,13 @@ elseif ($_REQUEST['step'] == 'done')
             " FROM " .$ecs->table('cart') .
             " WHERE session_id = '".SESS_ID."' AND rec_type = '$flow_type'";
     $db->query($sql);
+    /*插入提交跨境购接口数据 by gaoyan*/
+    //<<<<
+    	$gmtime = gmtime();
+        $sql = "INSERT INTO ".$ecs->table('kjg_status'). " (order_id,order_sn,add_time) VALUES ('$new_order_id','$order[order_sn]','$gmtime')";
+		$db->query($sql);
+	//>>>>
+
     /* 修改拍卖活动状态 */
     if ($order['extension_code']=='auction')
     {

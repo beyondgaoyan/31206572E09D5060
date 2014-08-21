@@ -75,3 +75,6 @@
  <a target="_blank" href="#"><img alt="诚信网站" src="goods_files/szfwVerifyseal.gif" style="border:none;"></a> 
  <a target="_blank" href="#"><img alt="诚信网站" src="goods_files/save.jpg" style="border:none;"></a> </div>
 </div>
+{if $stats_code}
+    <div align="left" style="display:none">{$stats_code}</div>
+    {/if}

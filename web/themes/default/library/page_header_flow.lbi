@@ -19,7 +19,7 @@ var process_request = "{$lang.process_request}";
 <div class="site-header site-mini-header container">
     <div class="span4">
         <div class="site-logo">
-            <a title="小米官网" href="http://www.mi.com/index.php" class="logo ">
+            <a title="海狗商城-商城首页" href="./" class="logo ">
                 <i class="iconfont"></i>
             </a>
     </div>
