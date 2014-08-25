@@ -119,7 +119,10 @@ if ($_REQUEST['step'] == 'add_to_cart')
     }
 
     /* 更新：如果是一步购物，先清空购物车 */
-    if ($_CFG['one_step_buy'] == '1')
+    //by gaoyan
+    $one_step_buy = 0;
+    if(!empty($goods->one_step_buy) && $goods->one_step_buy=='1') {$one_step_buy = '1';}
+    if ($_CFG['one_step_buy'] == '1' || $one_step_buy=='1')
     {
         clear_cart();
     }
@@ -153,7 +156,7 @@ if ($_REQUEST['step'] == 'add_to_cart')
             }
 
             $result['content'] = insert_cart_info();
-            $result['one_step_buy'] = $_CFG['one_step_buy'];
+            $result['one_step_buy'] = !empty($one_step_buy) ? $one_step_buy : $_CFG['one_step_buy'];
             $result['goods_id'] = stripslashes($goods->goods_id);//by gaoyan
         }
         else

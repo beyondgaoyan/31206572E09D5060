@@ -865,6 +865,7 @@ _height: 100px; width:920px;
 color: #fff;
 background-color: #ff7e51;
 }
+
 .shop-cart-btns {
 padding: 0 20px 20px;
 text-align: right;
@@ -1597,6 +1598,12 @@ a:hover, a:focus {
     border-color: #ee330a;
     color: #fff;
 }
+.btn-one {
+    background-color: #FF6F3D;
+    border: 0 none;
+    color: #FFFFFF;
+}
+
 .btn-yellow {
     background-color: #ffdb3d;
     border-color: #ffdb3d;

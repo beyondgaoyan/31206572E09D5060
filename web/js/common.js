@@ -33,7 +33,37 @@ function addToCart(goodsId, parentId)
 
   Ajax.call('flow.php?step=add_to_cart', 'goods=' + $.toJSON(goods), addToCartResponse, 'POST', 'JSON');
 }
+//直接购买by gaoyan
+function addToCartOne(goodsId, parentId)
+{
+  var goods        = new Object();
+  var spec_arr     = new Array();
+  var fittings_arr = new Array();
+  var number       = 1;
+  var formBuy      = document.forms['ECS_FORMBUY'];
+  var quick		   = 0;
 
+  // 检查是否有商品规格 
+  if (formBuy)
+  {
+    spec_arr = getSelectedAttributes(formBuy);
+
+    if (formBuy.elements['number'])
+    {
+      number = formBuy.elements['number'].value;
+    }
+
+	quick = 1;
+  }
+  goods.one_step_buy    = 1;
+  goods.quick    = quick;
+  goods.spec     = spec_arr;
+  goods.goods_id = goodsId;
+  goods.number   = number;
+  goods.parent   = (typeof(parentId) == "undefined") ? 0 : parseInt(parentId);
+
+  Ajax.call('flow.php?step=add_to_cart', 'goods=' + $.toJSON(goods), addToCartResponse, 'POST', 'JSON');
+}
 /**
  * 获得选定的商品属性
  */
@@ -155,7 +185,7 @@ function addToCartResponse(result)
                                 f.animate({'top': '60px'}, 200, 'swing', function() {
                                   f.remove();
                                 });
-                            }, 1000);
+                            }, 100220);
 					});
                             window.clearTimeout(timeoutSuccessef);
                             

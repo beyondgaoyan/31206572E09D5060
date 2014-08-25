@@ -343,7 +343,7 @@ dl.goods-info-box .goods-info-head dl .goods-info-head-cart .stopCursor {
     font-size: 14px;
     height: 40px;
 
-    width: 235px;
+    width: 135px;
 }
 dl.goods-info-box .goods-info-head dl .goods-info-head-cart .goods-add-cart-btn .iconfont, dl.goods-info-box .goods-info-head dl .goods-info-head-cart .goods-over-btn .iconfont {
     font-size: 14px;
@@ -1087,7 +1087,7 @@ dl.goods-info-box .goods-info-foot a:hover {
     position: absolute;
     text-align: center;
     top: 52px;
-    width: 237px;
+    width: 137px;
     z-index: 9;
 }
 .goods-sub-bar .goods-desc-menu {
