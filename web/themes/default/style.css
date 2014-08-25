@@ -1614,6 +1614,17 @@ a:hover, a:focus {
     border-color: #ffc700;
     color: #333;
 }
+.btn-blue {
+    background-color: #52aaf8;
+    border-color: #3592e2;
+    color: #333;
+}
+.btn-blue:hover, .btn-blue:focus, .btn-blue.active, .btn-blue:active {
+    background-color: #2e8bde;
+    border-color: #1a78ca;
+    color: #fff;
+}
+
 .btn-dake {
     background-color: #6d6d6d;
     border-color: #6d6d6d;

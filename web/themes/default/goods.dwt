@@ -152,7 +152,7 @@ changePrice();
       <li>
       <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-primary goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCart({$goods_id})">
                         <i class="iconfont "></i>加入购物车</a>
-                       <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-yellow goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCartOne({$goods_id})">
+                       <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-blue goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCartOne({$goods_id})">
                         <i class="iconfont "></i>一键购买</a>
                         <a class="btn btn-dake  goods-collect-btn" data-isfavorite="false" id="goodsDetailCollectBtn" href="javascript:collect({$goods_id})">
                         <i class="iconfont"></i>
