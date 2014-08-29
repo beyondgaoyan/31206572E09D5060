@@ -3764,3 +3764,148 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     .box_1 .userCenterBox .userMenu a.curs{background:url(images/menuBg.gif) no-repeat -26px 0px; font-weight:bold;}
     .box_1 .userCenterBox .userMenu a img{ margin-right:3px;}
     .msgBottomBorder{clear:both; background:url(images/lineBg.gif) repeat-x left bottom; padding-bottom:8px; margin-bottom:8px;}
+    /*旺旺右侧客服*/
+  
+.tb-toolbar {
+    background-color: #7c8994;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 100000020;
+}
+.ks-ie6 .tb-toolbar {
+    position: absolute;
+    right: auto;
+}
+.tb-toolbar-list {
+    list-style: none outside none;
+    margin: 0;
+    min-height: 55px;
+    padding: 0;
+}
+.tb-toolbar-item {
+    height: 55px;
+}
+.tb-toolbar-item-hd {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    height: 55px;
+    outline: 0 none;
+    position: relative;
+    text-decoration: none !important;
+    width: 40px;
+}
+.tb-toolbar-item-hd-active, .tb-toolbar-item-hd:hover {
+    background-color: #f1f1f1;
+    color: #7c8994;
+}
+.tb-toolbar-item-bd {
+    background-color: #f1f1f1;
+    bottom: 0;
+    display: none;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    width: 225px;
+    z-index: 100000021;
+}
+.tb-toolbar-item-label {
+    font-size: 12px;
+    line-height: 14px;
+    margin: 2px 0;
+    text-align: center;
+}
+@font-face {
+    font-family: "tb-toolbar-iconfont";
+    src: url("http://at.alicdn.com/t/font_1400641136_5017655.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_1400641136_5017655.woff") format("woff"), url("http://at.alicdn.com/t/font_1400641136_5017655.ttf") format("truetype"), url("http://at.alicdn.com/t/font_1400641136_5017655.svg#iconfont") format("svg");
+}
+.tb-toolbar-item-icon {
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    display: block;
+    font-family: tb-toolbar-iconfont;
+    font-size: 20px;
+    font-style: normal;
+    height: 28px;
+    padding-top: 2px;
+    text-align: center;
+    width: 40px;
+}
+.tb-toolbar-relative {
+    position: relative;
+}
+.tb-toolbar-loading {
+    background-image: url("http://a.tbcdn.cn/mw/base/styles/component/more/images/loading.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.tb-toolbar .J_WangWang, .tb-toolbar .ww-light {
+    display: none !important;
+}
+.tb-toolbar-ww-offline {
+    color: #adb7c1;
+}
+.tb-toolbar-ww-groups {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #f1f1f1;
+    border-color: #d6dce0 -moz-use-text-color #d6dce0 #d6dce0;
+    border-image: none;
+    border-style: solid none solid solid;
+    border-width: 1px medium 1px 1px;
+    color: #7c8994;
+    margin: 0 auto;
+    min-height: 34px;
+    padding: 10px 15px;
+}
+.tb-toolbar-ww-groups li {
+    margin: 5px 0;
+    position: relative;
+}
+.tb-toolbar-ww-groups a {
+    color: #7c8994;
+    line-height: 18px;
+    padding-left: 20px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.tb-toolbar-ww-groups a:hover {
+    text-decoration: none;
+}
+.tb-toolbar-ww-groups-status {
+    background-image: url("http://gtms01.alicdn.com/tps/i1/T15AD7FFFaXXbJnvQ_-130-60.gif");
+    background-position: -80px -20px;
+    background-repeat: no-repeat;
+    height: 20px;
+    left: -4px;
+    position: absolute;
+    top: -4px;
+    width: 20px;
+}
+.tb-toolbar-ww-groups-status-online {
+    background-position: -80px 0;
+}
+@media screen and (max-width: 1024px) {
+.tb-toolbar {
+    bottom: auto;
+    top: 25%;
+}
+.tb-toolbar-list, .tb-toolbar-space {
+    display: none;
+}
+.tb-toolbar .tb-toolbar-list:nth-child(2) {
+    display: block;
+}
+.tb-toolbar:hover {
+    bottom: 0;
+    top: 0;
+}
+.tb-toolbar:hover .tb-toolbar-list, .tb-toolbar:hover .tb-toolbar-space {
+    display: block;
+}
+}

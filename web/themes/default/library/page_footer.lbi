@@ -78,3 +78,42 @@
 {if $stats_code}
     <div align="left" style="display:none">{$stats_code}</div>
     {/if}
+    
+
+  <div data-spm="630" role="toolbar" id="J_toolbar" class="tb-toolbar" data-spm-max-idx="6"><div class="tb-toolbar-space" style="height: 25%;"></div><ul class="tb-toolbar-list"><li data-item="ww" class="tb-toolbar-item tb-toolbar-relative">
+    <span data-encode="true" data-display="inline" data-icon="small" data-nick="%E5%88%9B%E8%BE%BE%E4%BF%A1%E6%95%B0%E7%A0%81" class="ww-light ww-small"><a target="_blank" href="http://www.taobao.com/webww/ww.php?ver=3&touid=%E6%B5%B7%E7%8B%97%E5%95%86%E5%9F%8Ehigoshop%3Ad&siteid=cntaobao&status=1&charset=utf-8" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。" data-spm-anchor-id="2013.1.630.1"><span>旺旺在线</span></a></span>
+    <a class="tb-toolbar-item-hd" data-spm-click="gostr=/tbdetail;locaid=d1" href="#" data-spm-anchor-id="2013.1.630.d1">
+        <div class="tb-toolbar-item-icon">󰅀</div>
+        <div class="tb-toolbar-item-label">客服</div>
+    </a>
+    <div class="tb-toolbar-item-bd" style="height: 0px; width: 100px; display: none;">
+    </div>
+</li><li data-item="cart" class="tb-toolbar-item">
+    <a class="tb-toolbar-item-hd J_TBToolbarCart" data-spm-click="gostr=/tbdetail;locaid=d2" href="flow.php" data-spm-anchor-id="2013.1.630.3">
+        <div class="tb-toolbar-item-icon">󰅹</div>
+        <div class="tb-toolbar-item-label">购物车</div>
+    </a>
+    <div class="tb-toolbar-item-bd tb-toolbar-mini-cart tb-toolbar-loading">
+    </div>
+</li><!--
+<li data-item="pk" class="tb-toolbar-item">
+    <a class="tb-toolbar-item-hd" href="#" data-spm-click="gostr=/tbdetail;locaid=d3" data-spm-anchor-id="2013.1.630.4">
+        <div class="tb-toolbar-item-icon"></div>
+        <div class="tb-toolbar-item-label">对比</div>
+    </a>
+    <div class="tb-toolbar-item-bd tb-toolbar-loading">
+    </div>
+</li>
+--></ul><div class="tb-toolbar-space" style="height: 25%;"></div><ul class="tb-toolbar-list"><!--
+<li data-item="feedback" class="tb-toolbar-item">
+    <a class="tb-toolbar-item-hd" href="#" data-spm-click="gostr=/tbdetail;locaid=d5" data-spm-anchor-id="2013.1.630.5">
+        <div class="tb-toolbar-item-icon">󰀙</div>
+        <div class="tb-toolbar-item-label">建议</div>
+    </a>
+</li>
+--><li data-item="gotop" class="tb-toolbar-item">
+    <a class="tb-toolbar-item-hd" href="#" data-spm-click="gostr=/tbdetail;locaid=d4" data-spm-anchor-id="2013.1.630.6">
+        <div class="tb-toolbar-item-icon">󰀳</div>
+        <div class="tb-toolbar-item-label">顶部</div>
+    </a>
+</li></ul></div>
