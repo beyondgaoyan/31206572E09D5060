@@ -8,3 +8,5 @@
 /web/data
 /web/data/*
 /web/data/
+web/data/config.php
+*config.php
