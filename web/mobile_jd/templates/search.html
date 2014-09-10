@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{if $keywords}{$keywords}{else}搜索{/if} - {$shop_name}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="style/base.css?v=ecdaddy" />
+</head>
+</head>
+<body>
+{include file='head3.html'}
+<form name="searchForm" method="get" action="search.php" class="search">
+	<input name="keywords" id="keyword" type="text" class="keyword" value="{$keywords}" placeholder="请输入关键词">
+	<input type="submit" value="搜索" class="search-button">
+</form>
+<div class="mc radius">
+	<ul class="mu-l2w">
+		{foreach from=$goods_data item=goods name=goodsit}
+		<li style="padding: 10px;border-top: none;overflow: hidden;{if $smarty.foreach.goodsit.iteration neq 1}border-top: 1px solid #DED6C9;{/if}line-height: 1.6em;"> <a href="goods.php?id={$goods.goods_id}" style="display: block;overflow: hidden;lear: both;padding: .22em 0;"> <span class="mu-tmb" style="float:left;margin-right:8px;">{if $goods.i <= 3}<b style="position:absolute;padding:2px 2px 2px 2px;font-size:.65em;background:red;color:white;">HOT</b>{/if}<img src="/{$goods.goods_thumb}" alt="{$goods.name}" width="100" height="100"> </span> <span>{$goods.goods_name}</span><span class="red" style="display: block;">{$goods.shop_price}</span></a> </li>
+		{foreachelse}
+		<li>暂无此类商品</li>
+		{/foreach}
+	</ul>
+</div>
+{if $pagebar}
+{$pagebar}
+{/if}
+{include file='foot.html'}
+</body>
+</html>

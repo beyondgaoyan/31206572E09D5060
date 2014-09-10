@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>在线客服 - {$shop_name}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="style/base.css?v=ecdaddy" />
+</head>
+<body>
+{include file='head4.html'}
+<div class="kefu mc radius">
+	<ul>
+		<li>商店名称：{$shop_name}</li>
+		<li>商店地址：{$shop_address}</li>
+		<li>客服QQ：{$qq}</li>
+		<li>淘宝旺旺：{$ww}</li>
+		<li>客服邮箱：{$service_email}</li>
+		<li style="border:none;"><a class="telephonelink" href="tel:{$service_phone}" style="color:#FFF;">{$service_phone}</a></li>
+	</ul>
+</div>
+{include file='foot.html'}
+</body>
+</html>

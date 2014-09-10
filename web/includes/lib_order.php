@@ -569,7 +569,9 @@ function order_fee($order, $goods, $consignee)
                     'surplus'          => 0,
                     'cod_fee'          => 0,
                     'pay_fee'          => 0,
-                    'tax'              => 0);
+                    'tax'              => 0,
+                    'goods_tariff'	   => 0,
+                    'goods_number'     => 0);
     $weight = 0;
     /* 商品总价 */
     foreach ($goods AS $val)
@@ -1602,6 +1604,7 @@ function get_cart_goods()
         'saving'       => 0, // 节省金额（有格式）
         'save_rate'    => 0, // 节省百分比
         'goods_amount' => 0, // 本店售价合计（无格式）
+        'goods_tariff' => 0,//关税
     );
 
     /* 循环、统计 */

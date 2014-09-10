@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>登录 - {$shop_name}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="ecdaddy.com">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" type="text/css" href="style/base.css?v=ecdaddy" />
+</head>
+<body>
+{include file='head3.html'}
+{if $login_faild eq 1}
+<div class="login-reg-tip"> <font class="red">用户名或密码错误，请重新输入</font> </div>
+{/if}
+<div class="login-reg mc radius">
+	<form action="user.php?act=do_login" method="post" id="frm_login">
+			<div>账户名：</div>
+			<div>
+				<input type="text" value="" name="username" id="username" class="common-input" placeholder="请输入用户名/邮箱/已验证手机">
+			</div>
+			<div>密码：</div>
+			<div>
+				<input class="common-input" type="password" name="pwd" id="pwd">
+			</div>
+		<div>
+			<input type="submit" class="sub_btn" value="登录">
+		</div>
+	</form>
+	<div><a href="#"> 找回密码</a>&nbsp;&nbsp;<a href="user.php?act=register">注册</a></div>
+</div>
+{include file='foot.html'}
+</body>
+</html>
