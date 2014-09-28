@@ -5,28 +5,34 @@ define('IN_ECS', true);
 require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'includes/lib_order.php');
 require_once(ROOT_PATH . 'includes/lib_goods.php');
+if(!empty($_GET['order_id'])){
+	$order_id=$_GET['order_id'];
+
 	//跨境购订单接口 by gaoyan
 	$kjg_list = array();
-	$kjg_list = $GLOBALS['db']->getAll("SELECT * FROM " . $GLOBALS['ecs']->table("kjg_status") . " where allok_time=0  order by add_time asc limit 50");
+	$kjg_list = $GLOBALS['db']->getAll("SELECT * FROM " . $GLOBALS['ecs']->table("kjg_status") . " where order_id=$order_id");
+
 	if(!empty($kjg_list)){
+	
 		foreach($kjg_list AS $k){
 			//暂未提交订单
 			$orderinfo = array();
 			$orderinfo = getOrder($k['order_id']);
 			
 			if(!empty($orderinfo)){
-				if($k['api_order']=='0'){
-					kjg_api_order($orderinfo);
-				} elseif($k['api_pay']=='0'){
-					kjg_api_pay($orderinfo);
-				} elseif($k['api_shopping']=='0'){
-					kjg_api_shopping($orderinfo);
-				}
+					$date = kjg_api_pay($orderinfo);
 			}
 		}
-		print_r(count($kjg_list));
 	}
-	
+}	
+   /* 操作成功 */
+        if(!empty($date) && isset($date->Header->Result) && $date->Header->Result=='F'){
+       		$links[] = array('href' => 'order.php?act=list&' . list_link_postfix(), 'text' => $date->Header->ResultMsg);
+	        sys_msg('提交错误', 0, $links);
+        } else {
+			$links[] = array('href' => 'order.php?act=list&' . list_link_postfix(), 'text' => $_LANG['02_order_list']);
+			sys_msg($_LANG['act_ok'], 0, $links);
+        }
 	//订单详情
     function getOrder($order_id){
 	    //发货地址所在地
@@ -109,7 +115,7 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_MUTE, 1);
+            //curl_setopt($ch, CURLOPT_MUTE, 1);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -123,7 +129,7 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
             $result = simplexml_load_string($resp);
 			if(!empty($result->Header->Result) && $result->Header->Result=='T'){
             	update_status("api_order",$orderinfo['order_id']);
-	            return kjg_api_pay($orderinfo);
+	            //return kjg_api_pay($orderinfo);
             } else {
 	            return "F";
             }
@@ -153,7 +159,7 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_MUTE, 1);
+            //curl_setopt($ch, CURLOPT_MUTE, 1);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -163,13 +169,13 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
 
             $resp = curl_exec($ch);
             curl_close($ch);
-           
+
             $result = simplexml_load_string($resp);
             if(!empty($result->Header->Result) && $result->Header->Result=='T'){
             	update_status("api_pay",$orderinfo['order_id']);
-	            return kjg_api_shopping($orderinfo);
+	           // return kjg_api_shopping($orderinfo);
             } else {
-	            return "F";
+	            return $result;
             }
         } else {
 		   return "F";
@@ -197,7 +203,7 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
             $header[] = "Content-type:text/xml; charset=utf-8";
             $ch = curl_init();
 
-            curl_setopt($ch, CURLOPT_MUTE, 1);
+            //curl_setopt($ch, CURLOPT_MUTE, 1);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_URL, $url);
@@ -220,13 +226,14 @@ require_once(ROOT_PATH . 'includes/lib_goods.php');
 
 	}
 	function update_status($field,$order_id){
-		if($field=='api_shenbao'){
-			$sql = "UPDATE " .$GLOBALS['ecs']->table('kjg_status')." SET $field = 1 WHERE order_id='$order_id'";
-			echo $sql;
-			$GLOBALS['db']->query($sql);
-		} else {
+		if($field=='api_shopping'){
 			$gmtime=gmtime();
 			$sql = "UPDATE " .$GLOBALS['ecs']->table('kjg_status')." SET $field = 1,allok_time='$gmtime' WHERE order_id='$order_id'";
+			$GLOBALS['db']->query($sql);
+
+		} else {
+			$sql = "UPDATE " .$GLOBALS['ecs']->table('kjg_status')." SET $field = 1 WHERE order_id='$order_id'";
+		
 			$GLOBALS['db']->query($sql);
 		}
 		
