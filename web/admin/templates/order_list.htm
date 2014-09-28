@@ -45,11 +45,12 @@
     <td align="right" valign="top" nowrap="nowrap">{$order.formated_total_fee}</td>
     <td align="right" valign="top" nowrap="nowrap">{$order.formated_order_amount}</td>
     <td align="center" valign="top" nowrap="nowrap">{$lang.os[$order.order_status]},{$lang.ps[$order.pay_status]},{$lang.ss[$order.shipping_status]}</td>
-    <td align="right" valign="top" nowrap="nowrap">{if $order.pay_status=='2'}
+    <td align="right" valign="top" nowrap="nowrap">
+    {if $order.pay_status=='2'}
     {if $order.allok_time!='0'} 下单 支付 发货{else}
-    {if $order.api_order=='1'}<a href="hg_xiadan_1.php?order_id={$order.order_id}"><font color="red">下单</font></a>>>{else}<a href="hg_xiadan_1.php?order_id={$order.order_id}"><font color="blue">下单</font></a>>>{/if} 
-    {if $order.api_pay=='1'}<a href="hg_xiadan_2.php?order_id={$order.order_id}"><font color="red">支付</font></a>>>{else}<a href="hg_xiadan_2.php?order_id={$order.order_id}"><font color="blue">支付</font></a>>>{/if} 
-    {if $order.api_shenbao=='0'}<a href="hg_xiadan_3.php?order_id={$order.order_id}"><font color="blue">发货</font></a>{/if} 
+    {if $order.api_order=='1'}<a href="hg_xiadan_1.php?order_id={$order.order_id}"><font color="red">下单</font></a>>>{if $order.api_pay=='1'}<a href="hg_xiadan_2.php?order_id={$order.order_id}"><font color="red">支付</font></a>>>{if $order.api_shenbao=='0'}<a href="hg_xiadan_3.php?order_id={$order.order_id}"><font color="blue">发货</font></a>{/if} {else}<a href="hg_xiadan_2.php?order_id={$order.order_id}"><font color="blue">支付</font></a>>>{/if} {else}<a href="hg_xiadan_1.php?order_id={$order.order_id}"><font color="blue">下单</font></a>>>{/if} 
+    
+    
     {/if}  {/if}</td>
     <td align="center" valign="top"  nowrap="nowrap">
      <a href="order.php?act=info&order_id={$order.order_id}">{$lang.detail}</a>
