@@ -1274,7 +1274,12 @@ elseif($_REQUEST['act'] = 'done')
             " FROM " .$ecs->table('cart') .
             " WHERE session_id = '".SESS_ID."' AND rec_type = '$flow_type'";
     $db->query($sql);
-
+    /*插入提交跨境购接口数据 by gaoyan*/
+    //<<<<
+    	$gmtime = gmtime();
+        $sql = "INSERT INTO ".$ecs->table('kjg_status'). " (order_id,order_sn,add_time) VALUES ('$new_order_id','$order[order_sn]','$gmtime')";
+		$db->query($sql);
+	//>>>>
 	/* 处理余额、积分、红包 */
 	if ($order['user_id'] > 0 && $order['surplus'] > 0)
 	{
