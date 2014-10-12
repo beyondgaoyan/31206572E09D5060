@@ -60,7 +60,7 @@ else
 	if($cid == 0){
 		$article_num = $db->getOne("SELECT count(*) FROM " . $ecs->table('article') . " WHERE cat_id > 0 AND is_open = 1");
 		if ($article_num > 0){
-			$page_num = '10';
+			$page_num = '50';
 			$page = !empty($_GET['page']) ? intval($_GET['page']) : 1;
 			$pages = ceil($article_num / $page_num);
 			if ($page <= 0)
@@ -91,7 +91,7 @@ else
 	}else{
 		include_once(ROOT_PATH . '/includes/lib_article.php');
 		$article_num = get_article_count($cid);
-		$page_num = '10';
+		$page_num = '50';
 		$page = !empty($_GET['page']) ? intval($_GET['page']) : 1;
 		$pages = ceil($article_num / $page_num);
 		if ($page <= 0)
