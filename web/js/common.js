@@ -178,14 +178,14 @@ function addToCartResponse(result)
 					});
 					var f=$("<span>");
 					f.html("<i class='icon-goods-add-success'></i>加入成功！").appendTo(e.parent()).addClass("item-action-state-info").animate({
-						top:"10px"
+						top:"20px"
 					}
 					,200,function(){
 						 timeoutSuccessef = window.setTimeout(function() {
-                                f.animate({'top': '60px'}, 200, 'swing', function() {
+                                f.animate({'top': '80px'}, 200, 'swing', function() {
                                   f.remove();
                                 });
-                            }, 100220);
+                            }, 1000);
 					});
                             window.clearTimeout(timeoutSuccessef);
                             

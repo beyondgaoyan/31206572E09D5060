@@ -147,13 +147,16 @@ changePrice();
       
       
       
-       <ul class="dd  clearfix">
-         
-      <li>
+       
+         {if $goods.goods_number > 0}
+      <li><ul class="dd  clearfix">
       <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-primary goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCart({$goods_id})">
                         <i class="iconfont "></i>加入购物车</a>
                        <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-blue goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCartOne({$goods_id})">
                         <i class="iconfont "></i>一键购买</a>
+                        {else}
+                        <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-yellow goods-add-cart-btn"  style="width:270px;" href="javascript:void(0)">补货中</a>
+                        {/if}
                         <a class="btn btn-dake  goods-collect-btn" data-isfavorite="false" id="goodsDetailCollectBtn" href="javascript:collect({$goods_id})">
                         <i class="iconfont"></i>
                     </a>
@@ -162,7 +165,9 @@ changePrice();
       </ul>  
       
       
-     </div></form>
+     </div>
+     
+     </form>
    </div>
    <div class="blank"></div>
    

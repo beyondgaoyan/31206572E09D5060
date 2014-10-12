@@ -98,7 +98,9 @@
                                     </div>
 -->
                                                                         <div class="item-actions item-actions-{$goods.goods_id}">
+                                                                        {if $goods.goods_number>0}
                                                                                 <a class="btn btn-small btn-primary J_addCart" href="javascript:addToCart({$goods.goods_id})"  data-disabled="false" data-package="false" rel="nofollow"><i class="iconfont"></i>购物车</a>
+                                                                                {else}<a class="btn btn-small btn-yellow J_addCart" href="javascript:void(0)"  data-disabled="false" data-package="false" rel="nofollow">补货中</a>{/if}
                                                                                 <a class="btn btn-dake btn-small J_addFav" href="javascript:collect({$goods.goods_id});" ><i class="iconfont"></i>收藏</a>
                                     </div>
                                     <!--
