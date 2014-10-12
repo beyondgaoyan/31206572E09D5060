@@ -517,7 +517,6 @@ elseif ($act == 'register')
 elseif ($act == 'act_register')
 {
 		include_once(ROOT_PATH . 'includes/lib_passport.php');
-
 		$username = isset($_POST['username']) ? trim($_POST['username']) : '';
 		$password = isset($_POST['password']) ? trim($_POST['password']) : '';
 		$email	= isset($_POST['email']) ? trim($_POST['email']) : '';
@@ -528,7 +527,49 @@ elseif ($act == 'act_register')
 		$other['mobile_phone'] = isset($_POST['extend_field5']) ? $_POST['extend_field5'] : '';
 		$sel_question = empty($_POST['sel_question']) ? '' : compile_str($_POST['sel_question']);
 		$passwd_answer = isset($_POST['passwd_answer']) ? compile_str(trim($_POST['passwd_answer'])) : '';
+		//先处理跨境购 by gaoyan
+		$idcard = isset($_POST['idcard']) ? trim($_POST['idcard']) : '';
+		$truename = isset($_POST['truename']) ? trim($_POST['truename']) : '';
+		$mobilenum = isset($_POST['mobilenum']) ? trim($_POST['mobilenum']) : '';
+		//手机端注册 by gaoyan
+		$other['mobilereg'] = 1;
+		if($idcard && $truename && $mobilenum){
+			
+			//发送请求，获得接口新增修改数据
+			$time = date("Y-m-d H:i:s");
+            $xml_data = '<?xm?><Message><Body>';
+            $xml_data.="<OrderFrom>0000</OrderFrom>";
+            $xml_data.="<Idnum>$idcard</Idnum>";
+            $xml_data.="<Name>$truename</Name>";
+            $xml_data.="<Account>$username</Account>";
+            $xml_data.="<Phone>$mobilenum</Phone>";
+            $xml_data.="<Email>$email</Email>";
+            $xml_data.="</Body></Message>";
+            $url_get = '';
+            $url_get .="userid=higoshop&timestamp=".urlencode($time);
+            $sign = "higoshop53c31dfe-800f-4935-9425-02692fd87907".$time;
+            
+            $url_get .="&sign=".md5($sign);
+            $url_get .="&xmlstr=".$xml_data;
+            $url_get .="&xmlstr=".$xml_data;
+            $url = 'http://i.kjb2c.com/msg/regapi.do?'.$url_get;
+            $header[] = "Content-type:text/xml";
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_MUTE, 1);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
 
+            $resp = curl_exec($ch);
+            curl_close($ch);
+            $result = simplexml_load_string($resp);
+            if($result->Body->Result=='F'){
+	            echo '<script language=javascript>alert("'.$result->Body->Remark.'");history.go(-1);</script>';
+				exit;
+            }
+		}
 		$back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
 
 		if (m_register($username, $password, $email, $other) !== false)
@@ -912,7 +953,8 @@ function m_register($username, $password, $email, $other = array())
 	}
 
 		//定义other合法的变量数组
-		$other_key_array = array('msn', 'qq', 'office_phone', 'home_phone', 'mobile_phone');
+		//增加手机端注册参数 by gaoyan
+		$other_key_array = array('msn', 'qq', 'office_phone', 'home_phone', 'mobile_phone','mobilereg');
 		$update_data['reg_time'] = local_strtotime(local_date('Y-m-d H:i:s'));
 		if ($other)
 		{

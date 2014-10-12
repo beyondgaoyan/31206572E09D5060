@@ -77,6 +77,33 @@
 			<!-- {/if} -->
 		<!-- {/if} -->
 		<!-- {/foreach} -->
+		  //by gaoyan
+		  var idcard =  theForm.idcard.value;
+		  var truename =  theForm.truename.value;
+		  var mobilenum =  theForm.mobilenum.value;
+		  //by gaoyan
+		  if (idcard.length == 0)
+  {
+    alert("身份证号不能为空!");theForm.idcard.focus();return false;
+  }
+  else if (idcard.match(/^\s*$|^c:\\con\\con$|[%,\'\*\"\s\t\<\>\&\\]/))
+  {
+    alert("请正确填写身份证号!");theForm.idcard.focus();return false;
+  }
+  else if (idcard.length < 16)
+  {
+    alert("身份证号错误!");theForm.idcard.focus();return false;
+  }
+  
+  if (truename.length == 0)
+  {
+    alert("真实姓名不能为空!");theForm.idcard.focus();return false;
+  }
+  
+  if (mobilenum.length == 0)
+  {
+    alert("手机号不能为空!");theForm.idcard.focus();return false;
+  }
 		theform.submit();
 	}
 </script>
@@ -116,13 +143,32 @@
             </li>
 			{/if}
 			{/foreach}
-            <li>
+            
+		</ul>
+		<ul>
+		<li style="color:red;">跨境购平台注册信息，请一定要正确输入，如果输入错误，将影响通关和发货！</li>
+		</ul>
+		<ul>
+			<li><div class="leftinput"><font style="color:#FF0000"> *</font>身份证号</div>
+			<div class="rightinput"><input id='idcard' type="text" value="" name="idcard"></div><div style="clear:both;"></div>
+			</li>
+			<li><div class="leftinput"><font style="color:#FF0000"> *</font>真实姓名</div>
+			<div class="rightinput"><input id='truename' type="text" value="" name="truename"></div><div style="clear:both;"></div>
+			</li>
+			<li><div class="leftinput"><font style="color:#FF0000"> *</font>手机号</div>
+			<div class="rightinput"><input id='mobilenum' type="text" value="" name="mobilenum"></div><div style="clear:both;"></div>
+			</li>
+		</ul>
+		<ul>
+		<li>
             <input name="act" type="hidden" value="act_register" />
             <input type="hidden" name="back_act" value="{$back_act}" />
             <input id='btn_enter' type="submit" class="btn" value="注册" />
             </li>
 		</ul>
 		</form>	
+		<p class="p_cor_hui"><a target="_blank" href="http://www.kjb2c.com/portal/faq.do">点击查看为什么要输入身份证号？</a></p>
+      <p class="p_cor_hui">点击“立即注册”，即表示您同意并愿意遵守<a target="_blank" class="cor_yellow" href="article.php?act=detail&a_id=10">用户协议</a></p>
 	</div>
 </section>
 <script type="text/javascript">
