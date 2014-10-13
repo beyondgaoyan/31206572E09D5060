@@ -13,10 +13,10 @@
     <link href="css/foot.css" rel="stylesheet" type="text/css" />
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 	<script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
-	<script src="/js/jquery.lazyload.js" type="text/javascript"></script>
+	<script src="js/jquery.lazyload.js" type="text/javascript"></script>
 	<script src="js/jquery.autocomplete.js" type="text/javascript"></script>
 	<script src="js/jquery.touchScroll.js" type="text/javascript"></script>
-{insert_scripts files="../js/transport.js,../js/region.js"}
+{insert_scripts files="../js/transport_pro.js,../js/region.js"}
 	<script>
           var util = (function(){
               var u = navigator.userAgent.toLowerCase();
