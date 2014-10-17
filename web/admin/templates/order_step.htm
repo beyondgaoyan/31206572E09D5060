@@ -9,8 +9,7 @@
 {if $step eq "user"}
 <form name="theForm" action="order.php?act=step_post&step={$step}&order_id={$order_id}&step_act={$step_act}" method="post" onsubmit="return checkUser()">
 <div class="main-div" style="padding: 15px">
-  <label><input type="radio" name="anonymous" value="1" checked /> {$lang.anonymous}</label><br />
-  <label><input type="radio" name="anonymous" value="0" id="user_useridname" /> {$lang.by_useridname}</label>
+  <label><input type="radio" name="anonymous" value="0" id="user_useridname" checked/> {$lang.by_useridname}</label>
   <input name="keyword" type="text" value="" />
   <input type="button" class="button" name="search" value="{$lang.button_search}" onclick="searchUser();" />
   <select name="user"></select>
