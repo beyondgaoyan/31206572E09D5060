@@ -1239,7 +1239,12 @@ elseif ($_REQUEST['act'] == 'step_post')
         while (true); // 防止订单号重复
 
         $order_id = $db->insert_id();
-
+		/*插入提交跨境购接口数据 by gaoyan*/
+	    //<<<<
+	    	$gmtime = gmtime();
+	        $kjgsql = "INSERT INTO ".$ecs->table('kjg_status'). " (order_id,order_sn,add_time) VALUES ('$order_id','$order[order_sn]','$gmtime')";
+			$db->query($kjgsql);
+		//>>>>
         /* todo 记录日志 */
         admin_log($order['order_sn'], 'add', 'order');
 
