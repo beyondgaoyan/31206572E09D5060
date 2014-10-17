@@ -155,7 +155,7 @@ changePrice();
                        <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-blue goods-add-cart-btn" id="goodsDetailAddCartBtn" href="javascript:addToCartOne({$goods_id})">
                         <i class="iconfont "></i>一键购买</a>
                         {else}
-                        <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-yellow goods-add-cart-btn"  style="width:270px;" href="javascript:void(0)">补货中</a>
+                        <a data-package="false" data-gid="{$goods_id}" data-disabled="false" class="btn btn-yellow goods-add-cart-btn"  style="width:270px;" id="goodsDetailAddCartBtn" href="javascript:addToCart({$goods_id})">缺货登记</a>
                         {/if}
                         <a class="btn btn-dake  goods-collect-btn" data-isfavorite="false" id="goodsDetailCollectBtn" href="javascript:collect({$goods_id})">
                         <i class="iconfont"></i>
@@ -595,8 +595,11 @@ function submitComment(frm)
             </div>
             <div class="span12">
                                 <div class="fr">
+                                {if $goods.goods_number > 0}
                                 <a data-package="false"  data-disabled="false" id="goodsSubBarAddCartBtn" class="btn btn-primary  xm-animate  J_cart_bar_cal xm-animate-flipInX" href="javascript:addToCart({$goods_id})"style="width: 235px;color: #fff;font-size: 12px;line-height: 40px;height: 40px;">
                         <i class="iconfont"></i>加入购物车</a>
+                        {else}<a data-package="false"  data-disabled="false" id="goodsSubBarAddCartBtn" class="btn btn-yellow  xm-animate  J_cart_bar_cal xm-animate-flipInX" href="javascript:addToCart({$goods_id})"style="width: 235px;color: #fff;font-size: 12px;line-height: 40px;height: 40px;">
+                        <i class="iconfont"></i>缺货登记</a>{/if}
                         
 
                 </div>
