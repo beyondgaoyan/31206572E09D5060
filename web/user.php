@@ -294,7 +294,13 @@ elseif ($action == 'act_register')
                 $sql = 'INSERT INTO '. $ecs->table('reg_extend_info') . ' (`user_id`, `reg_field_id`, `content`) VALUES' . $extend_field_str;
                 $db->query($sql);
             }
-
+			/*记录跨境购资料 by gaoyan*/
+			//$xml_data.="<Idnum>$idcard</Idnum>";
+            //$xml_data.="<Name>$truename</Name>";
+            //$xml_data.="<Account>$username</Account>";
+            //$xml_data.="<Phone>$mobilenum</Phone>";
+			$sql = 'UPDATE ' . $ecs->table('users') . " SET `idcard`='$idcard', `truename`='$truename',`mobilenum`='$mobilenum'  WHERE `user_id`='" . $_SESSION['user_id'] . "'";
+                $db->query($sql);
             /* 写入密码提示问题和答案 */
             if (!empty($passwd_answer) && !empty($sel_question))
             {
