@@ -84,10 +84,14 @@ if(!empty($_GET['order_id'])){
             $xml_data.="<Amount>".$orderinfo['money_paid']."</Amount>";//买家实付金额
             $xml_data.="<BuyerAccount>".$orderinfo['user_name']."</BuyerAccount>";//买家账号
             $xml_data.="<TaxAmount>".$orderinfo['tariff_fee']."</TaxAmount>";//税额（免税请设置0）
-            $xml_data.="<DisAmount>0</DisAmount>";//优惠金额
-            $xml_data.="<Promotions></Promotions>";//订单优惠清单列表
-			$xml_data.="<Goods>";
-
+            $xml_data.="<DisAmount>".$orderinfo['bonus']."</DisAmount>";//优惠金额
+            $xml_data.="<Promotions>";//订单优惠清单列表
+            //红包优惠节点 可循环
+            if($orderinfo['bonus']>0){
+		$xml_data.="<Promotion><ProAmount>".$orderinfo['bonus']."</ProAmount><ProRemark>红包</ProRemark></Promotion>";
+            }
+            $xml_data.="</Promotions>";//订单优惠清单列表
+	$xml_data.="<Goods>";
             /*可循环 */
             foreach($orderinfo['goods_list'] AS $g){
 	            $xml_data.="<Detail>";

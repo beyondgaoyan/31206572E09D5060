@@ -583,7 +583,7 @@
 
                 {$lang.input_bonus_no}
                 <input name="bonus_sn" type="text" class="inputBg" size="15" value="{$order.bonus_sn}" />
-                <input name="validate_bonus" type="button" class="bnt_blue_1" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
+                <input name="validate_bonus" type="button" class="bnt_blue_6" value="{$lang.validate_bonus}" onclick="validateBonus(document.forms['theForm'].elements['bonus_sn'].value)" style="vertical-align:middle;" />
               </td>
             </tr>
             <!-- {/if} 是否使用红包 -->

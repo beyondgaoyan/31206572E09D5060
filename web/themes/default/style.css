@@ -90,6 +90,10 @@ text-align:center;  color:#fff; font-size:12px; font-weight:bold; border:none; c
 background:url(images/bg.gif) no-repeat -60px 0px; width:56px; height:20px;
 text-align:center; line-height:21px; color:#000; border:none; cursor:pointer;
 }
+.bnt_blue_6{
+background:#f45c2f; width:125px; padding: 5px 0;
+text-align:center;  color:#fff; font-size:12px; font-weight:bold; border:none; cursor:pointer; margin-left:10px; 
+}
 /*模块容器*/
 
 .box_1{ background-color:#fff;}
