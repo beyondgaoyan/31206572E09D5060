@@ -54,11 +54,13 @@
         <div class="box-hd">
             <div class="filter-lists">
                 <dl class="xm-filter-list xm-filter-list-first category-filter-list clearfix">
+                <dt>排序：</dt>
                     <dd>
                         <ul id="typeOrder" class="clearfix">
-                            <li class="<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=DESC#goods_list" rel="nofollow">最新</a></li>
-                            <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=DESC#goods_list" rel="nofollow">价格从高到低</a></li>
-                            <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=ASC#goods_list" rel="nofollow">价格从低到高</a></li>
+                            <li class="first <!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=last_update&order=DESC#goods_list" rel="nofollow">最新</a></li>
+                            <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=shop_price&order=DESC#goods_list" rel="nofollow">价格从高到低</a></li>
+                            <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=shop_price&order=ASC#goods_list" rel="nofollow">价格从低到高</a></li>
+                            <li class="<!-- {if $pager.sort == 'goods_number' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=goods_number&order=DESC#goods_list" rel="nofollow">有货</a></li>
                         </ul>
                     </dd>
                 </dl>
@@ -103,11 +105,11 @@
                                                                                 {else}<a class="btn btn-small btn-yellow J_addCart" href="javascript:addToCart({$goods.goods_id})"  data-disabled="false" data-package="false" rel="nofollow">缺货登记</a>{/if}
                                                                                 <a class="btn btn-dake btn-small J_addFav" href="javascript:collect({$goods.goods_id});" ><i class="iconfont"></i>收藏</a>
                                     </div>
-                                    <!--
+                                    {if $goods.goods_number<1}
 <div class="item-flag">
-                                                                                <span class="icon-saleoff icon-saleoff-5">5折</span>
+                                                                                <span class="icon-saleoff">缺货</span>
                                                                             </div>
--->
+{/if}
                                 </div>
                             </div>
                         </li>
