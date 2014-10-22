@@ -32,16 +32,174 @@ window.pageConfig={
 <!--当前位置 end-->
 <div class="blank"></div>
 <div class="block clearfix">
-<!-- {if $category==20} -->
+<!-- {if $current_cat_pr_id==20} -->
+{insert_scripts files='koala.min.1.5.js'}
 <div class="block clearfix">
-{insert name='ads' id=5 num=$ads_num}
-</div>
-<!-- {/if} -->
-   <!-- TemplateBeginEditable name="右边区域" -->
+<div id="fsD1" class="focus" style="margin:0 auto;">  
+    <div id="D1pic1" class="fPic">  
+    <!--{foreach from=$banner_kjg name=ban item=banner}-->
 
-  <!-- #BeginLibraryItem "/library/goods_list.lbi" --><!-- #EndLibraryItem -->
-  <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+        <div class="fcon" style="display: none;">
+            <a target="_blank" href="{$banner.ad_link}"><img src="{$banner.ad_code}" style="opacity: 1; "></a>
+            <span class="shadow"><a target="_blank" href="{$banner.ad_link}">{$banner.title}</a></span>
+        </div>
+        <!--{/foreach}--> 
+
+    </div>
+    <div class="fbg">  
+    <div class="D1fBt" id="D1fBt">  
+    <!--{foreach from=$banner_kjg name=ban item=banner}-->
+        <a href="javascript:void(0)" hidefocus="true" target="_self" class=""><i>{$smarty.foreach.ban.iteration}</i></a>  
+        <!--{/foreach}--> 
+    </div>  
+    </div>  
+    <span class="prev"></span>   
+    <span class="next"></span>    
+</div>  
+</div>
+<script type="text/javascript">
+	Qfast.add('widgets', { path: "/js/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+	Qfast(false, 'widgets', function () {
+		K.tabs({
+			id: 'fsD1',   //焦点图包裹id  
+			conId: "D1pic1",  //** 大图域包裹id  
+			tabId:"D1fBt",  
+			tabTn:"a",
+			conCn: '.fcon', //** 大图域配置class       
+			auto: 1,   //自动播放 1或0
+			effect: 'fade',   //效果配置
+			eType: 'click', //** 鼠标事件
+			pageBt:true,//是否有按钮切换页码
+			bns: ['.prev', '.next'],//** 前后按钮配置class                          
+			interval: 3000  //** 停顿时间  
+		}) 
+	})  
+</script>
+<!-- {/if} -->
+<!-- {if $category=='20'} -->
+    <!-- TemplateBeginEditable name="右边区域" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="hm_floor_box floor0 floor{$goods_cat.id}" id="floor{$goods_cat.id}">
+      <div class="nav5 nav_hover">
+      <span><a target="_blank" href="{$goods_cat.url}">更多&gt;&gt;</a></span>
+        <ul>
+          <li class=""><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></li>
+        </ul>
+      </div>
+      
+      <div class="floor1_right yahei_fff right">
+        <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+        <ul style="{if $smarty.foreach.cat_goods.iteration!='1'}border-left-width: 0px;{/if}">
+          <div class="top"><a href="{$goods.url}" target="_blank" alt="{$goods.name|escape:html}"><img src="{$goods.thumb}"></a></div>
+          <p style="color: rgb(0, 0, 0); height:38px"><a href="{$goods.url}" target="_blank" style="color:#000000">{$goods.name|escape:html}</a></p>
+          <p style="border-bottom: 0px solid rgb(204, 204, 204);color:#ff0500" ><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></p>
+        </ul>
+    <!--{/foreach}-->   
+      </div>
+      <div class="clear"></div>
+    </div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="hm_floor_box floor0 floor{$goods_cat.id}" id="floor{$goods_cat.id}">
+      <div class="nav5 nav_hover">
+      <span><a target="_blank" href="{$goods_cat.url}">更多&gt;&gt;</a></span>
+        <ul>
+          <li class=""><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></li>
+        </ul>
+      </div>
+      
+      <div class="floor1_right yahei_fff right">
+        <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+        <ul style="{if $smarty.foreach.cat_goods.iteration!='1'}border-left-width: 0px;{/if}">
+          <div class="top"><a href="{$goods.url}" target="_blank" alt="{$goods.name|escape:html}"><img src="{$goods.thumb}"></a></div>
+          <p style="color: rgb(0, 0, 0); height:38px"><a href="{$goods.url}" target="_blank" style="color:#000000">{$goods.name|escape:html}</a></p>
+          <p style="border-bottom: 0px solid rgb(204, 204, 204);color:#ff0500" ><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></p>
+        </ul>
+    <!--{/foreach}-->   
+      </div>
+      <div class="clear"></div>
+    </div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="hm_floor_box floor0 floor{$goods_cat.id}" id="floor{$goods_cat.id}">
+      <div class="nav5 nav_hover">
+      <span><a target="_blank" href="{$goods_cat.url}">更多&gt;&gt;</a></span>
+        <ul>
+          <li class=""><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></li>
+        </ul>
+      </div>
+      
+      <div class="floor1_right yahei_fff right">
+        <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+        <ul style="{if $smarty.foreach.cat_goods.iteration!='1'}border-left-width: 0px;{/if}">
+          <div class="top"><a href="{$goods.url}" target="_blank" alt="{$goods.name|escape:html}"><img src="{$goods.thumb}"></a></div>
+          <p style="color: rgb(0, 0, 0); height:38px"><a href="{$goods.url}" target="_blank" style="color:#000000">{$goods.name|escape:html}</a></p>
+          <p style="border-bottom: 0px solid rgb(204, 204, 204);color:#ff0500" ><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></p>
+        </ul>
+    <!--{/foreach}-->   
+      </div>
+      <div class="clear"></div>
+    </div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="hm_floor_box floor0 floor{$goods_cat.id}" id="floor{$goods_cat.id}">
+      <div class="nav5 nav_hover">
+      <span><a target="_blank" href="{$goods_cat.url}">更多&gt;&gt;</a></span>
+        <ul>
+          <li class=""><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></li>
+        </ul>
+      </div>
+      
+      <div class="floor1_right yahei_fff right">
+        <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+        <ul style="{if $smarty.foreach.cat_goods.iteration!='1'}border-left-width: 0px;{/if}">
+          <div class="top"><a href="{$goods.url}" target="_blank" alt="{$goods.name|escape:html}"><img src="{$goods.thumb}"></a></div>
+          <p style="color: rgb(0, 0, 0); height:38px"><a href="{$goods.url}" target="_blank" style="color:#000000">{$goods.name|escape:html}</a></p>
+          <p style="border-bottom: 0px solid rgb(204, 204, 204);color:#ff0500" ><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></p>
+        </ul>
+    <!--{/foreach}-->   
+      </div>
+      <div class="clear"></div>
+    </div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="hm_floor_box floor0 floor{$goods_cat.id}" id="floor{$goods_cat.id}">
+      <div class="nav5 nav_hover">
+      <span><a target="_blank" href="{$goods_cat.url}">更多&gt;&gt;</a></span>
+        <ul>
+          <li class=""><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></li>
+        </ul>
+      </div>
+      
+      <div class="floor1_right yahei_fff right">
+        <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+        <ul style="{if $smarty.foreach.cat_goods.iteration!='1'}border-left-width: 0px;{/if}">
+          <div class="top"><a href="{$goods.url}" target="_blank" alt="{$goods.name|escape:html}"><img src="{$goods.thumb}"></a></div>
+          <p style="color: rgb(0, 0, 0); height:38px"><a href="{$goods.url}" target="_blank" style="color:#000000">{$goods.name|escape:html}</a></p>
+          <p style="border-bottom: 0px solid rgb(204, 204, 204);color:#ff0500" ><!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></p>
+        </ul>
+    <!--{/foreach}-->   
+      </div>
+      <div class="clear"></div>
+    </div>
+
+ <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
+<!--{/if}-->
+<!-- #BeginLibraryItem "/library/goods_list.lbi" -->
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/pages.lbi" -->
+ <!-- #EndLibraryItem -->
+
 
 
 

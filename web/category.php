@@ -390,7 +390,20 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('goods_list',       $goodslist);
     $smarty->assign('category',         $cat_id);
     $smarty->assign('script_name', 'category');
+    //by gaoyan  跨境购分类广告
+    $smarty->assign("banner_kjg",getads(5,5));
+    //获取顶级分类ID by gaoyan
+    $catlist = array(); 
+    foreach(get_parent_cats($cat_id) as $k=>$v) 
+    { 
+    $catlist[] = $v['cat_id']; 
+     }
 
+    $smarty->assign('current_cat_pr_id',$catlist[count($catlist)-1]); 
+    if (count($catlist)>=2) 
+    { 
+     $smarty->assign('current_cat_t_id',$catlist[count($catlist)-2]); 
+    }
     assign_pager('category',            $cat_id, $count, $size, $sort, $order, $page, '', $brand, $price_min, $price_max, $display, $filter_attr_str); // 分页
     assign_dynamic('category'); // 动态内容
 }
