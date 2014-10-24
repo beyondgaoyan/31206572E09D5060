@@ -2630,18 +2630,19 @@ function send_order_bonus($order_id)
         }
 
         /* 如果有红包，发送邮件 */
-        if ($count > 0)
-        {
-            $tpl = get_mail_template('send_bonus');
-            $GLOBALS['smarty']->assign('user_name', $user['user_name']);
-            $GLOBALS['smarty']->assign('count', $count);
-            $GLOBALS['smarty']->assign('money', $money);
-            $GLOBALS['smarty']->assign('shop_name', $GLOBALS['_CFG']['shop_name']);
-            $GLOBALS['smarty']->assign('send_date', local_date($GLOBALS['_CFG']['date_format']));
-            $GLOBALS['smarty']->assign('sent_date', local_date($GLOBALS['_CFG']['date_format']));
-            $content = $GLOBALS['smarty']->fetch('str:' . $tpl['template_content']);
-            send_mail($user['user_name'], $user['email'], $tpl['template_subject'], $content, $tpl['is_html']);
-        }
+        //by gaoyan 暂时去掉送红包发邮件
+        // if ($count > 0)
+        // {
+        //     $tpl = get_mail_template('send_bonus');
+        //     $GLOBALS['smarty']->assign('user_name', $user['user_name']);
+        //     $GLOBALS['smarty']->assign('count', $count);
+        //     $GLOBALS['smarty']->assign('money', $money);
+        //     $GLOBALS['smarty']->assign('shop_name', $GLOBALS['_CFG']['shop_name']);
+        //     $GLOBALS['smarty']->assign('send_date', local_date($GLOBALS['_CFG']['date_format']));
+        //     $GLOBALS['smarty']->assign('sent_date', local_date($GLOBALS['_CFG']['date_format']));
+        //     $content = $GLOBALS['smarty']->fetch('str:' . $tpl['template_content']);
+        //     send_mail($user['user_name'], $user['email'], $tpl['template_subject'], $content, $tpl['is_html']);
+        // }
     }
 
     return true;
@@ -2713,10 +2714,14 @@ function order_bonus($order_id)
             "FROM " . $GLOBALS['ecs']->table('bonus_type') .
             "WHERE send_type = '" . SEND_BY_ORDER . "' " .
             "AND send_start_date <= '$order_time' " .
-            "AND send_end_date >= '$order_time' ";
+            "AND send_end_date >= '$order_time' ORDER BY min_amount DESC";
     $list = array_merge($list, $GLOBALS['db']->getAll($sql));
-
-    return $list;
+    //by gaoyan 修正送红包规则，重复的达到仅送最高的
+    $return = '';
+    if(!empty($list)){
+        $return = $list[0];
+    }
+    return $return;
 }
 
 /**
