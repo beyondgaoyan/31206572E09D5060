@@ -349,9 +349,7 @@ body {
 .header .back a {
 	display:block;
 	color:#fff;
-	font-size:1.9em;
 	padding:0 .52632em;
-	line-height:2.55263em;
 	text-shadow:rgba(0,0,0,.2) 1px 1px 4px;
 	text-align: center;
 }
