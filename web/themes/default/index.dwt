@@ -22,7 +22,7 @@
 <body class="root61 indexbg">
 <!-- #BeginLibraryItem "/library/page_header_index.lbi" --><!-- #EndLibraryItem -->
 <!-- 中间部分开始 -->
-<div class="block clearfix bg_fff">
+<div class="block clearfix bg_blue">
 <!-- 首屏轮播 -->
 <div style="float:right" class="span12">
 		<div class="slideBox2" id="slideBox">
@@ -55,24 +55,9 @@
 		jQuery(".slideBox2").slide({mainCell:".bd ul",autoPlay:true});
 		</script>
 <!-- 首屏轮播 -->
-<!-- 明星单品 -->
-<div class="block clearfix ad_index_big4">
-<!-- TemplateBeginEditable name="首页第一屏4图广告广告位" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+<!--仿照淘宝店铺首页 by gaoyan 20141031-->
+<!-- #BeginLibraryItem "/library/taobao_ad.lbi" --><!-- #EndLibraryItem -->
 
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-</div>
-<div class="block clearfix ad_index_big10">
- <!-- TemplateBeginEditable name="首页第二屏10图广告" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
-<!-- TemplateEndEditable -->
-</div>
-<!-- 明星单品 -->
 </div>
 <!-- 中间部分结束 -->
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->

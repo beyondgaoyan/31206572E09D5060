@@ -2368,6 +2368,7 @@ a:hover, a:focus {
     width: 30px;
 }
 .bg_fff{background-color: #fff;}
+.bg_blue{background-color: #def4ff}
 .site-header {
     padding-top: 25px;
     position: relative;
@@ -4065,4 +4066,4 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
     color: #8c8c8c;
     font-size: 12px;
 }
-.indexbg{background: url(imagesgy/bg_index.jpg) no-repeat scroll center -960px #fff;}
+.indexbg{background: url(imagesgy/bg_index.jpg) repeat-y scroll center -960px #fff;}
