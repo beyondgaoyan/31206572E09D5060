@@ -42,14 +42,7 @@
 		</div>
 		
 		
-		<div class="home-hd-show clearfix">
-		<!--{foreach from=$banner2 name=ban item=banner}-->
-		<div class="hd-show-item hd-show-item-first J_randomItem">
-                    <a href="{$banner.ad_link} " class="item" style="display: inline;"><img srcset="{$banner.ad_code}" src="{$banner.ad_code}" ></a>
-                </div>
-                <!--{/foreach}--> 
-
-        </div>
+		
 </div>
 <script type="text/javascript">
 		jQuery(".slideBox2").slide({mainCell:".bd ul",autoPlay:true});
