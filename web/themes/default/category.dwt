@@ -76,7 +76,7 @@ window.pageConfig={
 	})  
 </script>
 <!-- {/if} -->
-<!-- {if $category=='20'} -->
+<!-- {if ($category=='20' && $brand=='0')} -->
     <!-- TemplateBeginEditable name="右边区域" -->
 <!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
 

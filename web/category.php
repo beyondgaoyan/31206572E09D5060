@@ -247,9 +247,8 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $brands[0]['brand_name'] = $_LANG['all_attribute'];
     $brands[0]['url'] = build_uri('category', array('cid' => $cat_id, 'bid' => 0, 'price_min'=>$price_min, 'price_max'=> $price_max, 'filter_attr'=>$filter_attr_str), $cat['cat_name']);
     $brands[0]['selected'] = empty($brand) ? 1 : 0;
-
     $smarty->assign('brands', $brands);
-
+    $smarty->assign('brand', !empty($brand) ? $brand : 0);
 
     /* 属性筛选 */
     $ext = ''; //商品查询条件扩展
