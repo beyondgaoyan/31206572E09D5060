@@ -145,7 +145,7 @@ if(!empty($_GET['order_id'])){
             $xml_data.="<Header><CustomsCode>3302461604</CustomsCode><OrgName>宁波海狗电子商务有限公司</OrgName><CreateTime>$createdate</CreateTime></Header>";
             $xml_data.="<Body>";
             $xml_data.="<Pay>";
-            $xml_data.="<PaymentNo>".$orderinfo['order_sn']."</PaymentNo><OrderNo>".$orderinfo['order_sn']."</OrderNo><OrderSeqNo>".$orderinfo['order_sn']."</OrderSeqNo><Amount>".$orderinfo['total_fee']."</Amount><CurrCode>RMB</CurrCode><BuyerAccount>".$orderinfo['order_sn']."</BuyerAccount><Source>02</Source>";
+            $xml_data.="<PaymentNo>".$orderinfo['order_sn']."</PaymentNo><OrderNo>".$orderinfo['order_sn']."</OrderNo><OrderSeqNo>".$orderinfo['order_sn']."</OrderSeqNo><Amount>".$orderinfo['money_paid']."</Amount><CurrCode>RMB</CurrCode><BuyerAccount>".$orderinfo['order_sn']."</BuyerAccount><Source>02</Source>";
             $xml_data.= "</Pay>";
             $xml_data.="</Body></Message>";
 
