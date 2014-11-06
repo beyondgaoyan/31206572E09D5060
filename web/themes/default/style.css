@@ -2666,7 +2666,7 @@ a:hover, a:focus {
     display: none;
 }
 .site-header .header-nav {
-    background: none repeat scroll 0 0 #3592e2;
+    background: none repeat scroll 0 0 #56bff1;
     clear: both;
     height: 50px;
     position: relative;
@@ -2861,7 +2861,7 @@ a:hover, a:focus {
     position: relative;
 }
 .site-header .header-nav .nav-main-list .nav-main-item a:hover {
-    background: none repeat scroll 0 0 #0c7edf;
+    background: none repeat scroll 0 0 #3aace2;
     color: #fff;
 }
 .site-header .header-nav .nav-main-list .nav-main-item a:hover .arrow {
