@@ -18,35 +18,38 @@
 {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
 {insert_scripts files='common.js,global.js,compare.js'}
 {insert_scripts files='common.js,index.js'}
+{insert_scripts files='jquery.SuperSlide.2.1.1.js'}
+
 </head>
 <body class="root61 indexbg">
-<!-- #BeginLibraryItem "/library/page_header_index.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!--通栏广告-->
+<div class="slideBox" id="slideBox">
+<div class="hd">
+<ul>
+				<!--{foreach from=$banner1 name=ban item=banner}-->
+				<li class="">&nbsp;</li>
+
+				<!--{/foreach}--> 
+
+</ul>
+</div>
+<div class="bd">
+<div style="overflow:hidden; position:relative; height:340px" class="tempWrap"><ul style="top: -1700px; position: relative; padding: 0px; margin: 0px;">
+<!--{foreach from=$banner1 name=ban item=banner}-->
+				<li style="height: 310px;"><a target="_blank" href="{$banner.ad_link}"><img src="{$banner.ad_code}"></a></li>
+				<!--{/foreach}--> 
+
+			</ul></div>
+</div>
+<script type="text/javascript">
+		jQuery(".slideBox").slide({mainCell:".bd ul",effect:"top",autoPlay:true});
+		</script>
+</div>
 <!-- 中间部分开始 -->
 <div class="block clearfix bg_blue">
 <!-- 首屏轮播 -->
-<div style="float:right" class="span12">
-		<div class="slideBox2" id="slideBox">
-		
-			<div class="bd">
-				<ul>
-				<!--{foreach from=$banner1 name=ban item=banner}-->
-				<li style="display: list-item;"><table cellspacing="0" cellpadding="0">
-				<tbody><tr><td><a target="_blank" href="{$banner.ad_link}"><img border="0" src="{$banner.ad_code}"></a></td></tr>
-				</tbody></table> </li>
-				<!--{/foreach}--> 
-				</ul>
-			</div>
-			
-			<a href="javascript:void(0)" class="prev"></a>
-			<a href="javascript:void(0)" class="next"></a>
-		</div>
-		
-		
-		
-</div>
-<script type="text/javascript">
-		jQuery(".slideBox2").slide({mainCell:".bd ul",autoPlay:true});
-		</script>
+
 <!-- 首屏轮播 -->
 <!--仿照淘宝店铺首页 by gaoyan 20141031-->
 <!-- #BeginLibraryItem "/library/taobao_ad.lbi" --><!-- #EndLibraryItem -->

@@ -4066,3 +4066,51 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
     font-size: 12px;
 }
 .indexbg{background: url(imagesgy/bg_index.jpg) repeat-y scroll center -960px #fff;}
+/*首页统揽*/
+.slideBox {
+    margin: 0 40px 0 0;
+    overflow: hidden;
+    position: relative;
+
+}
+.slideBox .hd {
+    bottom: 5px;
+    height: 12px;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    z-index: 1;
+}
+.slideBox .hd ul {
+    float: left;
+    overflow: hidden;
+}
+.slideBox .hd ul li {
+    background: none repeat scroll 0 0 #fff;
+    cursor: pointer;
+    float: left;
+    height: 12px;
+    margin-right: 3px;
+    width: 40px;
+}
+.slideBox .hd ul li.on {
+    background: none repeat scroll 0 0 #e05617;
+}
+.slideBox .bd {
+    height: 310px;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+}
+.slideBox .bd li {
+    padding: 0;
+    vertical-align: middle;
+}
+.slideBox .bd img {
+    display: block;
+    height: 310px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
