@@ -3306,6 +3306,10 @@ a:hover, a:focus {
     color: #8c8c8c;
     font-size: 12px;
 }
+.xm-goods-item .item-price zhe {
+    color: #8c8c8c;
+    font-size: 12px;
+}
 .xm-goods-item .item-star {
     border-bottom: 1px solid #dfdfdf;
     color: #8c8c8c;

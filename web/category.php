@@ -510,6 +510,10 @@ function category_get_goods($children, $brand, $min, $max, $ext, $size, $page, $
         {
             $arr[$row['goods_id']]['goods_name']       = $row['goods_name'];
         }
+        //增加优惠折扣率 by gaoyan
+        $row['sheng_price'] = $row['market_price']-$row['shop_price']; 
+        $arr[$row['goods_id']]['zhekou_price'] =round(($row['shop_price']/$row['market_price'])*10); 
+
         $arr[$row['goods_id']]['name']             = $row['goods_name'];
         $arr[$row['goods_id']]['goods_brief']      = $row['goods_brief'];
         $arr[$row['goods_id']]['goods_style_name'] = add_style($row['goods_name'],$row['goods_name_style']);

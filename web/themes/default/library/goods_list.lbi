@@ -92,7 +92,7 @@
                                         <a href="{$goods.url}" target="_blank">{$goods.goods_name}</a>
                                     </h3>
                                     <div class="item-price">
-                                       <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></div>
+                                       <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del><span class="sep">|</span><zhe>{$goods.zhekou_price}折</zhe></div>
                                                                         <!--
 <div class="item-star">
                                         <span class="icon-stat icon-stat-4half"></span>
