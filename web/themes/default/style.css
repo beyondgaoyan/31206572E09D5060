@@ -4068,7 +4068,8 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
 .indexbg{background: url(imagesgy/bg_index.jpg) repeat-y scroll center -960px #fff;}
 /*首页统揽*/
 .slideBox {
-    margin: 0 40px 0 0;
+	width: 1240px;
+    margin: 0 auto;
     overflow: hidden;
     position: relative;
 

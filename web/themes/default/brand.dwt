@@ -11,6 +11,7 @@
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
 {* 包含脚本文件 *}
+{insert_scripts files='jquery-1.9.1.min.js,jquery.json.js'}
 {insert_scripts files='common.js,global.js,compare.js'}
 </head>
 <body>
@@ -72,14 +73,12 @@
       <div class="boxCenterList">
         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
         <tr>
-          <td bgcolor="#ffffff" width="200" align="center" valign="middle">
-          <div style="width:200px; overflow:hidden;">
+          <td bgcolor="#ffffff" align="left" valign="middle">
+          <div style="overflow:hidden; float: left; margin: 0 10px 10px 0">
           <!-- {if $brand.brand_logo} -->
             <img src="data/brandlogo/{$brand.brand_logo}" />
             <!-- {/if} -->
           </div>
-          </td>
-          <td bgcolor="#ffffff">
           {$brand.brand_desc|nl2br}<br />
             <!-- {if $brand.site_url} -->
             {$lang.official_site} <a href="{$brand.site_url}" target="_blank" class="f6">{$brand.site_url}</a><br />
@@ -90,7 +89,8 @@
             <a href="{$cat.url}" class="f6">{$cat.cat_name|escape:html} {if $cat.goods_count}({$cat.goods_count}){/if}</a>
               <!-- {/foreach} -->
             </div>  
-         </td>
+          </td>
+          
         </tr>
       </table>
       </div>
