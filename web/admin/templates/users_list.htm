@@ -8,7 +8,7 @@
     <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
     &nbsp;{$lang.label_rank_name} <select name="user_rank"><option value="0">{$lang.all_option}</option>{html_options options=$user_ranks }</select>
     &nbsp;{$lang.label_pay_points_gt}&nbsp;<input type="text" name="pay_points_gt" size="8" />&nbsp;{$lang.label_pay_points_lt}&nbsp;<input type="text" name="pay_points_lt" size="10" />
-    &nbsp;{$lang.label_user_name} &nbsp;<input type="text" name="keyword" /> <input type="submit" value="{$lang.button_search}" />
+    &nbsp;{$lang.label_user_name} &nbsp;<input type="text" name="keyword" />&nbsp;真实姓名 &nbsp;<input type="text" name="truename" /> <input type="submit" value="{$lang.button_search}" />
   </form>
 </div>
 
@@ -25,6 +25,7 @@
       <a href="javascript:listTable.sort('user_id'); ">{$lang.record_id}</a>{$sort_user_id}
     </th>
     <th><a href="javascript:listTable.sort('user_name'); ">{$lang.username}</a>{$sort_user_name}</th>
+    <th><a href="javascript:listTable.sort('truename'); ">真实姓名</a>{$sort_truename}</th>
     <th><a href="javascript:listTable.sort('email'); ">{$lang.email}</a>{$sort_email}</th>
     <th><a href="javascript:listTable.sort('is_validated'); ">{$lang.is_validated}</a>{$sort_is_validate}</th>
     <th>{$lang.user_money}</th>
@@ -38,6 +39,7 @@
   <tr>
     <td><input type="checkbox" name="checkboxes[]" value="{$user.user_id}" notice="{if $user.user_money ne 0}1{else}0{/if}"/>{$user.user_id}</td>
     <td class="first-cell">{$user.user_name|escape}</td>
+    <td class="first-cell">{if $user.truename}{$user.truename|escape} | {$user.idcard}{/if}</td>
     <td><span onclick="listTable.edit(this, 'edit_email', {$user.user_id})">{$user.email}</span></td>
     <td align="center">{if $user.is_validated} <img src="images/yes.gif"> {else} <img src="images/no.gif"> {/if}</td>
     <td>{$user.user_money}</td>
@@ -93,6 +95,7 @@ onload = function()
 function searchUser()
 {
     listTable.filter['keywords'] = Utils.trim(document.forms['searchForm'].elements['keyword'].value);
+    listTable.filter['truename'] = Utils.trim(document.forms['searchForm'].elements['truename'].value);
     listTable.filter['rank'] = document.forms['searchForm'].elements['user_rank'].value;
     listTable.filter['pay_points_gt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_gt'].value);
     listTable.filter['pay_points_lt'] = Utils.trim(document.forms['searchForm'].elements['pay_points_lt'].value);

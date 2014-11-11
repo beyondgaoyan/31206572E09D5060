@@ -693,6 +693,13 @@ function user_list()
         {
             $ex_where .= " AND user_name LIKE '%" . mysql_like_quote($filter['keywords']) ."%'";
         }
+        //增加对跨境购真实姓名的搜索 by gaoyan
+        $filter['truename'] = empty($_REQUEST['truename']) ? '' : trim($_REQUEST['truename']);
+        if ($filter['truename'])
+        {
+            $ex_where .= " AND truename LIKE '%" . mysql_like_quote($filter['truename']) ."%'";
+        }
+        
         if ($filter['rank'])
         {
             $sql = "SELECT min_points, max_points, special_rank FROM ".$GLOBALS['ecs']->table('user_rank')." WHERE rank_id = '$filter[rank]'";
@@ -720,7 +727,7 @@ function user_list()
 
         /* 分页大小 */
         $filter = page_and_size($filter);
-        $sql = "SELECT user_id, user_name, email, is_validated, user_money, frozen_money, rank_points, pay_points, reg_time ".
+        $sql = "SELECT user_id, user_name, email, is_validated, user_money, frozen_money, rank_points, pay_points, reg_time,idcard,truename ".
                 " FROM " . $GLOBALS['ecs']->table('users') . $ex_where .
                 " ORDER by " . $filter['sort_by'] . ' ' . $filter['sort_order'] .
                 " LIMIT " . $filter['start'] . ',' . $filter['page_size'];
