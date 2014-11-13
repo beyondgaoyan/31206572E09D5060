@@ -1,0 +1,739 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"strt",
+				"strtotime"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"c",
+				"color	Attr"
+			],
+			[
+				"sh",
+				"shuffle"
+			],
+			[
+				"pro",
+				"proCur  (variable)"
+			],
+			[
+				"CHO",
+				"Choujiang_user  (variable)"
+			],
+			[
+				"C",
+				"Choujiang_user"
+			],
+			[
+				"t",
+				"target	Attr"
+			],
+			[
+				"s",
+				"scroll"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"image",
+				"imagesgy"
+			],
+			[
+				"f",
+				"font-family"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"p",
+				"padding"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 327.0,
+		"selected_items":
+		[
+			[
+				"tabs",
+				"Tag: Fold Attributes"
+			],
+			[
+				"tab",
+				"View: Toggle Tabs"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"format",
+				"Tag: Auto-Format Tags on Selection"
+			],
+			[
+				"pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"his",
+				"File History: Open recently closed file (Current Project)"
+			],
+			[
+				"history",
+				"File History: Open README"
+			],
+			[
+				"sv",
+				"Preferences: SVN Settings"
+			],
+			[
+				"svn",
+				"SVN: Checkout…"
+			],
+			[
+				"git",
+				"Git: Diff"
+			],
+			[
+				"c",
+				"Git: Diff Cached"
+			],
+			[
+				"ch",
+				"Change List: Show"
+			],
+			[
+				"change",
+				"Change List: Show"
+			],
+			[
+				"PHP Code Sniffer: ",
+				"PHP Code Sniffer: Clear sniffer marks"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"jquery",
+				"Set Syntax: jQuery (JavaScript)"
+			],
+			[
+				"ina",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/gaoyan/站点/other/徐凯旋/github/web"
+	],
+	"file_history":
+	[
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/Util/Date.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Runtime/Cache/94e80d441775d43fcb329faea1d14d71.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/js/saas_new/DD_belatedPNG_0.0.8a-min.js",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/css/dell.css",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/CommonAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/ChoujiangAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Engine/Sae/Lib/Extend/Library/ORG/Net/UploadFile_sae.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/Net/UploadFile.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/GeneralAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Choujiang/topside.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Choujiang/aside.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/ChoujiangAction.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/choujiang.txt",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Conf/config.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Lib/Core/Model.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/EbankAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/EbankDealAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Lib/Core/Action.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/CardAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/DialeAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/third_party/jqplot/plugins/jqplot.categoryAxisRenderer.min.js",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/css/dialog.css",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Msg/default_imgitem_add.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Tpl/default_index.tpl",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/msgImage2/4wrBGywictFRXX9W4aNvwWyWcQwMiaHk8Wib7NeiarQFtcW4lgjabkeY3lsLJZjTXIhiaudS7Idxx38RzGg4gkJ85yQ",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/css/boc/ebank.css",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/third_party/ueditor/_src/core/EventBase.js",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/js/effect.js",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/CommonAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Model/ManagerModel.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/css/boc/shop.css",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Tpl/Rotate/showresult.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/shopAction.class.php.mine",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/Util/Input.class.php",
+		"/Users/gaoyan/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Bank/newScratchList (2).html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Model/CommonModel.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/gjsShopAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/shopAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/config_db_host.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/ButtonAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Tpl/shop/register.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/testAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/choujiangAction.class.php",
+		"/Users/gaoyan/Library/Application Support/Sublime Text 3/Packages/File History/README.md",
+		"/Users/gaoyan/Library/Application Support/Sublime Text 3/Packages/SVN/SVN.sublime-settings",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/gquizReportAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/PHPExcel/Calculation/FormulaParser.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Mode/phprpc.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/PHPExcel/Shared/PasswordHasher.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/media_partake.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/index.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Lib/Action/ActivityAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Tpl/gjsShop/register.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Common/runtime.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/css/boc/shop_order.css",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/sysplugins/smarty_internal_filter_handler.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/conf/siteconfig.inc.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Runtime/Cache/01fb6739da9c24faf58de9a8123a116c.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/sysplugins/smarty_resource_uncompiled.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/README.txt",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/Tpl/Wxhmember/score_use.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/plugins/shared.mb_unicode.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc.conf",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/BusinessAction.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Conf/config.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/js/mobile/clearOpenID.js",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/cater.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/sysplugins/smarty_internal_compile_private_object_block_function.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Library/ORG/PHPExcel/Cell/IValueBinder.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Boc/card_item.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Tpl/Officebusiness/officebusiness_edit.html",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Behavior/FireShowPageTraceBehavior.class.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/plugins/function.html_image.php",
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Common/functions.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/sftp-config.json",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/static_caches/cat_option_static.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/cycle_image.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/compiled/admin/bonus_type_info.htm.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/compiled/goods_list.lbi.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/goods_list.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/goods_script.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/goods.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/gallery.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/lib_goods.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/category.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/category.dwt",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/static_caches/cat_pid_releate.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/brand.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/search.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/style.css",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/tms.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/library/index_ad.lbi",
+		"/Users/gaoyan/Desktop/跨境购—集全球商品导购与跨境电商服务为一体的综合性网络平台。.html",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/library/taobao_ad.lbi",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/js/jquery.SuperSlide.2.1.1.js",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/index.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/fckeditor/editor/dialog/fck_UpFileBtn.html",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/group_buy_goods.dwt",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/library/bought_note_guide.lbi",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/hg_xiadan_2.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/hg_xiadan_1.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/phpinfo.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/compiled/page_header.lbi.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/package.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/flow.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/lib_order.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/index.dwt",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/chinabank_receive.php",
+		"/Users/gaoyan/Desktop/higoshop－taobao/taobao_ad.html",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/library/history.lbi",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/.bashrc",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/temp/compiled/cart.lbi.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/.bash_profile",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/.bash_logout",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/kefu.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules/payment/kuaiqian.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/index.dwt",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/themes/default/library/goods_list.lbi",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/css/home.css",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/hg_orders.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/goods.dwt",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/goods.html",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/css/head.css",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/account.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/index.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/account.dwt"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/gaoyan/站点/微信海/中国银行独立项目/web/",
+			"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/plugin",
+			"/Users/gaoyan/站点/微信海/中国银行独立项目/web/",
+			"/Users/gaoyan/站点/微信海/中国银行独立项目/web/bocp/",
+			"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc",
+			"/Users/gaoyan/站点/other/徐凯旋/github/web/",
+			"/Users/gaoyan/站点/other/徐凯旋/github/web"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"get_rsv_record",
+			"output_excel",
+			"rsv_cash",
+			"{if",
+			"firstday",
+			"iphone4",
+			".input_list dd {",
+			".input_list .time dd {",
+			"getDayOfWeek",
+			"firstDayOfMonth",
+			"UploadFile",
+			"firstDayOfMonth",
+			"//如果是添加",
+			"buildSelectSql",
+			"rotate_del",
+			"choujiangchouji",
+			"test",
+			"uploadFileInfo",
+			"n getUploadFileInfo",
+			"edit_act",
+			"card_",
+			"刮刮卡",
+			"ACCOUNT_ID",
+			"dtotip",
+			"boc_column",
+			"lefe_data",
+			"rotate_lottery",
+			"showresult",
+			"getstatus",
+			"showresult",
+			"ACCOUNT_ID",
+			"mt_rand",
+			"<br>",
+			"\"//\"",
+			"PHPExcel",
+			"safeHtml",
+			"n _sql_operate",
+			"_sql_operate",
+			"update",
+			"未中奖",
+			"select()",
+			"function select",
+			"_tokens",
+			"getToken",
+			"extends",
+			"CommonAction",
+			"api.weixin.qq.com",
+			"api",
+			"M('Choujiang');",
+			"add",
+			"ajaxReturn",
+			"array_",
+			"register",
+			"_send_msg",
+			"update_business",
+			"del_info",
+			".xm-goods-item .item-price del",
+			".site-header .header-nav",
+			"SuperSlide",
+			".my_left_category",
+			"$brand",
+			"alt=\"\"></td>",
+			"images/",
+			"images",
+			"colspan=\"3\"",
+			"colspan=\"2\"",
+			"background",
+			".header .back",
+			"order_bonus",
+			"gaoyan",
+			"n order_bonus",
+			"n send_order_bonus",
+			"money",
+			"INSERT",
+			"in",
+			"user_bonus",
+			"send_order_bonus",
+			"INSERT INTO \" . $GLOBALS['ecs']->table('user_bonus')",
+			"user_bonus",
+			":",
+			".floor1_right ul",
+			".footer",
+			"site-header",
+			".root61 .footer",
+			".hm_floor_box",
+			".hm_floor_box li",
+			".hm_floor_box .nav5",
+			".xm-goods-item .item-price .sep",
+			".floor1_right ul",
+			".clear",
+			".right",
+			"nav_hover",
+			"goodsItem",
+			"TemplateEndEditable",
+			"TemplateBeginEditable",
+			"current_cat_pr_id",
+			"get_parent_cats",
+			".focus .shadow",
+			"images",
+			"$smarty.",
+			"$smarty.section",
+			"n getads",
+			"getads",
+			"banner1",
+			"page",
+			"order",
+			"category_get_goods",
+			".xm-goods-item .item-flag .icon-saleoff",
+			"item-flag",
+			"item-actions",
+			"dd",
+			"category.d",
+			"n order_info",
+			"n getOrder",
+			"total_fee",
+			"orderinfo",
+			"kjg_api_order",
+			"bnt_blue_1",
+			"gaoyan",
+			"shoplist",
+			"weisite",
+			"Show",
+			"weisite",
+			"WeiSite",
+			"for_mod_sshop",
+			"mod",
+			"		if($_FILES['logo']['tmp_name']) {\n			$picname = $_FILES['logo']['name'];\n			$picsize = $_FILES['logo']['size'];\n		\n			if ($picname != \"\") {\n				$type = strstr($picname, '.');\n				if ($type != \".gif\" && $type != \".jpg\"&& $type != \".png\") {\n					showerror(lang('plugin/aljbd','s19'));\n				}\n				$rand = rand(100, 999);\n				$pics = date(\"YmdHis\") . $rand . $type;\n				$logo = \"source/plugin/aljbd/images/consume/\". $pics;\n				if(@copy($_FILES['logo']['tmp_name'], $logo)||@move_uploaded_file($_FILES['logo']['tmp_name'], $logo)){\n					@unlink($_FILES['logo']['tmp_name']);\n				}\n			}\n		}else{\n			showerror(lang('plugin/aljbd','logo'));\n		}",
+			"file_url"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"手机",
+			"choujiang",
+			"choujiang_",
+			"抽奖",
+			"\\n",
+			"M('gy_choujiang');",
+			"alt=\"\"></a></td>",
+			"ad/",
+			"",
+			"showsite",
+			"ShowSite",
+			"showsite",
+			"Show"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 118.0
+	},
+	"project": "higoshop.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"rsv_cash",
+				"boc/Tpl/Rsv/rsv_cash.html"
+			],
+			[
+				"94e80d441775d43fcb329faea1d14d71.php",
+				"boc/Runtime/Cache/94e80d441775d43fcb329faea1d14d71.php"
+			],
+			[
+				"aside",
+				"boc/Tpl/public/aside.html"
+			],
+			[
+				"choujiang",
+				"boc/Lib/Action/ChoujiangAction.php"
+			],
+			[
+				"ebank",
+				"msgImage2/4wrBGywictFRXX9W4aNvwWyWcQwMiaHk8Wib7NeiarQFtcW4lgjabkeY3lsLJZjTXIhiaudS7Idxx38RzGg4gkJ85yQ"
+			],
+			[
+				"chouji",
+				"choujiang.txt"
+			],
+			[
+				"chou",
+				"bocp/Lib/Action/choujiangAction.class.php"
+			],
+			[
+				"register",
+				"bocp/Tpl/shop/register.html"
+			],
+			[
+				"shop",
+				"Public/css/boc/shop.css"
+			],
+			[
+				"runtime/",
+				"boc/Runtime/Cache/01fb6739da9c24faf58de9a8123a116c.php"
+			],
+			[
+				"run",
+				"ThinkPHP/Common/runtime.php"
+			],
+			[
+				"bocp",
+				"bocp.php"
+			],
+			[
+				"con",
+				"bocp/Conf/config.php"
+			],
+			[
+				"config",
+				"bocp/Conf/config.php"
+			],
+			[
+				"config.php",
+				"boc/Conf/config.php"
+			],
+			[
+				"siteconfig.inc.php",
+				"Public/conf/siteconfig.inc.php"
+			],
+			[
+				"confi",
+				"data/config.php"
+			],
+			[
+				"style",
+				"themes/default/style.css"
+			],
+			[
+				"goods_list.l",
+				"themes/default/library/goods_list.lbi"
+			],
+			[
+				"categor",
+				"category.php"
+			],
+			[
+				"lib_goods",
+				"includes/lib_goods.php"
+			],
+			[
+				"category.d",
+				"themes/default/category.dwt"
+			],
+			[
+				"brand.d",
+				"themes/default/brand.dwt"
+			],
+			[
+				"style.css",
+				"themes/default/style.css"
+			],
+			[
+				"taobao",
+				"themes/default/library/taobao_ad.lbi"
+			],
+			[
+				"index_ad",
+				"themes/default/library/index_ad.lbi"
+			],
+			[
+				"obao_ad.lb",
+				"themes/default/library/taobao_ad.lbi"
+			],
+			[
+				"index.dwt",
+				"themes/default/index.dwt"
+			],
+			[
+				"hg_",
+				"admin/hg_xiadan_1.php"
+			],
+			[
+				".lib",
+				"themes/default/library/history.lbi"
+			],
+			[
+				"home.css",
+				"mobile/css/home.css"
+			],
+			[
+				"cate",
+				"category.php"
+			],
+			[
+				"index.php",
+				"index.php"
+			],
+			[
+				"includes/lib_insert.php",
+				"includes/lib_insert.php"
+			],
+			[
+				"cat_goods.lbi",
+				"themes/default/library/cat_goods.lbi"
+			],
+			[
+				"index.d",
+				"themes/default/index.dwt"
+			],
+			[
+				"ry/goods_list.lb",
+				"themes/default/library/goods_list.lbi"
+			],
+			[
+				"category.dwt",
+				"mobile/templates/category.dwt"
+			],
+			[
+				"category.php",
+				"category.php"
+			],
+			[
+				"flow.dwt",
+				"themes/default/flow.dwt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
