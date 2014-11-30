@@ -702,7 +702,7 @@ margin-bottom:8px;
 }
 .comments li img{position:absolute; right:0px; top:3px;}
 .comments li p{margin:3px auto; text-align:left;}
-.commentsList{border:1px solid #e4e4e4; background:#; padding:10px;}
+.commentsList{border:1px solid #e4e4e4; background:#; padding:10px; margin: 10px}
 .commentsList .inputBorder{border:1px solid #ccc; background:#fff;}
 .captcha{margin-left:0px; position:relative; top:-1px; *margin-left:8px; *position:relative; top:-3px; cursor:pointer;}
 /* ====================
