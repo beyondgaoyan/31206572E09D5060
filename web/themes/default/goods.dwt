@@ -121,15 +121,22 @@ changePrice();
        <strong>产地：</strong>{$goods.originplace}</dd>
       </li>
                           
-              
+              <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
+      {insert_scripts files='lefttime.js'}
+      <li class="padd loop" style="border-bottom:2px solid #f1f1f1;border-right:2px solid #f1f1f1;background: #ffdb3d;padding:10px;">
+      <strong>{$lang.promote_price}</strong><font class="shop">{$goods.promote_price}</font><br />
+      <strong>{$lang.residual_time}</strong>
+      <font class="f4" id="leftTime">{$lang.please_waiting}</font><br />
+      </li>
+      <!--{/if}-->
       	         </ul> 
 	   <ul class="dd  clearfix">   
           
      
                  
             
-	  
-	   <li class="clearfix" style="margin-top:25px;    ">
+	        
+	   <li class="clearfix" style="margin-top:10px;    ">
        <dd>
        <strong style="float:left; padding-top:5px;">购买数量：</strong>
         <input name="number" id="number" value="1" size="4"  maxlength="3" style="border:1px solid #ccc; text-align:center;float:left; height:23px; line-height:23px; color:#969593  " type="text">

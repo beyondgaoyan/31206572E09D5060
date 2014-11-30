@@ -12,3 +12,5 @@ web/data/config.php
 *config.php
 data/config.php
 mem.php
+web/.tags
+web/.tags_sorted_by_file
