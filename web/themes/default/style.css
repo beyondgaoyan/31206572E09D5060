@@ -1056,7 +1056,7 @@ padding-top:	3px !important;
 
 /* CSS class for thumbnail link <A> */
 .MagicThumb {
-cursor: url(images/zoomin.cur), pointer;
+/*cursor: url(images/zoomin.cur), pointer;*/
 outline: none;
 }
 
