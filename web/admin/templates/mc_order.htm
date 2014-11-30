@@ -1,0 +1,86 @@
+<!-- $Id: ads_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<div class="main-div">
+<form action="mc_order.php" method="post" enctype="multipart/form-data" name="theForm" onsubmit="return validate()">
+  <table width="100%" id="general-table">
+
+    <tbody id="1" >
+    <tr>
+      <td align="right" >&nbsp;&nbsp;<img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"> 温馨提示：</td>
+      <td align="left" >用户的个数,决定了批量提交订单的数量！</td>
+      </tr>
+    <tr>
+      <td  class="label">
+        *批量导入用户[<span style="color:#F00;">必须注册过</span>]:</td>
+      <td>
+        <input name="upfile" type="file" id="upfile" size='35' onChange="ChkUpImg(this.value)" /> 
+        &nbsp;&nbsp;<span style="color:#F00;">*</span>文本以英文命名:例 user.txt ,内容以英文,分隔;例: user1,user2...</td>
+    </tr>
+    
+    
+    <tr>
+      <td class="label">评论的商品ID：</td>
+      <td><textarea name="comment_id" id="comment_id" cols="50" rows="10"></textarea>        
+        &nbsp;&nbsp;<span style="color:#F00;">*</span>内容以英文 , 号分隔;</td>
+    </tr>
+   <tr>
+      <td class="label"><span style="color:#F00;">*</span>随机购买次数：</td>
+      <td><input name="comment_num" type="text" id="comment_num" size="10" maxlength="4"  onkeyup="this.value=this.value.replace(/[^\d]/g,'')"/>        
+        &nbsp;&nbsp;<span style="color:#F00;">*</span>最大1000,默认100;系统会自动随机调用户名和随机评论;</td>
+    </tr>
+    </tbody>
+
+    <tr>
+      <td class="label">&nbsp;</td>
+      <td>
+        <input type="submit" value="批量添加定单" class="button" />
+        <input type="reset" value="{$lang.button_reset}" class="button" />
+        <input type="hidden" name="act" value="mc_add" /></td>
+    </tr>
+ </table>
+
+</form>
+</div>
+
+<script type="text/ecmascript" language="javascript">
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+	df = document.theForm;
+
+      if(!df.comment_id.value){
+		  alert('需要购买的订单商品ID,不能为空！;');
+		  df.comment_id.focus();
+		  return false;
+	  }
+	    
+	  if(!df.comment_num.value){
+		  alert('需评论的次数,必须为整数！;');
+		  df.comment_num.focus();
+		  return false;
+	  }
+	  
+    return true;
+}
+//上传格式;
+function ChkUpImg(str){
+	photo_type="txt";
+	len=str.lastIndexOf(".")+1;
+	type=str.substr(len);
+	type=type.toLowerCase();
+	chk=photo_type.indexOf(type);
+	if(chk!=-1 && type!=""){
+		document.images['upfile'].src="file:///"+str;
+	}else{
+		alert("上传的文件类型只支持 ."+photo_type+" 格式");
+		//document.images['previewimg'].src="image/nophoto.gif";
+	}
+}
+
+</script>
+
+{include file="pagefooter.htm"}

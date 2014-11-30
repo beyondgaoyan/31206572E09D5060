@@ -1,0 +1,84 @@
+<!-- $Id: ads_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/calendar.php?lang={$cfg_lang}"></script>
+<link href="../js/calendar/calendar.css" rel="stylesheet" type="text/css" />
+<div class="main-div">
+<form action="mc_user.php" method="post" enctype="multipart/form-data" name="theForm" onsubmit="return validate()">
+  <table width="100%" id="general-table">
+
+    <tbody id="1" >
+    <tr>
+      <td  class="label">
+        <a href="javascript:showNotice('AdCodeFlash');" title="{$lang.form_notice}">
+        <img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a>批量导入用户:</td>
+      <td>
+        <input name="upfile" type="file" id="upfile" size='35' onChange="ChkUpImg(this.value)" /> 
+        &nbsp;&nbsp;<span style="color:#F00;">*</span>文本以英文命名:例 user.txt ,内容以英文,分隔;例: user1,user2...</td>
+    </tr>
+    <tr>
+      <td class="label">用户密码：</td>
+      <td>
+        <input type="password" name="password" value="" size="20" /> 
+        <span style="color:#F00;">*</span>设置用户的密码. </td>
+    </tr>
+<tr>
+      <td class="label">确定密码：</td>
+      <td>
+        <input type="password" name="confirm_password" value="" size="20" />
+      </td>
+    </tr>
+    </tbody>
+
+    <tr>
+      <td class="label">&nbsp;</td>
+      <td>
+        <input type="submit" value="批量添加用户" class="button" />
+        <input type="reset" value="{$lang.button_reset}" class="button" />
+        <input type="hidden" name="act" value="mc_add" /></td>
+    </tr>
+ </table>
+
+</form>
+</div>
+
+<script type="text/ecmascript" language="javascript">
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+	df = document.theForm;
+
+      password  = df.password.value;
+      password2 = df.confirm_password.value;
+      if(password.length < 6){
+		  alert('用户密码长度必须大于等于 6位;');
+		  df.password.focus();
+		  return false;
+	  }
+	  if(password != password2){
+		   alert('再次输入密码不一致！');
+		   df.confirm_password.focus();
+		  return false;
+	  }
+
+    return true;
+}
+//上传格式;
+function ChkUpImg(str){
+	photo_type="txt,jpg";
+	len=str.lastIndexOf(".")+1;
+	type=str.substr(len);
+	type=type.toLowerCase();
+	chk=photo_type.indexOf(type);
+	if(chk!=-1 && type!=""){
+		document.images['upfile'].src="file:///"+str;
+	}else{
+		alert("上传的文件类型只支持 ."+photo_type+" 格式");
+		//document.images['previewimg'].src="image/nophoto.gif";
+	}
+}
+
+</script>
+
+{include file="pagefooter.htm"}
