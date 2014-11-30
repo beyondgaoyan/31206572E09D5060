@@ -4119,3 +4119,56 @@ filter:progid:DXImageTransform.Microsoft.gradient( GradientType = 0,startColorst
     width: 100%;
 }
 
+/*商品列表角标*/
+.pi1, .pi2, .pi3, .pi4, .pi5, .pi6, .pi7, .pi8, .pi9, .pi10, .pi11, .pi12 {
+  background: url("imagesgy/intro.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+  height: 53px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 52px;
+}
+.pi1 {
+    background-position: 0 0;
+}
+.pi2 {
+    background-position: -53px 0;
+}
+.pi3 {
+    background-position: -106px 0;
+}
+.pi4 {
+    background-position: -212px 0;
+}
+.pi5 {
+    background-position: -265px 0;
+}
+.pi6 {
+    background-position: 0 -55px;
+}
+.pi7 {
+    background-position: -159px -55px;
+}
+.pi8 {
+    background-position: -53px -55px;
+}
+.pi9 {
+    background-position: -159px 0;
+}
+.pi10 {
+    background-position: -265px -55px;
+}
+.pi11 {
+    background-position: -106px -55px;
+}
+.pi12 {
+    background-position: -212px -55px;
+}
+.picon {
+  height: 53px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 52px;
+}

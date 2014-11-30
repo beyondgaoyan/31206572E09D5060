@@ -57,10 +57,12 @@
                 <dt>排序：</dt>
                     <dd>
                         <ul id="typeOrder" class="clearfix">
-                            <li class="first <!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=last_update&order=DESC#goods_list" rel="nofollow">最新</a></li>
+                            <li class="first <!-- {if $pager.sort == 'promote_price' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=promote_price&order=DESC#goods_list" rel="nofollow" class="jingbaojia">惊爆价</a></li>
+                            <li class=" <!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=last_update&order=DESC#goods_list" rel="nofollow">最新</a></li>
                             <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=shop_price&order=DESC#goods_list" rel="nofollow">价格从高到低</a></li>
                             <li class="<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=shop_price&order=ASC#goods_list" rel="nofollow">价格从低到高</a></li>
                             <li class="<!-- {if $pager.sort == 'goods_number' && $pager.order == 'DESC'} -->current<!-- {/if}-->"><a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&sort=goods_number&order=DESC#goods_list" rel="nofollow">有货</a></li>
+
                         </ul>
                     </dd>
                 </dl>
@@ -92,7 +94,8 @@
                                         <a href="{$goods.url}" target="_blank">{$goods.goods_name}</a>
                                     </h3>
                                     <div class="item-price">
-                                       <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del><span class="sep">|</span><zhe>{$goods.zhekou_price}折</zhe></div>
+
+                                       <!--{if $goods.promote_price neq "" } --><div class="picon pi7"><b></b></div>{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del><span class="sep">|</span><zhe>{$goods.zhekou_price}折</zhe></div>
                                                                         <!--
 <div class="item-star">
                                         <span class="icon-stat icon-stat-4half"></span>

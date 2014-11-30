@@ -60,9 +60,9 @@ $filter_attr = empty($filter_attr_str) ? '' : explode('.', $filter_attr_str);
 /* 排序、显示方式以及类型 */
 $default_display_type = $_CFG['show_order_type'] == '0' ? 'list' : ($_CFG['show_order_type'] == '1' ? 'grid' : 'text');
 $default_sort_order_method = $_CFG['sort_order_method'] == '0' ? 'DESC' : 'ASC';
-$default_sort_order_type   = $_CFG['sort_order_type'] == '0' ? 'goods_id' : ($_CFG['sort_order_type'] == '1' ? 'shop_price' : 'last_update');
+$default_sort_order_type   = $_CFG['sort_order_type'] == '0' ? 'promote_price' : ($_CFG['sort_order_type'] == '1' ? 'shop_price' : 'last_update');
 //by gaoyan新增按照库存降序的有货
-$sort  = (isset($_REQUEST['sort'])  && in_array(trim(strtolower($_REQUEST['sort'])), array('goods_id', 'shop_price', 'last_update','goods_number'))) ? trim($_REQUEST['sort'])  : $default_sort_order_type;
+$sort  = (isset($_REQUEST['sort'])  && in_array(trim(strtolower($_REQUEST['sort'])), array('goods_id', 'shop_price', 'last_update','goods_number','promote_price'))) ? trim($_REQUEST['sort'])  : $default_sort_order_type;
 $order = (isset($_REQUEST['order']) && in_array(trim(strtoupper($_REQUEST['order'])), array('ASC', 'DESC')))                              ? trim($_REQUEST['order']) : $default_sort_order_method;
 $display  = (isset($_REQUEST['display']) && in_array(trim(strtolower($_REQUEST['display'])), array('list', 'grid', 'text'))) ? trim($_REQUEST['display'])  : (isset($_COOKIE['ECS']['display']) ? $_COOKIE['ECS']['display'] : $default_display_type);
 $display  = in_array($display, array('list', 'grid', 'text')) ? $display : 'text';

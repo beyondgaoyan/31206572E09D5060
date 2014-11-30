@@ -93,7 +93,8 @@
                                         <a href="{$goods.url}">{$goods.goods_name}</a>
                                     </h3>
                                     <div class="item-price">
-                                       <!--{if $goods.promote_price neq "" } -->{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></div>
+
+                                       <!--{if $goods.promote_price neq "" } --><div class="picon pi7"><b></b></div>{$goods.promote_price}<!--{else}-->{$goods.shop_price}<!--{/if}--><span class="sep">|</span><del>{$goods.market_price}</del></div>
 									   <div class="item-actions item-actions-{$goods.goods_id}">
                                                                                 <a class="btn btn-small btn-primary J_addCart" href="javascript:addToCart({$goods.goods_id})"  data-disabled="false" data-package="false" rel="nofollow"><i class="iconfont"></i>购物车</a>
                                                                                 <a class="btn btn-dake btn-small J_addFav" href="javascript:collect({$goods.goods_id});" ><i class="iconfont"></i>收藏</a>
