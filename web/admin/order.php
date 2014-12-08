@@ -1826,7 +1826,8 @@ elseif ($_REQUEST['act'] == 'step_post')
         $order['integral_money']= 0;
         $order['bonus_id']      = 0;
         $order['bonus']         = 0;
-
+        //修改订单金额增加税费 by gaoyan
+        $order['tariff_fee']    = isset($_POST['tariff_fee']) && floatval($_POST['tariff_fee']) >= 0 ? round(floatval($_POST['tariff_fee']), 2) : 0;
         /* 计算待付款金额 */
         $order['order_amount']  = $order['goods_amount'] - $order['discount']
                                 + $order['tax']
@@ -1835,7 +1836,8 @@ elseif ($_REQUEST['act'] == 'step_post')
                                 + $order['pay_fee']
                                 + $order['pack_fee']
                                 + $order['card_fee']
-                                - $order['money_paid'];
+                                - $order['money_paid']
+                                +$order['tariff_fee'];
         if ($order['order_amount'] > 0)
         {
             if ($old_order['user_id'] > 0)
@@ -5047,7 +5049,7 @@ function order_list()
         $sql = "SELECT o.order_id, o.order_sn, o.add_time, o.order_status, o.shipping_status, o.order_amount, o.money_paid," .
                     "o.pay_status, o.consignee, o.address, o.email, o.tel, o.extension_code, o.extension_id, " .
                     "(" . order_amount_field('o.') . ") AS total_fee, " .
-                    "IFNULL(u.user_name, '" .$GLOBALS['_LANG']['anonymous']. "') AS buyer,ks.api_order,ks.api_pay,ks.api_shopping,ks.api_shenbao,ks.allok_time ".
+                    "IFNULL(u.user_name, '" .$GLOBALS['_LANG']['anonymous']. "') AS buyer,ks.api_order,ks.api_pay,ks.api_shopping,ks.api_shenbao,ks.allok_time,o.tariff_fee ".
                 " FROM " . $GLOBALS['ecs']->table('order_info') . " AS o " .
                 " LEFT JOIN " .$GLOBALS['ecs']->table('users'). " AS u ON u.user_id=o.user_id ". 
                 " LEFT JOIN " .$GLOBALS['ecs']->table('kjg_status'). " AS ks ON ks.order_id=o.order_id ". $where .

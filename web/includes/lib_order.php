@@ -442,6 +442,7 @@ function order_info($order_id, $order_sn = '')
         $order['formated_surplus']        = price_format($order['surplus'], false);
         $order['formated_order_amount']   = price_format(abs($order['order_amount']), false);
         $order['formated_add_time']       = local_date($GLOBALS['_CFG']['time_format'], $order['add_time']);
+        $order['formated_tariff_fee']   = price_format($order['tariff_fee'], false);
     }
 
     return $order;

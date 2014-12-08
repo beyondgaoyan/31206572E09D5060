@@ -438,6 +438,14 @@ region.isAdmin=true;
     <th>{if $order.order_amount >= 0} {$lang.label_money_dues} {else} {$lang.label_money_refund} {/if}</th>
     <td>{$order.formated_order_amount}</td>
   </tr>
+  <tr>
+    <th>关税</th>
+    <td>
+      <input name="tariff_fee" type="text" value="{$order.tariff_fee}" size="15">
+      </td>
+    <th></th>
+    <td></td>
+  </tr>
 </table>
 </div>
   <p align="center">

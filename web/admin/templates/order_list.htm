@@ -34,6 +34,7 @@
     <th><a href="javascript:listTable.sort('total_fee', 'DESC'); ">{$lang.total_fee}</a>{$sort_total_fee}</th>
     <th><a href="javascript:listTable.sort('order_amount', 'DESC'); ">{$lang.order_amount}</a>{$sort_order_amount}</th>
     <th>{$lang.all_status}</th>
+    <th>关税</th>
     <th>跨境购提交状态</th>
     <th>{$lang.handler}</th>
   <tr>
@@ -45,6 +46,7 @@
     <td align="right" valign="top" nowrap="nowrap">{$order.formated_total_fee}</td>
     <td align="right" valign="top" nowrap="nowrap">{$order.formated_order_amount}</td>
     <td align="center" valign="top" nowrap="nowrap">{$lang.os[$order.order_status]},{$lang.ps[$order.pay_status]},{$lang.ss[$order.shipping_status]}</td>
+    <td align="center" valign="top" nowrap="nowrap">{$order.tariff_fee}</td>
     <td align="right" valign="top" nowrap="nowrap">
     {if $order.pay_status=='2'}
     {if $order.allok_time!='0' && $order.allok_time} 下单 支付 发货{else}
