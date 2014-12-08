@@ -54,7 +54,7 @@
 		}
 	</script>
 {else}
-{insert_scripts files="../js/utils.js,../js/transport.js"}
+{insert_scripts files="../js/utils.js,../js/transport_pro.js"}
 {insert_scripts files="../js/region.js"}
 <script type="text/javascript">
 	region.isAdmin=true;
