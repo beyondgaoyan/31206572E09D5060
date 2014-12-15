@@ -104,6 +104,22 @@
 			}
 		},
 		{
+			"file": "web/includes/modules/shipping/ems.php",
+			"settings":
+			{
+				"buffer_size": 5990,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/includes/modules/shipping/sf_express.php",
+			"settings":
+			{
+				"buffer_size": 4819,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "web/admin/templates/order_list.htm",
 			"settings":
 			{
@@ -253,10 +269,16 @@
 	[
 		"/Users/gaoyan/站点/other/徐凯旋/github/web",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin",
-		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/templates"
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/templates",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules/shipping"
 	],
 	"file_history":
 	[
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/languages/zh_cn/shipping/ems.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules/shipping/ems.php",
+		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/templates/ebao_select.htm",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/js/transport_pro.js",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/profile.dwt",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/privilege.php",
@@ -287,7 +309,6 @@
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/category.dwt",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/mobile/templates/search.dwt",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules/shipping/sf_express.php",
-		"/Users/gaoyan/站点/other/徐凯旋/github/web/includes/modules/shipping/ems.php",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/tms.php",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/admin/email_list.php",
 		"/Users/gaoyan/站点/other/徐凯旋/github/web/exchange.php",
@@ -382,9 +403,7 @@
 		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/ThinkPHP/Extend/Vendor/Smarty/plugins/shared.mb_unicode.php",
 		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc.conf",
 		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Lib/Action/BusinessAction.class.php",
-		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Conf/config.php",
-		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/Public/js/mobile/clearOpenID.js",
-		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/cater.php"
+		"/Users/gaoyan/站点/微信海/中国银行独立项目/web/boc/Conf/config.php"
 	],
 	"find":
 	{
@@ -568,7 +587,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -769,7 +788,7 @@
 						"translation.y": 40006.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -863,7 +882,7 @@
 						"translation.y": 5687.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1063,7 +1082,7 @@
 						"translation.y": 1122.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1079,8 +1098,8 @@
 						"selection":
 						[
 							[
-								10223,
-								10223
+								492,
+								492
 							]
 						],
 						"settings":
@@ -1088,31 +1107,16 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -1123,26 +1127,41 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
 							"codeintel": true,
 							"codeintel_config":
@@ -1247,7 +1266,7 @@
 								"Python Django": "Python"
 							},
 							"codeintel_tooltips": "popup",
-							"function_name_status_row": 407,
+							"function_name_status_row": 14,
 							"incomplete_sync": null,
 							"is_xml": false,
 							"remote_loading": false,
@@ -1256,19 +1275,317 @@
 							"synced": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
-							"tabs_extra_last_activated": 1418038924.3,
+							"tabs_extra_last_activated": 1418626809.84,
 							"tabs_extra_last_activated_sheet_index": 3,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 2.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "web/includes/modules/shipping/ems.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5990,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1325,
+								1325
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"function_name_status_row": 50,
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"sublime_auto_complete": true,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"tabs_extra_last_activated": 1418627168.15,
+							"tabs_extra_last_activated_sheet_index": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 83.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "web/includes/modules/shipping/sf_express.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3138,
+								3138
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"function_name_status_row": 94,
+							"incomplete_sync": null,
+							"is_xml": false,
+							"remote_loading": false,
+							"side_bar_folders_auto_load_folder": 1,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"tabs_extra_last_activated": 1418641925.92,
+							"tabs_extra_last_activated_sheet_index": 5,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 5.0,
+						"translation.y": 1506.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "web/admin/templates/order_list.htm",
 					"semi_transient": false,
 					"settings":
@@ -1478,11 +1795,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "web/admin/templates/order_step.htm",
 					"semi_transient": false,
 					"settings":
@@ -1679,11 +1996,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "web/admin/templates/order_info.htm",
 					"semi_transient": false,
 					"settings":
@@ -1789,7 +2106,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1846,6 +2163,10 @@
 		"selected_items":
 		[
 			[
+				"ems",
+				"languages/zh_cn/shipping/ems.php"
+			],
+			[
 				"buy.dw",
 				"mobile/templates/buy.dwt"
 			],
@@ -1888,10 +2209,6 @@
 			[
 				"taobao",
 				"themes/default/library/taobao_ad.lbi"
-			],
-			[
-				"ems",
-				"includes/modules/shipping/ems.php"
 			],
 			[
 				"/shipping_area.php",

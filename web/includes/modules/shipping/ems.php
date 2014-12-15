@@ -132,9 +132,9 @@ class ems
             }
             else
             {
-                if ($goods_weight > 0.5)
+                if ($goods_weight > 1)
                 {
-                    $fee += (ceil(($goods_weight - 0.5) / 0.5)) * $this->configure['step_fee'];
+                    $fee += (ceil(($goods_weight - 1))) * $this->configure['step_fee'];
                 }
             }
             return $fee;
