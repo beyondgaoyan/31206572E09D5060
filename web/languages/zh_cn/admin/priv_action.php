@@ -108,6 +108,7 @@ $_LANG['sale_order_stats'] = '订单销售统计';
 $_LANG['client_flow_stats'] = '客户流量统计';
 $_LANG['delivery_view'] = '查看发货单';
 $_LANG['back_view'] = '查看退货单';
+$_LANG['order_kjg_push'] = '跨境购订单推送';
 
 //促销管理
 $_LANG['snatch_manage'] = '夺宝奇兵';

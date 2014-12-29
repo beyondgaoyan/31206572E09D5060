@@ -5,6 +5,8 @@ define('IN_ECS', true);
 require(dirname(__FILE__) . '/includes/init.php');
 require_once(ROOT_PATH . 'includes/lib_order.php');
 require_once(ROOT_PATH . 'includes/lib_goods.php');
+/* 检查权限 */
+    admin_priv('order_kjg_push');
 if(!empty($_GET['order_id'])){
 	$order_id=$_GET['order_id'];
 
