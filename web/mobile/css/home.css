@@ -485,8 +485,15 @@ body {
 	margin-bottom:1em;
 	-webkit-box-shadow:#d2d2d4 0 .1em 0;
 	-moz-box-shadow:#d2d2d4 0 .1em 0;
-	box-shadow:#d2d2d4 0 .1em 0
+	box-shadow:#d2d2d4 0 .1em 0;
+	width:45%;
+	height: 250px; 
+	float: left;
+	margin: 2%;
+	overflow: hidden;
+
 }
+
 #list li .type_ad {
 	background-color:#fff
 }

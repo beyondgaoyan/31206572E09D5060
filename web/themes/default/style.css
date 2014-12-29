@@ -3858,6 +3858,23 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 .tb-toolbar-ww-offline {
     color: #adb7c1;
 }
+.tb-toolbar-item-hd:hover .tb-toolbar-item-tip{display: block;}
+.tb-toolbar-item-tip {
+  background: none repeat scroll 0 0 #7c8994;
+  color: #fff;
+  font-size: 12px;
+
+  left: -102px;
+  line-height: 30px;
+  padding: 6px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 90px;
+  z-index: 100000022;
+  display: none;
+}
+.tb-toolbar-item-tip p {line-height: 30px; margin: 5px 0;}
 .tb-toolbar-ww-groups {
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
