@@ -17,6 +17,15 @@ require_once(ROOT_PATH . 'includes/cls_json.php');
 $json = new JSON;
 
 $hash_code = $db->getOne("SELECT `value` FROM " . $ecs->table('shop_config') . " WHERE `code`='hash_code'", true);
+//搜索参数
+$st = intval($_REQUEST['st']);
+$et = intval($_REQUEST['et']);
+$p = isset($_REQUEST['p']) ? intval($_REQUEST['p']) : 1;
+        $shop_id = isset($data['shop_id'])? intval($data['shop_id']):0;
+        $record_number = isset($data['record_number'])? intval($data['record_number']):20;
+        $page_number = isset($p)? (intval($p)-1):0;
+        $limit = ' LIMIT ' . ($record_number * $page_number) . ', ' . ($record_number+1);
+
 
 $action = isset($_REQUEST['action'])? $_REQUEST['action']:'';
 if (empty($_REQUEST['verify']) || empty($_REQUEST['auth']) || empty($_REQUEST['action']))
@@ -37,30 +46,78 @@ switch ($action)
     //get_order_list
     case 'get_order_list':
     {
-        $shop_id = isset($data['shop_id'])? intval($data['shop_id']):0;
-        $record_number = isset($data['record_number'])? intval($data['record_number']):20;
-        $page_number = isset($data['page_number'])? intval($data['page_number']):0;
-        $limit = ' LIMIT ' . ($record_number * $page_number) . ', ' . ($record_number+1);
-        $sql = "SELECT `goods_id`, `goods_name`, `goods_number`, `shop_price`, `keywords`, `goods_brief`, `goods_thumb`, `goods_img`, `last_update` FROM " . $ecs->table('goods') . " WHERE `is_delete`='0' ORDER BY `goods_id` ASC $limit ";
-        $results = array('result' => 'false', 'next' => 'false', 'data' => array());
+        $count = $db->getOne("SELECT count(order_id) FROM ecs_order_info WHERE add_time >= ".$st." AND add_time <= ".$et."");
+        $sql = "SELECT
+    g.goods_id as goodsid,
+    g.goods_name as goodsname,
+    g.goods_sn as goodsno,
+    g.goods_number as goodsnum,
+    g.goods_price as goodsprice,
+    o.confirm_time as modtime,
+    o.inv_payee as inv_payee,
+    o.inv_type as inv_type,
+    o.inv_content as inv_content,
+    o.to_buyer as to_buyer,
+    o.money_paid as money_paid,
+    o.order_status as orderstatus,
+    o.pay_status as paystatus,
+    o.ishaiwai,
+    o.order_sn,
+    u.user_name,
+    o.address,
+    o.zipcode,
+    o.email,
+    o.best_time as besttime,
+    o.postscript,
+    o.tel,
+    o.mobile,
+    o.consignee as name,
+    o.shipping_name as shippingname,
+    o.pay_name as payname,
+    o.goods_amount as goodsamount,
+    o.shipping_fee as shippingfee,
+    o.insure_fee as insurefee,
+    o.tariff_fee as texfee,
+    o.trade_no as bankno,
+    o.add_time as addtime,
+    o.pay_time as paytime,
+    b.type_money as bonusfee
+FROM
+    ecs_order_goods g left
+    JOIN ecs_order_info o ON o.order_id = g.order_id left
+    JOIN ecs_users u ON u.user_id = o.user_id left
+    JOIN ecs_user_bonus ub ON ub.bonus_id = o.bonus_id left
+    JOIN ecs_bonus_type b ON b.type_id = ub.bonus_type_id
+WHERE
+    o.add_time >= ".$st."
+    AND o.add_time <= ".$et."
+group by o.order_id order by o.add_time asc ".$limit;
+        $results = array('result' => 'false',  'data' => array());
         $query = $db->query($sql);
         $record_count = 0;
-        while ($goods = $db->fetch_array($query))
-        {
-            $goods['goods_thumb'] = (!empty($goods['goods_thumb']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_thumb']:'';
-            $goods['goods_img'] = (!empty($goods['goods_img']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_img']:'';
-            $results['data'][] = $goods;
-            $record_count++;
-        }
-        if ($record_count > 0)
-        {
-            $results['result'] = 'true';
-        }
-        if ($record_count > $record_number)
-        {
-            array_pop($results['data']);
-            $results['next'] = 'true';
-        }
+        // while ($goods = $db->fetch_array($query))
+        // {
+        //     $goods['goods_thumb'] = (!empty($goods['goods_thumb']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_thumb']:'';
+        //     $goods['goods_img'] = (!empty($goods['goods_img']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_img']:'';
+        //     $results['data'][] = $goods;
+        //     $record_count++;
+        // }
+        // if ($record_count > 0)
+        // {
+        //     $results['result'] = 'true';
+        // }
+        // if ($record_count > $record_number)
+        // {
+        //     array_pop($results['data']);
+        //     $results['next'] = 'true';
+        // }
+        /**
+             安装数据
+         */
+        $results['result'] = true;
+        $results['tp'] = ceil($count / $record_number);
+        $results['p'] = $p;
+        $results['data'][] = $db->fetch_array($query);
         exit($json->encode($results));
         break;
     }
