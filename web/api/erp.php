@@ -13,6 +13,7 @@ define('IN_ECS', true);
 
 require('./init.php');
 require_once(ROOT_PATH . 'includes/cls_json.php');
+
 $key ='31693422540744c0a6b6da635b7a5a93';
 $json = new JSON;
 
@@ -71,9 +72,11 @@ switch ($action)
     o.order_status as orderstatus,
     o.pay_status as paystatus,
     o.ishaiwai,
-    o.order_sn,
-    u.user_name,
-    o.address,
+    o.order_sn as ordersn,
+    u.user_name as username,
+    u.idcard as certificate,
+    u.truename as relName,
+    o.address as dr_name,
     o.zipcode,
     o.email,
     o.best_time as besttime,
@@ -90,6 +93,9 @@ switch ($action)
     o.trade_no as bankno,
     o.add_time as addtime,
     o.pay_time as paytime,
+    o.province,
+    o.city,
+    o.district,
     b.type_money as bonusfee
 FROM
     ecs_order_goods g left
@@ -120,13 +126,23 @@ group by o.order_id order by o.add_time asc ".$limit;
         //     array_pop($results['data']);
         //     $results['next'] = 'true';
         // }
-        /**
-             安装数据
-         */
         $results['result'] = true;
         $results['tp'] = ceil($count / $record_number);
         $results['p'] = $p;
-        $results['data'][] = $db->fetch_array($query);
+        //$results['data'][] = $db->fetch_array($query);
+        while($q = $db->fetch_array($query)){
+            $cr_name= get_regions_name($q['province']);
+            $pr_name= get_regions_name($q['city']);
+            $tr_name = get_regions_name($q['district']);
+            $q['cr_name'] = $cr_name;
+            $q['pr_name'] = $pr_name;
+            $q['tr_name'] = $tr_name;
+            $results['data'][] = $q;
+        }
+        /**
+             安装数据
+         */
+
         exit($json->encode($results));
         break;
     }
@@ -251,5 +267,12 @@ function passport_key($txt, $encrypt_key)
         $tmp .= $txt[$i] ^ $encrypt_key[$ctr++];
     }
     return $tmp;
+}
+function get_regions_name($id = 0)
+{
+    $sql = 'SELECT region_name FROM ' . $GLOBALS['ecs']->table('region') .
+            " WHERE region_id = '$id' limit 1";
+
+    return $GLOBALS['db']->getOne($sql);
 }
 ?>
