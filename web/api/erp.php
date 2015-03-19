@@ -13,7 +13,7 @@ define('IN_ECS', true);
 
 require('./init.php');
 require_once(ROOT_PATH . 'includes/cls_json.php');
-
+$key ='31693422540744c0a6b6da635b7a5a93';
 $json = new JSON;
 
 $hash_code = $db->getOne("SELECT `value` FROM " . $ecs->table('shop_config') . " WHERE `code`='hash_code'", true);
@@ -27,19 +27,28 @@ $p = isset($_REQUEST['p']) ? intval($_REQUEST['p']) : 1;
         $limit = ' LIMIT ' . ($record_number * $page_number) . ', ' . ($record_number+1);
 
 
-$action = isset($_REQUEST['action'])? $_REQUEST['action']:'';
-if (empty($_REQUEST['verify']) || empty($_REQUEST['auth']) || empty($_REQUEST['action']))
+$action = isset($_REQUEST['act'])? $_REQUEST['act']:'';
+if (empty($_REQUEST['key']) || empty($_REQUEST['act']))
 {
     $results = array('result'=>'false', 'data'=>'缺少必要的参数');
     exit($json->encode($results));
 }
-if ($_REQUEST['verify'] != md5($hash_code.$_REQUEST['action'].$_REQUEST['auth']))
-{
-    $results = array('result'=>'false', 'data'=>'数据来源不合法，请返回');
+if($_REQUEST['key']!=$key){
+    $results = array('result'=>'false', 'data'=>'key错误');
     exit($json->encode($results));
 }
+// if (empty($_REQUEST['verify']) || empty($_REQUEST['key']) || empty($_REQUEST['act']))
+// {
+//     $results = array('result'=>'false', 'data'=>'缺少必要的参数');
+//     exit($json->encode($results));
+// }
+// if ($_REQUEST['verify'] != md5($hash_code.$_REQUEST['act'].$_REQUEST['key']))
+// {
+//     $results = array('result'=>'false', 'data'=>'数据来源不合法，请返回');
+//     exit($json->encode($results));
+// }
 
-parse_str(passport_decrypt($_REQUEST['auth'], $hash_code), $data);
+parse_str(passport_decrypt($_REQUEST['key'], $hash_code), $data);
 
 switch ($action)
 {
