@@ -76,7 +76,7 @@ switch ($action)
     u.user_name as username,
     u.idcard as certificate,
     u.truename as relName,
-    o.address as dr_name,
+    o.address as address,
     o.zipcode,
     o.email,
     o.best_time as besttime,
@@ -96,7 +96,8 @@ switch ($action)
     o.province,
     o.city,
     o.district,
-    b.type_money as bonusfee
+    b.type_money as bonusfee,
+    o.order_id
 FROM
     ecs_order_goods g left
     JOIN ecs_order_info o ON o.order_id = g.order_id left
@@ -104,8 +105,8 @@ FROM
     JOIN ecs_user_bonus ub ON ub.bonus_id = o.bonus_id left
     JOIN ecs_bonus_type b ON b.type_id = ub.bonus_type_id
 WHERE
-    o.add_time >= ".$st."
-    AND o.add_time <= ".$et."
+    o.pay_time >= '{$st}'
+    AND o.pay_time <= '{$et}'
 group by o.order_id order by o.add_time asc ".$limit;
         $results = array('result' => 'false',  'data' => array());
         $query = $db->query($sql);
@@ -131,12 +132,19 @@ group by o.order_id order by o.add_time asc ".$limit;
         $results['p'] = $p;
         //$results['data'][] = $db->fetch_array($query);
         while($q = $db->fetch_array($query)){
-            $cr_name= get_regions_name($q['province']);
-            $pr_name= get_regions_name($q['city']);
-            $tr_name = get_regions_name($q['district']);
+            $cr_name = '中国';
+            $pr_name= get_regions_name($q['province']);
+            $tr_name= get_regions_name($q['city']);
+            $dr_name = get_regions_name($q['district']);
+
             $q['cr_name'] = $cr_name;
             $q['pr_name'] = $pr_name;
             $q['tr_name'] = $tr_name;
+            $q['dr_name'] = $dr_name;
+            //获取订单商品
+            $sqlg = "SELECT goods_id as goodsid,    goods_name as goodsname,    goods_sn as goodsno,    goods_number as goodsnum,    goods_price as goodsprice FROM " . $ecs->table('order_goods') . "  WHERE order_id=".$q['order_id'];
+            $q['goods'] = $db->getAll($sqlg);
+
             $results['data'][] = $q;
         }
         /**
